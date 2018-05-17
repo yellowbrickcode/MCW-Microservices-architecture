@@ -1,3 +1,4 @@
+This is the final text edit
 
 # Contributing
 
