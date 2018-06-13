@@ -190,7 +190,7 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 #### Tasks to complete:
 
-1.  On your Lab VM, download the starter project from <http://bit.ly/2t1HhbS>. (Note: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.)
+1.  On your Lab VM, download the starter project from <http://bit.ly/2JO4yIB>. (Note: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.)
 
 2.  Unzip the contents to the folder C:\\handsonlab.
 
