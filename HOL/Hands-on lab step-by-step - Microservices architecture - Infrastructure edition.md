@@ -843,6 +843,10 @@ In this task, you will test the ticket order processing back-end, to validate th
 
     ![In the function apps pane, under Function, the ProcessOrderExternalizations ID parameter value is circled. under Logs, the same ID value is circled.](images/Labs/image132.png "Function apps pane")
 
+    > If when clicking the Monitor tab a request to configure Application Insights is displayed, click Switch to classic view.
+    >
+    > ![In the Monitor tab, the Switch to classic view is circled.](images/Labs/image132a.png "Monitor tab Application Insights request")
+
 7.  In the Azure portal, navigate to your Cosmos DB account, and from the top menu of the Overview blade, select Data Explorer.
 
     ![In the Azure Cosmos DB account pane, the Data Explorer button is circled.](images/Labs/image133.png "Azure Cosmos DB account pane")
@@ -910,6 +914,8 @@ In this task, you will deploy the application to a hosted Service Fabric Cluster
 8.  In the Publish Service Fabric Application dialog, set the Target profile to Cloud.xml, and select your Service Fabric Cluster endpoint from the Connection Endpoint drop down, then select Publish.
 
     ![In the Publish Service Fabric Application dialog box, the Target profile, which is circled, is set to PublishProfiles\\Cloud.xml. The Connection Endpoint also is circled, and is set to contosoeventssf-SUFFIX.westus2.cloudapp.azure.com:19000.](images/Labs/image136.png "Publish Service Fabric Application dialog box")
+
+    > Ensure that StoreLocation is LocalMachine and StoreName is My.
 
 9.  Publishing to the hosted Service Fabric Cluster takes about 5 minutes. It follows the same steps as a local publish step with an alternate configuration. The Visual Studio output window keeps you updated of progress.
 
