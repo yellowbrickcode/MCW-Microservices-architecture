@@ -27,7 +27,7 @@ Attendees will learn how to:
 
 -   Provide query flexibility with Cosmos DB
 
-## Hand-on Lab
+## Hands-on Lab
 
 In this hands-on lab, you will construct an end-to-end POC for ticket ordering. You will leverage Service Fabric, API Management, Function Apps, Web Apps, and Cosmos DB.
 
