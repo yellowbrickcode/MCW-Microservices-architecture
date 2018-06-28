@@ -4,7 +4,7 @@ Contoso Events is an online service for concerts, sporting and other event ticke
 
 ## Workshop
 
-In this workshop, you will look at the process of developing a proof of concept (POC) that will illustrate the use of many Azure features to support a highly scalable architecture based on Service Fabric, Functions and leveraging Azure Queues, CosmosDB migration from MongoDB, and other supporting features such as Azure AD and API Management. 
+In this workshop, you will look at the process of developing a proof of concept (POC) that will illustrate the use of many Azure features to support a highly scalable architecture based on Service Fabric, Functions and leveraging Azure Queues, CosmosDB, and other supporting features such as Azure AD and API Management. 
 
 ## Target Audience
 
