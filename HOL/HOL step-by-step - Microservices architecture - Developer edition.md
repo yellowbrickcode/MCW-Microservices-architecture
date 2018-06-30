@@ -71,7 +71,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Microservices architecture -- developer edition hands-on lab step-by-step
+# Microservices architecture -- Developer edition hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
