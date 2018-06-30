@@ -608,25 +608,25 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
    As for choosing between Service Fabric and App Services or SQL DB the benefits of the former include:
 
--   The ability to deploy individual application services without concern over the target infrastructure -- let Service Fabric decide the target nodes appropriate for each tier and service type
+    -   The ability to deploy individual application services without concern over the target infrastructure -- let Service Fabric decide the target nodes appropriate for each tier and service type
 
--   Simplified approach to managing data persistence with stateful services
+    -   Simplified approach to managing data persistence with stateful services
 
--   Microservices design from the ground up on a platform that is specifically designed for that purpose -- with the ability to scale
+    -   Microservices design from the ground up on a platform that is specifically designed for that purpose -- with the ability to scale
 
--   The capability to deploy Service Fabric clusters in Azure and on-premises, across both Windows and Linux hosts
+    -   The capability to deploy Service Fabric clusters in Azure and on-premises, across both Windows and Linux hosts
 
 2. Microservices concepts are completely new to the Contoso Events team. If we were to go forward with Service Fabric as our microservices platform, we would like to understand what skills the team can carry forward, and how much of a learning curve exists.
 
    Service Fabric is a natural transition for .NET developers in many respects:
 
--   They can continue to use Visual Studio for development, debugging and publishing applications
+    -   They can continue to use Visual Studio for development, debugging and publishing applications
 
--   They can continue to develop ASP.NET and Web API applications and can leverage Service Fabric project templates to kick-start their understanding of the specifics of Service Fabric services
+    -   They can continue to develop ASP.NET and Web API applications and can leverage Service Fabric project templates to kick-start their understanding of the specifics of Service Fabric services
 
--   The programming model for services is familiar in that it leverages features of existing .NET technologies and related concepts such as WCF endpoints (simplified), channels and serialization
+    -   The programming model for services is familiar in that it leverages features of existing .NET technologies and related concepts such as WCF endpoints (simplified), channels and serialization
 
--   Working with stateful services is also familiar in the sense that state is defined via objects (POCO) and serialized as part of the service implementation. Saving and retrieving state is just a few lines of code and the robustness, availability and reliability of that state is a feature of the stateful service.
+    -   Working with stateful services is also familiar in the sense that state is defined via objects (POCO) and serialized as part of the service implementation. Saving and retrieving state is just a few lines of code and the robustness, availability and reliability of that state is a feature of the stateful service.
 
 3. We'd like to understand if stateful services or stateful actors will help us with ticket ordering throughput, workflow and state management, and easier rollouts of changes to this process.
 
@@ -636,13 +636,13 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
    By using the stateful actor, not only is the persistence of the actual ticket order handled by the Service Fabric at scale, but the actor can be wholly responsible for the workflow required to complete the order including:
 
--   Completing the payment processing purchase with token
+    -   Completing the payment processing purchase with token
 
--   Securing the ticket based on availability
+    -   Securing the ticket based on availability
 
--   Notifying the user of the result, success or failure
+    -   Notifying the user of the result, success or failure
 
--   Preserving the state of the workflow as it progresses
+    -   Preserving the state of the workflow as it progresses
 
    When updates to this actor are required, the existing state is preserved, any active instances can continue completing their work, and the new actor functionality or state requirements can be rolled out safely by Service Fabric across the nodes in the cluster, eventually retiring the previous version.
 
