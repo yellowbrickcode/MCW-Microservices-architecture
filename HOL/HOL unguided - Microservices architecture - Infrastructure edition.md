@@ -1,4 +1,4 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Microservices architecture - Infrastructure edition
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Microservices architecture -- infrastructure edition hands-on lab unguided](#microservices-architecture----infrastructure-edition-hands-on-lab-unguided)
+- [Microservices architecture -- Infrastructure edition hands-on lab unguided](#microservices-architecture----infrastructure-edition-hands-on-lab-unguided)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
@@ -159,7 +159,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Microservices architecture -- infrastructure edition hands-on lab unguided
+# Microservices architecture -- Infrastructure edition hands-on lab unguided
 
 ## Abstract and learning objectives
 
