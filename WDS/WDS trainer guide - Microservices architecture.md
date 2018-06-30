@@ -1,4 +1,4 @@
-!["Microsoft Cloud Workshops"](images/HeaderPic.png)
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 Microservices architecture
 
@@ -34,6 +34,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Microservices architecture whiteboard design session trainer guide](#microservices-architecture-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
@@ -91,7 +92,7 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Prepare to present a solution for your target customer audience
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 -   Determine your target customer audience
 
@@ -418,7 +419,7 @@ Directions:
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear a SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Preferred target audience
 
