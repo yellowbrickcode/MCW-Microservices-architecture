@@ -602,7 +602,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 ## Checklist of preferred objection handling
 
-*While we are interested in the microservices approach, we are still comparing Service Fabric with PaaS features such as App Services and SQL DB. How mature is Service Fabric by comparison?*
+1. While we are interested in the microservices approach, we are still comparing Service Fabric with PaaS features such as App Services and SQL DB. How mature is Service Fabric by comparison?
 
 Service Fabric has been battle tested for many years prior to becoming generally available. In fact, Service Fabric is the underlying foundation for Azure's own SQL DB and Cosmos DB services among other high traffic applications such as the very popular Halo game.
 
@@ -616,7 +616,7 @@ As for choosing between Service Fabric and App Services or SQL DB the benefits o
 
 -   The capability to deploy Service Fabric clusters in Azure and on-premises, across both Windows and Linux hosts
 
-*Microservices concepts are completely new to the Contoso Events team. If we were to go forward with Service Fabric as our microservices platform, we would like to understand what skills the team can carry forward, and how much of a learning curve exists.*
+2. Microservices concepts are completely new to the Contoso Events team. If we were to go forward with Service Fabric as our microservices platform, we would like to understand what skills the team can carry forward, and how much of a learning curve exists.
 
 Service Fabric is a natural transition for .NET developers in many respects:
 
@@ -628,7 +628,7 @@ Service Fabric is a natural transition for .NET developers in many respects:
 
 -   Working with stateful services is also familiar in the sense that state is defined via objects (POCO) and serialized as part of the service implementation. Saving and retrieving state is just a few lines of code and the robustness, availability and reliability of that state is a feature of the stateful service.
 
-*We'd like to understand if stateful services or stateful actors will help us with ticket ordering throughput, workflow and state management, and easier rollouts of changes to this process.*
+3. We'd like to understand if stateful services or stateful actors will help us with ticket ordering throughput, workflow and state management, and easier rollouts of changes to this process.
 
 Stateful services are very powerful as they make it very easy for developers to define state for any service by using familiar serializable types (POCO) and a few simple instructions to handle saving and retrieving state when the service is accessed. This allows for scenarios where compute and data are collocated reducing the latency of accessing this data.
 
@@ -648,13 +648,13 @@ When updates to this actor are required, the existing state is preserved, any ac
 
 While this solution may not be a typical example of an "Actor Model" in the parallel computing sense, it makes sense to leverage Service Fabric actors for a few reasons. The very nature of the ticket order, its internal workflow and state machine, and the granularity with which the partition is defined (by order) could not as easily be achieved with a traditional stateful service.
 
-*We are not clear how and where to incorporate stateful services and actors alongside other storage such as Cosmos DB. We need the ability to support robust ad-hoc queries against our system data such as events, customers, orders and related metrics -- but would like to take advantage of the performance and reliability of Service Fabric stateful options as well.*
+4. We are not clear how and where to incorporate stateful services and actors alongside other storage such as Cosmos DB. We need the ability to support robust ad-hoc queries against our system data such as events, customers, orders and related metrics -- but would like to take advantage of the performance and reliability of Service Fabric stateful options as well.
 
 Stateful services make it easy to save and retrieve state, and distribute that state for higher availability by using a partitioning strategy. Each partition has its own replica set for reliability. While you can retrieve data from all partitions and potentially use this for aggregation and metrics -- the recommended way to support alternate query patterns is to store the data to an externally accessible location.
 
 Most Service Fabric solutions can benefit from offloading stateful service state to an external store. This supports not only alternate query patterns and ad-hoc querying from the solution, but also analytics and disaster recovery. In this solution we are employing Azure Function to de-couple the Service Fabric app from its external storage options by providing server-less code that can take input from an Azure queue and send the latest state of the data to Document DB.
 
-*Could we consider Azure Functions as an alternative back end implementation for our APIs?*
+5. Could we consider Azure Functions as an alternative back end implementation for our APIs?
 
 While it is possible to create Functions that run behind API Management endpoints, they are best employed for decoupled, asynchronous background operations that can be run at scale without concern for the specific server running that operation.
 
@@ -662,7 +662,7 @@ In this solution, Azure Functions allowed for decoupling the location of the ext
 
 In a solution such as a mobile application back end, functions could be useful if they don't need to comingle with other solutions aspects -- such as acting as their own microservice with a targeted purpose.
 
-*We would like to understand more about the benefits of Serverless architectures---in Azure does this mean only using Azure Functions or is there more to it?*
+6. We would like to understand more about the benefits of Serverless architectures---in Azure does this mean only using Azure Functions or is there more to it?
 
 A Serverless Architecture, as the name implies, aims to provide a solution architecture where concern for individual servers is minimized. While the term "Serverless" has varying interpretations, it typically includes characteristics such as the extensive use of ephemeral services, a focus entirely on scaling the capabilities that support the business logic, the processing capability should be ephemeral (e.g, it can be started nearly instantaneously without preprovisioning on your part), the capability is scaled transparently at a very granular level (e.g. scaling occurs on a per request or function invocation basis and not on an all up server load basis), and the cost is typically associated with time spent supporting business logic computation and not on the time server resources are available to handle requests. In Azure, Functions is a prime component of a Serverless architecture, but not the only service that may be utilized in one. Other Azure Services that, by this definition, can be composed into a Serverless architecture include: Azure Storage Blobs, Tables and Queues, Azure Data Lake Store, API Management, CDN, Media Services, Notification Hubs, IoT Hub, and Service Bus.
 
