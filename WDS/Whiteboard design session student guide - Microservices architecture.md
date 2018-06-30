@@ -1,16 +1,10 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+!["Microsoft Cloud Workshops"](images/HeaderPic.png)
 
-<div class="MCWHeader1">
 Microservices architecture
-</div>
 
-<div class="MCWHeader2">
 Whiteboard design session student guide
-</div>
 
-<div class="MCWHeader3">
-March 2018
-</div>
+July 2018
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -59,8 +53,10 @@ Attendees will learn how to:
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+
+Timeframe: 15 minutes 
+
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
@@ -85,7 +81,7 @@ According to the CIO, the current system topology handles the following core use
 
 -   **Consumer site (Web site)**: Customers search events, place ticket orders, return to view their orders and history of events
 
-    -   **Search events**: Customers will search for events they are interested in, from the event catalog available via the web site. The event catalog is managed by an internal administrative site
+    -   **Search events**: Customers will search for events they are interested in, from the event catalog available via the web site. The event catalog is managed by an internal administrative site.
 
     -   **Event details**: Customers may visit a specific event page to order tickets, from search results or a direct link from an email campaign or referral
 
@@ -105,33 +101,33 @@ According to the CIO, the current system topology handles the following core use
 
 ### Customer needs
 
-1.  Event tickets can be ordered from multiple channels: the web site, new mobile applications, and third-party site and applications via available APIs.
+1.  Event tickets can be ordered from multiple channels: the web site, new mobile applications, and third-party site and applications via available APIs
 
-2.  Customers must be registered / logged in to place orders, so that they can login and find their orders, and for reporting and analytics purposes.
+2.  Customers must be registered or logged in to place orders, so that they can login and find their orders, and for reporting and analytics purposes
 
-3.  Internal staff will manage orders and view reports from the Admin site.
+3.  Internal staff will manage orders and view reports from the Admin site
 
-4.  The ability to rapidly release new features that may involve UI, business logic and data model changes by reducing dependency across features.
+4.  The ability to rapidly release new features that may involve UI, business logic and data model changes by reducing dependency across features
 
 5.  Reduced overall downtime caused by system updates. Rollouts must be possible without scheduled downtime. Rollbacks must be possible in the event of failure.
 
-6.  The solution must be able to handle increased system load for ticket purchasing, including higher peak periods without excessive increases in management overhead and cost.
+6.  The solution must be able to handle increased system load for ticket purchasing, including higher peak periods without excessive increases in management overhead and cost
 
-7.  Operations management overhead must be improved through better system monitoring, visibility, self-healing services and auto-scale features.
+7.  Operations management overhead must be improved through better system monitoring, visibility, self-healing services and auto-scale features
 
-8.  The customer has decided to migrate from SQL Server to Cosmos DB for a more flexible schema and increased scalability across features.
+8.  The customer has decided to migrate from SQL Server to Cosmos DB for a more flexible schema and increased scalability across features
 
-9.  A solution is required for securing and managing APIs used internally and by external partners, with the ability to easily publish APIs, version APIs, onboard consumers, control policy, monitor and audit usage.
+9.  A solution is required for securing and managing APIs used internally and by external partners, with the ability to easily publish APIs, version APIs, onboard consumers, control policy, monitor and audit usage
 
 10. The solution currently processes credit cards with a third-party payment-processing provider. This aspect of the solution will remain the same and requires integration into the new design.
 
 ### Customer objections 
 
-1.  While we are interested in the microservices approach, we are still comparing Service Fabric with PaaS features such as App Services and SQL DB. Service Fabric seems relatively new, while App Services and SQL DB have been around for some time.
+1.  While we are interested in the microservices approach, we are still comparing Service Fabric with PaaS features such as App Services and SQL DB. How mature is Service Fabric by comparison?
 
 2.  Microservices architectures are completely new to the Contoso Events team. If we were to go forward with Service Fabric, we would like to understand what skills the team can carry forward, and how much of a learning curve exists.
 
-3.  We would like to understand if stateful services or stateful actors will help us with ticket ordering throughput, workflow and state management, and easier rollouts of changes to this process.
+3.  We would like to understand if stateful services or stateful actors will help us with ticket ordering throughput, workflow and state management, and easier rollouts of changes to this process
 
 4.  We are not clear how and where to incorporate stateful services and actors alongside other storage such as Cosmos DB. We need the ability to support robust ad-hoc queries against our system data such as events, customers, orders and related metrics -- but would like to take advantage of the performance and reliability of Service Fabric stateful options as well.
 
@@ -157,16 +153,17 @@ Reference: [*https://docs.microsoft.com/en-us/azure/service-fabric/service-fabri
 
 ***Storage State between Monolithic and Microservices Approaches***
 
-The monolithic approach on the left has a single database and tiers of specific technologies. The microservices approach on the right has a graph of interconnected microservices where state is typically scoped to the microservice and various approaches are used to manage state.
+The monolithic approach has a single database and tiers of specific technologies. The microservices approach has a graph of interconnected microservices where state is typically scoped to the microservice and various approaches are used to manage state.
 
 Source: *<https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices>*
 
 ## Step 2: Design a proof of concept solution
 
 **Outcome** 
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -175,35 +172,36 @@ Directions: With all participants at your table, answer the following questions 
 2.  What customer business needs do you need to address with your solution?
 
 **Design** 
+
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
 *High-level architecture*
 
-1.  Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for web sites, mobile applications, third party applications, access to APIs, compute and storage.
+1.  Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for web sites, mobile applications, third party applications, access to APIs, compute and storage
 
 2.  Based on the customer situation, what core services would you propose as part of the new microservices architecture? What state, if any, would those services hold? Illustrate with a diagram.
 
 *Scalability of ticket orders*
 
-1.  Illustrate in more detail the Service Fabric services and components participating in a ticket order request.
+1.  Illustrate in more detail the Service Fabric services and components participating in a ticket order request
 
-2.  Describe the scalability features of this design, including any partitioning strategies that are applicable.
+2.  Describe the scalability features of this design, including any partitioning strategies that are applicable
 
 3.  Describe the resiliency of this use case. How can you create an asynchronous ticket order request and guarantee processing? Are there any potential points of failure? How will you address those?
 
-4.  Describe how you will enable external clients to reach stateless HTTP services exposed from the Azure load balancer.
+4.  Describe how you will enable external clients to reach stateless HTTP services exposed from the Azure load balancer
 
 *Improving DevOps workflows*
 
 1.  How would you structure the Visual Studio solution so that developers can run, debug, and publish the entire solution but also be able to publish and upgrade individual microservices (could be one or more service grouped together)?
 
-2.  Describe to the customer how they can upgrade services in situ and preserve state; handle rollback and roll forward; and service self-healing features.
+2.  Describe to the customer how they can upgrade services in situ and preserve state; handle rollback and roll forward; and service self-healing features
 
 3.  Explain how the Service Fabric cluster handles auto-scaling. How does Service Fabric help the customer to make better utilization of their compute resources?
 
 4.  How would you recommend the customer plan for high availability (HA) in this solution?
 
-5.  Explain to the customer how Service Fabric can help the customer have visibility into overall solution health.
+5.  Explain to the customer how Service Fabric can help the customer have visibility into overall solution health
 
 6.  How can you update cluster settings after the fact? What kind of settings might you want to update?
 
@@ -219,9 +217,9 @@ Directions: With all participants at your table, respond to the following questi
 
 Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution 
+2.  Identify the benefits of your solution
+3.  Determine how you will respond to the customer’s objections
 
 Prepare a 15-minute chalk-talk style presentation to the customer. 
 
@@ -231,18 +229,18 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team
+7.  Tables switch roles and repeat Steps 2–6
 
 ##  Additional references
 |    |            |       
@@ -253,3 +251,4 @@ Directions:
 | Azure Functions | <https://azure.microsoft.com/en-us/services/functions/> |
 | Cosmos DB | <https://azure.microsoft.com/en-us/documentation/articles/documentdb-introduction/> |
 | Azure AD | <https://azure.microsoft.com/en-us/services/active-directory-b2c/> |
+
