@@ -1,4 +1,4 @@
-!["Microsoft Cloud Workshops"](images/HeaderPic.png)
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 Microservices architecture
 
@@ -241,6 +241,12 @@ Directions:
 5.  The Microsoft team responds to the objection
 6.  The customer team gives feedback to the Microsoft team
 7.  Tables switch roles and repeat Steps 2–6
+
+## Wrap-up
+
+Timeframe:  15 minutes
+
+Directions:  Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 |    |            |       
