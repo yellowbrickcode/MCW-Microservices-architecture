@@ -193,9 +193,9 @@ The following figures are intended to help you keep track of all the technologie
 
 ## Requirements
 
-1.  Microsoft Azure subscription must be pay-as-you-go or MSDN.
+1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
 
-    a.  Trial subscriptions will not work.
+    a.  Trial subscriptions will not work
 
 2.  A virtual machine configured with (see Before the hands-on lab):
 
@@ -225,15 +225,15 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 1.  On your Lab VM, download the starter project from <http://bit.ly/2l7aCyg>. (Note: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.)
 
-2.  Unzip the contents to the folder C:\\handsonlab.
+2.  Unzip the contents to the folder C:\\handsonlab
 
-3.  Open the ContosoEventsPoc.sln with Visual Studio.
+3.  Open the ContosoEventsPoc.sln with Visual Studio
 
-4.  Before you compile the solution, set the configuration to x64.
+4.  Before you compile the solution, set the configuration to x64
 
 #### Exit criteria:
 
--  You cannot successfully build the solution.
+-  You cannot successfully build the solution
 
 > **Note**: If you have the prerequisites on your VM, this solution should open without requesting additional software to be installed. You should have some compile-time errors at this point. These are expected, and will be fixed as you proceed with the hands-on lab.
 
@@ -257,9 +257,9 @@ In this section, you will provision an Azure Active Directory B2C tenant. You wi
 
 1.  Create a new Azure Active Directory B2C tenant in the same region as your other items. Use the domain 'contosoeventsb2cSUFFIX'. Set it up as a B2C directory.
 
-2.  Configure the tenant for Username sign in.
+2.  Configure the tenant for Username sign in
 
-3.  Create three profiles: sign in, sign up, and profile edit.
+3.  Create three profiles: sign in, sign up, and profile edit
 
 #### Exit criteria:
 
@@ -273,7 +273,7 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
 1.  Provision a web app to host the website. Create an App Service Plan in the Resource Group and region you used previously. Name the Web App something like 'contosoeventsweb-SUFFIX'.
 
-2.  Select pricing tier S1 Standard.
+2.  Select pricing tier S1 Standard
 
 #### Exit criteria:
 
@@ -287,11 +287,11 @@ In this task, you will provision a Function App using a Consumption Plan. By usi
 
 1.  Provision a Function App to host the functions in the Visual Studio solution, in a Consumption Plan. Create a new Resource Group with a name similar to your main Resource Group such as 'contosoeventsfn-SUFFIX'.
 
-2.  Name the App something like 'contosoeventsfn-SUFFIX'.
+2.  Name the App something like 'contosoeventsfn-SUFFIX'
 
 #### Exit criteria:
 
--  When the provisioning completes, your Web App and Function App are listed in the Azure Portal.
+-  When the provisioning completes, your Web App and Function App are listed in the Azure Portal
 
 ### Task 6: Storage account
 
@@ -299,13 +299,13 @@ In this section, you will create a Storage account for the application to create
 
 #### Tasks to complete:
 
-1.  Provision a Resource Manager based Storage account of type Standard LRS in the same Location and Resource Group as your other services.
+1.  Provision a Resource Manager based Storage account of type Standard LRS in the same Location and Resource Group as your other services
 
-2.  Name it something like 'contosoeventsSUFFIX'.
+2.  Name it something like 'contosoeventsSUFFIX'
 
 #### Exit criteria:
 
--  After provisioning is complete, the Storage account will be listed in the Azure Portal.
+-  After provisioning is complete, the Storage account will be listed in the Azure Portal
 
 ### Task 7: Cosmos DB
 
@@ -313,15 +313,15 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 #### Tasks to complete:
 
-1.  Provision a new Cosmos DB account in the same region and Resource Group as your other services. Use the name 'contosoeventsdocdb-SUFFIX'.
+1.  Provision a new Cosmos DB account in the same region and Resource Group as your other services. Use the name 'contosoeventsdocdb-SUFFIX'
 
-2.  Add a database with ID 'TicketManager'.
+2.  Add a database with ID 'TicketManager'
 
-3.  Add two collections named 'Orders' and 'Events'.
+3.  Add two collections named 'Orders' and 'Events'
 
 #### Exit criteria:
 
--  You will be able to see the two collections in the new database.
+-  You will be able to see the two collections in the new database
 
 ## Exercise 2: Placing ticket orders
 
@@ -345,7 +345,7 @@ Note: Not all features are in place, but you will be able to see that the applic
 
 1.  First, make sure the local Service Fabric environment is running. If not, set up the local cluster.
 
-2.  From Visual Studio, compile the solution and publish ContosoEventsApp to the local Service Fabric cluster.
+2.  From Visual Studio, compile the solution and publish ContosoEventsApp to the local Service Fabric cluster
 
 #### Exit criteria:
 
@@ -363,7 +363,7 @@ The Service Fabric Application includes a front-end Web API as the public-facing
 
 #### Exit criteria:
 
--  If you were able to view the Swagger definition and select the partitions method with a successful response, your environment is in a good state to continue.
+-  If you were able to view the Swagger definition and select the partitions method with a successful response, your environment is in a good state to continue
 
 ### Task 3: Service Fabric Explorer
 
@@ -373,11 +373,11 @@ In this task, you will browse to the Service Fabric Explorer, and view the local
 
 1.  Browse to the Service Fabric Explorer for the local cluster at: <http://localhost:19080/Explorer/index.html>
 
-2.  Observe the services deployed with the application.
+2.  Observe the services deployed with the application
 
 #### Exit criteria:
 
--  If you are able to access the Service Fabric Explorer, your environment is in a good state to continue.
+-  If you are able to access the Service Fabric Explorer, your environment is in a good state to continue
 
 ### Task 4: Set up the Ticket Order Sync queue
 
@@ -393,9 +393,9 @@ In this task, you will complete features of the Contoso Events POC so that placi
         <Parameter Name="StorageConnectionString" Value="" />
     ```
 
-2.  Set DataStorageEndpointUri to the Cosmos DB endpoint Uri.
+2.  Set DataStorageEndpointUri to the Cosmos DB endpoint Uri
 
-3.  Set DataStoragePrimaryKey to the Cosmos DB Primary Key.
+3.  Set DataStoragePrimaryKey to the Cosmos DB Primary Key
 
 4.  Set StorageConnectionString to the connection for your storage account in this format:
 
@@ -403,7 +403,7 @@ In this task, you will complete features of the Contoso Events POC so that placi
     DefaultEndpointsProtocol=https;AccountName=ACCOUNTNAME;AccountKey=KEY1
     ```
 
-5.  Rebuild and publish the application to the local cluster.
+5.  Rebuild and publish the application to the local cluster
 
 6.  Browse to the local Swagger endpoint and test the POST /api/orders method by posting the following JSON formatted order payload:
 
@@ -419,7 +419,7 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
 #### Exit criteria:
 
--  In Visual Studio, open the Cloud Explorer, navigate to the externalization queue, and verify that the new order is in the queue.
+-  In Visual Studio, open the Cloud Explorer, navigate to the externalization queue, and verify that the new order is in the queue
 
 ### Task 5: Set up the functions
 
@@ -431,25 +431,25 @@ You will also create a second function that will be used to generate load agains
 
 #### Tasks to complete:
 
-1.  From the Azure portal, find the Function App you created previously.
+1.  From the Azure portal, find the Function App you created previously
 
 2.  Create a function called 'ProcessOrderExternalizations' based on the QueueTrigger C\# template. Select the queue contosoevents-externalization-requests. Connect it to the Storage account created previously.
 
-3.  Select Azure Storage Queue as the trigger and select the queue name contosevents-externalization-requests.
+3.  Select Azure Storage Queue as the trigger and select the queue name contosevents-externalization-requests
 
-4.  Connect the output to the Orders collection of the Cosmos DB instance you created previously.
+4.  Connect the output to the Orders collection of the Cosmos DB instance you created previously
 
-5.  Copy the code from the ProcessTicketOrderExternalizationEvent.cs file in the solution.
+5.  Copy the code from the ProcessTicketOrderExternalizationEvent.cs file in the solution
 
 6.  Create the ProcessSimulationRequests function from the QueueTrigger PowerShell template. Name the queue contosevents-simulation-requests.
 
 7.  There is no need to connect this function to an output. Copy the code from the ProcessOrderTicketSimulationRequest.PS1 file in the solution.
 
-8.  You will set up the API Management key in a later step when we use this function.
+8.  You will set up the API Management key in a later step when we use this function
 
 #### Exit criteria:
 
--  If each function successfully compiled as you went through these steps, you are ready to proceed to the next exercise.
+-  If each function successfully compiled as you went through these steps, you are ready to proceed to the next exercise
 
 ### Task 6: Test order data sync
 
@@ -457,15 +457,15 @@ In this task, you will test the ticket order processing back-end, to validate th
 
 #### Tasks to complete:
 
-1.  Open the logs for the ProcessOrderExternalizations function.
+1.  Open the logs for the ProcessOrderExternalizations function
 
 2.  Process an order following your steps on Task 4. Note the order id that appears in the logs.
 
-3.  From the Azure portal, navigate to your Cosmos DB account and use query explorer to query the Orders collection for the order id.
+3.  From the Azure portal, navigate to your Cosmos DB account and use query explorer to query the Orders collection for the order id
 
 #### Exit criteria:
 
--  If the Cosmos DB query returns the order id specified, the order has been fully processed through to the Cosmos DB.
+-  If the Cosmos DB query returns the order id specified, the order has been fully processed through to the Cosmos DB
 
 ## Exercise 3: Publish the Service Fabric Application
 
@@ -479,15 +479,15 @@ In this task, you will deploy the application to a hosted Service Fabric Cluster
 
 #### Tasks to complete:
 
-1.  Open the Cloud.xml configuration file for the ContosoEventsApp project and validate that the settings modified in Exercise 2 also match this file.
+1.  Open the Cloud.xml configuration file for the ContosoEventsApp project and validate that the settings modified in Exercise 2 also match this file
 
-2.  Verify the TicketOrderService\_PartitionCount is set to 5.
+2.  Verify the TicketOrderService\_PartitionCount is set to 5
 
-3.  Publish the application using the Cloud.xml configuration to the cluster you created previously.
+3.  Publish the application using the Cloud.xml configuration to the cluster you created previously
 
 #### Exit criteria:
 
--  From the Visual Studio output window, you can validate that the deployment has completed with success.
+-  From the Visual Studio output window, you can validate that the deployment has completed with success
 
 ### Task 2: Test an order from the cluster
 
@@ -528,17 +528,17 @@ In this task, you will import the Web API description to your API Management ser
 
 #### Tasks to complete:
 
-1.  From the Azure Portal, select the API Management Service that you created earlier.
+1.  From the Azure Portal, select the API Management Service that you created earlier
 
-2.  Import the API that was deployed to the Service Fabric cluster.
+2.  Import the API that was deployed to the Service Fabric cluster
 
-3.  Associate the "Unlimited" product.
+3.  Associate the "Unlimited" product
 
     > **Note**: You would typically create a new product subscription for each environment in a scenario like this one. For example, Development, Testing, Acceptance and Production (DTAP) and issue a key for your internal application usage for each environment, managed accordingly.
 
 #### Exit criteria:
 
--  You will see your API listed under All APIs.
+-  You will see your API listed under All APIs
 
 ### Task 2: Retrieve the user subscription key
 
@@ -548,11 +548,11 @@ In this task, you will retrieve the subscription key for the client applications
 
 1.  Return to the API Management dashboard for the same service. Select the publisher portal link and navigate from there to the developer portal.
 
-2.  Reveal the primary key of the "Unlimited" subscription, storing that info for future usage.
+2.  Reveal the primary key of the "Unlimited" subscription, storing that info for future usage
 
 #### Exit criteria:
 
--  You can view the revealed key and save it for other configuration steps.
+-  You can view the revealed key and save it for other configuration steps
 
 ### Task 3: Configure the Function App with the API Management key
 
@@ -560,11 +560,11 @@ In this task, you will provide the API Management key in a setting for the Funct
 
 #### Tasks to complete:
 
-1.  From the Azure Portal browse to the Function App. Create an application setting called 'contosoeventsapimgrkey' and set the value to the API Management key you saved in the previous step.
+1.  From the Azure Portal browse to the Function App. Create an application setting called 'contosoeventsapimgrkey' and set the value to the API Management key you saved in the previous step
 
 #### Exit criteria:
 
--  You will be able to issue a load test from the Web site in Exercise 5, and see that orders have been processed through the function -- as it will have successfully called the API and you will see results in the reports page.
+-  You will be able to issue a load test from the Web site in Exercise 5, and see that orders have been processed through the function -- as it will have successfully called the API and you will see results in the reports page
 
 ## Exercise 5: Configure and publish the web application
 
@@ -578,15 +578,15 @@ In this task, you will update configuration settings to communicate with the API
 
 #### Tasks to complete:
 
-1.  Open the web.config for the ContosoEvents.Web project.
+1.  Open the web.config for the ContosoEvents.Web project
 
-2.  For the apimng:BaseUrl enter the base URL of the API you created in API Management such as <https://contosoeventsSUFFIX.azure-api.net/events/>. Make sure to include the closing /.
+2.  For the apimng:BaseUrl enter the base URL of the API you created in API Management such as <https://contosoeventsSUFFIX.azure-api.net/events/>. Make sure to include the closing /
 
-3.  For the apimng:SubscriptionKey enter the subscription key you revealed in API Management developer portal.
+3.  For the apimng:SubscriptionKey enter the subscription key you revealed in API Management developer portal
 
 #### Exit criteria:
 
--  You should have values for the API Management app settings.
+-  You should have values for the API Management app settings
 
 ### Task 2: Running the web app and creating an order
 
@@ -596,13 +596,13 @@ In this task, you will test the web application calls to API Management by creat
 
 #### Tasks to complete:
 
-1.  From Visual Studio, run the ContosoEvents.Web application.
+1.  From Visual Studio, run the ContosoEvents.Web application
 
-2.  Place an order from the website, filling in the missing billing fields.
+2.  Place an order from the website, filling in the missing billing fields
 
 #### Exit criteria:
 
--  Once the order is queued for processing, you will be redirected to a results page indicating Success and showing you your order id that was queued as confirmation.
+-  Once the order is queued for processing, you will be redirected to a results page indicating Success and showing you your order id that was queued as confirmation
 
 ### Task 3: Publish the web app
 
@@ -610,7 +610,7 @@ In this task, you will publish the web application to Azure.
 
 #### Tasks to complete:
 
-1.  Publish the application to the Azure Web App you created previously named something like 'contosoeventsweb-SUFFIX'.
+1.  Publish the application to the Azure Web App you created previously named something like 'contosoeventsweb-SUFFIX'
 
 #### Exit criteria:
 
@@ -644,11 +644,11 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 #### Tasks to complete:
 
-1.  Add a state field to the TicketOrderActor by uncommenting the TODO: Exercise 6 - Task 1 sections in the solution.
+1.  Add a state field to the TicketOrderActor by uncommenting the TODO: Exercise 6 - Task 1 sections in the solution
 
 #### Exit criteria:
 
--  After making this change, compile the solution and verify that there are no errors.
+-  After making this change, compile the solution and verify that there are no errors
 
 ### Task 3: Perform a smooth upgrade
 
@@ -656,23 +656,23 @@ In this task, you will configure settings for the Service Fabric application to 
 
 #### Tasks to complete:
 
-1.  Publish the ContosoEventsApp using the Cloud.xml configuration, selecting the Upgrade option.
+1.  Publish the ContosoEventsApp using the Cloud.xml configuration, selecting the Upgrade option
 
-2.  Use 'Monitored' for the upgrade settings.
+2.  Use 'Monitored' for the upgrade settings
 
-3.  Update the TicketOrderActor version to 1.1.0.
+3.  Update the TicketOrderActor version to 1.1.0
 
-4.  View the upgrade status from the Visual Studio output window.
+4.  View the upgrade status from the Visual Studio output window
 
-5.  Navigate to Service Fabric Explorer for the hosted cluster and watch the upgrade in progress.
+5.  Navigate to Service Fabric Explorer for the hosted cluster and watch the upgrade in progress
 
 #### Exit criteria:
 
--  When the upgrade is complete, from Service Fabric Explorer observe the new application version number.
+-  When the upgrade is complete, from Service Fabric Explorer observe the new application version number
 
 ### Task 4: Submit a new order
 
-Now that the upgrade is completed successfully, you will submit a new order, and make sure that the newly submitted order has the extended state.
+Now that the upgrade is completed successfully, you will submit a new order, and make sure that the newly submitted order has the extended state
 
 #### Tasks to complete:
 
@@ -690,7 +690,7 @@ Now that the upgrade is completed successfully, you will submit a new order, and
 
 #### Exit criteria:
 
--  Navigate to the Cosmos DB query explorer and create a query using this order id to see the new extended state actually persisted to the database.
+-  Navigate to the Cosmos DB query explorer and create a query using this order id to see the new extended state actually persisted to the database
 
 ## Exercise 7: Rollback
 
@@ -704,11 +704,11 @@ In this task, you will add code to produce health checks that force the monitore
 
 #### Tasks to complete:
 
-1.  Locate all TODO: Exercise 7 - Task 1 in the solution and uncomment the code as indicated.
+1.  Locate all TODO: Exercise 7 - Task 1 in the solution and uncomment the code as indicated
 
 #### Exit criteria:
 
--  Compile the code to ensure there are no issues with the changes.
+-  Compile the code to ensure there are no issues with the changes
 
 ### Task 2: Perform a troubled upgrade
 
@@ -716,25 +716,25 @@ In this task, you will perform an upgrade and watch a rollback of the upgrade.
 
 #### Tasks to complete:
 
-1.  Publish the application to the cluster again. During the process, set the TicketOrderService new version to 1.1.0.
+1.  Publish the application to the cluster again. During the process, set the TicketOrderService new version to 1.1.0
 
-2.  From Service Fabric Explorer note the errors that appear.
+2.  From Service Fabric Explorer note the errors that appear
 
-3.  Try posting to the service and note that the application is still responsive.
+3.  Try posting to the service and note that the application is still responsive
 
 4.  So that you do not forget, return to the code and re-comment the failure report so that you can do future exercise without rollback!
 
 #### Exit criteria:
 
--  Look at the Visual Studio output window and note the rollback takes place after some seconds.
+-  Look at the Visual Studio output window and note the rollback takes place after some seconds
 
--  Note that Service Fabric Explorer shows the rollback as well with the current deployment now set to the previous version.
+-  Note that Service Fabric Explorer shows the rollback as well with the current deployment now set to the previous version
 
 -  Also, note that the error remains until it is time to live expires or it is replaced by another health state. Until then, the unhealthy state will remain in the cluster, but the cluster will be running normally. You can proceed without clearing this for now.
 
 -  The subsequent exercises (i.e. 8 and beyond) will be executed using version 1.1.0 and while the cluster shows unhealthy state. You can ignore this for now.
 
--  Optionally, from the Swagger endpoint for the deployed application, you can request health statistics at the following relative URL: /api/admin/applicationhealth.
+-  Optionally, from the Swagger endpoint for the deployed application, you can request health statistics at the following relative URL: /api/admin/applicationhealth
 
 ## Exercise 8: Load testing
 
@@ -748,15 +748,15 @@ In this task, you will simulate a load test of 50 orders against the cluster usi
 
 #### Tasks to complete:
 
-1.  Navigate to the published Web application at a URL like <https://contosoeventsweb-SUFFIX.azurewebsites.net>.
+1.  Navigate to the published Web application at a URL like <https://contosoeventsweb-SUFFIX.azurewebsites.net>
 
-2.  From the Load Test page, issue a load test for 50 iterations.
+2.  From the Load Test page, issue a load test for 50 iterations
 
-3.  From the Load Test Status page, refresh and view the distribution of messages across the partitions where they are queued.
+3.  From the Load Test Status page, refresh and view the distribution of messages across the partitions where they are queued
 
 #### Exit criteria:
 
--  After a few minutes you will see that the queues are drained, and the orders were processed.
+-  After a few minutes you will see that the queues are drained, and the orders were processed
 
 > **Note**: If you still have more time, run this again with additional iterations progressively such as 100, 150, 200, 250. Or, take a look at Exercise 9 in the answers area which takes you through a much more comprehensive load test and partition analysis process using the API endpoint.
 
@@ -785,11 +785,11 @@ In this task, you will simulate a load test against the Cluster using the curren
     }
     ```
 
-2.  Issue a GET request against /api/admin/partitions to see how the different partitions are functioning.
+2.  Issue a GET request against /api/admin/partitions to see how the different partitions are functioning
 
 #### Exit criteria:
 
--  Verify that queues are drained and that orders are processed before completing this task.
+-  Verify that queues are drained and that orders are processed before completing this task
 
 ### Task 2: Setting up for load testing with different partition counts
 
@@ -797,17 +797,17 @@ In this task, you will clean the existing orders from the Cosmos DB, so you can 
 
 #### Tasks to complete:
 
-1.  Use the Swagger UI to delete orders from the Cosmos DB.
+1.  Use the Swagger UI to delete orders from the Cosmos DB
 
-2.  Unprovision the application type, using Service Fabric Explorer.
+2.  Unprovision the application type, using Service Fabric Explorer
 
-3.  Make sure Upgrade the application checkbox is unchecked each time you publish.
+3.  Make sure Upgrade the application checkbox is unchecked each time you publish
 
 #### Exit criteria:
 
--  Service Fabric Explorer shows no application types or applications deployed.
+-  Service Fabric Explorer shows no application types or applications deployed
 
--  You can verify from Cosmos DB Orders Document Explorer that there are no more orders in the database.
+-  You can verify from Cosmos DB Orders Document Explorer that there are no more orders in the database
 
 ### Task 3: Using a partition count of 10, simulate 100 orders
 
@@ -815,9 +815,9 @@ In this task, you will repeat the same load test you performed in Task 2 but usi
 
 #### Tasks to complete:
 
-1.  Change the service and actor partition count to 10 in the Cloud.xml Application Parameters file.
+1.  Change the service and actor partition count to 10 in the Cloud.xml Application Parameters file
 
-2.  Redeploy the app to the cluster.
+2.  Redeploy the app to the cluster
 
 3.  Repeat the same load test you did in Task 1, but with a different tag:
 
@@ -834,7 +834,7 @@ In this task, you will repeat the same load test you performed in Task 2 but usi
 
 #### Exit criteria:
 
--  Verify that queues are drained and that orders are processed before completing this task.
+-  Verify that queues are drained and that orders are processed before completing this task
 
 ### Task 4: Using a partition count of 15, simulate 100 orders
 
@@ -842,9 +842,9 @@ In this task, you will repeat the same load test you performed in Task 2 but usi
 
 #### Tasks to complete:
 
-1.  Change the service and actor partition count to 15 in the Cloud.xml Application Parameters file.
+1.  Change the service and actor partition count to 15 in the Cloud.xml Application Parameters file
 
-2.  Redeploy the app to the cluster.
+2.  Redeploy the app to the cluster
 
 3.  Repeat the same test load you did in Task 1 but with a different tag:
 
@@ -860,7 +860,7 @@ In this task, you will repeat the same load test you performed in Task 2 but usi
 
 #### Exit criteria:
 
--  Verify that queues are drained and that orders are processed before completing this task.
+-  Verify that queues are drained and that orders are processed before completing this task
 
 ### Task 5: Using a partition count of 20, simulate 100 orders
 
@@ -868,9 +868,9 @@ In this task, you will repeat the same load test you performed in Task 1 but usi
 
 #### Tasks to complete:
 
-1.  Change the service and actor partition count to 15 in the Cloud.xml Application Parameters file.
+1.  Change the service and actor partition count to 15 in the Cloud.xml Application Parameters file
 
-2.  Redeploy the app to the cluster.
+2.  Redeploy the app to the cluster
 
 3.  Repeat the same test load you did in Task 2 but with a different tag:
 
@@ -887,21 +887,21 @@ In this task, you will repeat the same load test you performed in Task 1 but usi
 
 #### Exit criteria:
 
--  Verify that queues are drained and that orders are processed before completing this task.
+-  Verify that queues are drained and that orders are processed before completing this task
 
 ### Task 6: Determine the performance variations among the different load tests
 
 In this task, you will find out how each load test performed and plot the result.
 
-> **Note**: This step is out of scope and is shown here only to complete the picture.
+> **Note**: This step is out of scope and is shown here only to complete the picture
 
 #### Tasks to complete:
 
-1.  Using the Service Fabric Web API Swagger UI, please issue a GET request against /api/orders/stats.
+1.  Using the Service Fabric Web API Swagger UI, please issue a GET request against /api/orders/stats
 
-2.  Scale out the VMs count to 10 in your cluster, and repeat Tasks 1, 3, 4, and 5.
+2.  Scale out the VMs count to 10 in your cluster, and repeat Tasks 1, 3, 4, and 5
 
-3.  Produce an Excel sheet from the data you collected.
+3.  Produce an Excel sheet from the data you collected
 
 #### Exit criteria:
 
@@ -923,27 +923,27 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
 #### Tasks to complete:
 
-1.  Register a new application in the Azure Active Directory B2C tenant you created previously.
+1.  Register a new application in the Azure Active Directory B2C tenant you created previously
 
 2.  Add a reply URL for local testing: <https://localhost:44327/>
 
 3.  Add a reply URL for the hosted Web App as you named it, for example: <https://contosoeventsweb-SUFFIX.azurewebsites.net/>
 
-4.  Set local accounts to Username.
+4.  Set local accounts to Username
 
-5.  Define policies for sign up, sign in and profile editing.
+5.  Define policies for sign up, sign in and profile editing
 
-6.  For all policies, set Application Claims select Email Addresses, Given Name, Surname, and User's Object ID.
+6.  For all policies, set Application Claims select Email Addresses, Given Name, Surname, and User's Object ID
 
-7.  For the sign up and sign in policies, set the Claim representing policy ID to acr.
+7.  For the sign up and sign in policies, set the Claim representing policy ID to acr
 
-8.  For profile attributes, choose Given Name and Surname.
+8.  For profile attributes, choose Given Name and Surname
 
 9.  When done take note of the Application ID for later. Also, take note of the policy names.
 
 #### Exit criteria:
 
--  Your B2C directory is ready for use and after Task 2 is complete, you will be able to exercise it.
+-  Your B2C directory is ready for use and after Task 2 is complete, you will be able to exercise it
 
 ### Task 2: Configure the Web App Settings
 
@@ -953,19 +953,19 @@ You will be guided through the instructions to find the information necessary to
 
 #### Tasks to complete:
 
-1.  For the ida:Tenant enter the domain of the Azure Active Directory B2C you created such as 'contosoeventsb2cSUFFIX.onmicrosoft.com'.
+1.  For the ida:Tenant enter the domain of the Azure Active Directory B2C you created such as 'contosoeventsb2cSUFFIX.onmicrosoft.com'
 
-2.  For the ida:ClientId enter the Application ID generated for your B2C application created in the previous task.
+2.  For the ida:ClientId enter the Application ID generated for your B2C application created in the previous task
 
-3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., B2C\_1\_signup).
+3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., B2C\_1\_signup)
 
-4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., B2C\_1\_signin).
+4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., B2C\_1\_signin)
 
-5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., B2C\_1\_profileedit).
+5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., B2C\_1\_profileedit)
 
 #### Exit criteria:
 
--  You will have set all the required settings.
+-  You will have set all the required settings
 
 ### Task 3: Add security features to the web application
 
@@ -973,13 +973,13 @@ In this task, you will enable security features that will leverage the configura
 
 #### Tasks to complete:
 
-1.  In the solution, look for all TODO Exercise 10 - Task 3 instructions and follow the steps.
+1.  In the solution, look for all TODO Exercise 10 - Task 3 instructions and follow the steps
 
-2.  Compile the solution to ensure no issues.
+2.  Compile the solution to ensure no issues
 
 #### Exit criteria:
 
--  Compile the application and ensure no errors before the next step.
+-  Compile the application and ensure no errors before the next step
 
 ### Task 4: Running the Web App and signing in
 
@@ -987,17 +987,17 @@ In this task, you will test the web application and register yourself as a user 
 
 #### Tasks to complete:
 
-1.  Run the Web App.
+1.  Run the Web App
 
-2.  Register a new user and authenticate.
+2.  Register a new user and authenticate
 
-3.  Sign out and sign in again.
+3.  Sign out and sign in again
 
 #### Exit criteria:
 
--  Note your email is shown in the application header after you sign in.
+-  Note your email is shown in the application header after you sign in
 
-**Note**: You can optionally publish this application to Azure and test sign in, sign out continues to work from the deployed URL.
+**Note**: You can optionally publish this application to Azure and test sign in, sign out continues to work from the deployed URL
 
 ## After the hands-on lab
 
@@ -1007,9 +1007,9 @@ In this exercise, attendees will deprovision any Azure resources that were creat
 
 #### Tasks to complete:
 
-1.  Delete the Resource Group you created during this hands-on lab.
+1.  Delete the Resource Group you created during this hands-on lab
 
-2.  Delete the Azure Active Directory B2C tenant.
+2.  Delete the Azure Active Directory B2C tenant
 
 #### Exit criteria:
 
