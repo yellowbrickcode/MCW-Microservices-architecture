@@ -1,7 +1,7 @@
 ![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Microservices architecture
+Microservices architecture - Infrastucture edition
 </div>
 
 <div class="MCWHeader2">
