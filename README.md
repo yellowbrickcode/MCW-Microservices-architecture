@@ -1,43 +1,35 @@
-# Abstract
+# Microservices Architecture
 
 Contoso Events is an online service for concerts, sporting and other event ticket sales. They are redesigning their solution for scale with a microservices strategy and want to implement a POC for the path that receives the most traffic: ticket ordering.
 
-## Workshop
-
-In this workshop, you will look at the process of developing a proof of concept (POC) that will illustrate the use of many Azure features to support a highly scalable architecture based on Service Fabric, Functions and leveraging Azure Queues, CosmosDB, and other supporting features such as Azure AD and API Management. 
-
 ## Target Audience
 
-There are two labs, one for each target audience:
+- Application developer
+- Infrastructure architect
 
-* Application developer
-* Infrastructure architect
+### Workshop
 
-## Whiteboard Design Session
+In this workshop, you will look at the process of developing a proof of concept (POC) that will illustrate the use of many Azure features to support a highly scalable microservices architecture based on Service Fabric and Azure Functions. 
+
+By the end of this workshop you will be better able to design and deploy solutions based on Service Fabric and Azure Functions - in conjunction with other Azure features.
+
+### Whiteboard Design Session
 
 This whiteboard design session is designed to help attendees gain a better understanding of implementing architectures leveraging aspects from microservices and serverless architectures, by helping an online concert ticket vendor survive the first 5 minutes of crushing load. They will handle the client's scaling needs through microservices built on top of Service Fabric, and apply smooth updates or roll back failing updates. Finally, students will design an implementation of load testing to optimize the architecture for handling spikes in traffic.
 
-Attendees will learn how to:
+At end end of this whiteboard design session, you will better be able to design scalable microservices solutions involving Service Fabric and Azure Functions.
 
--   Implement scale and resiliency with Service Fabric
+### Hands-on Lab
 
--   Enable serverless solutions with Azure Functions
+In this hands-on lab, you will construct an end-to-end POC for ticket ordering based on a microservices architecture based on Service Fabric and Azure Functions - alongside other supporting Azure features such as API Management, Web Apps, Azure Active Directory and Cosmos DB.
 
--   Control API access with API Management
-
--   Provide query flexibility with Cosmos DB
-
-## Hands-on Lab
-
-In this hands-on lab, you will construct an end-to-end POC for ticket ordering. You will leverage Service Fabric, API Management, Function Apps, Web Apps, and Cosmos DB.
-
-![](HOL/images/Hands-onlabstep-by-step-Microservicesarchitecture-Infrastructureeditionimages/media/image2.png)
-
+At the end of this hands-on lab, you will better be able to build solutions that leverage these Azure features, in addition to gaining experience with deploying, scaling, upgrading and rolling back Service Fabric applications.
 
 ## Azure services and related products
+
 - Azure Service Fabric
 - Azure Resource Groups
-- Azure API Management 
+- Azure API Management
 - Azure  API Apps
 - Azure Active Directory
 - Azure Web Apps
@@ -47,8 +39,7 @@ In this hands-on lab, you will construct an end-to-end POC for ticket ordering. 
 - Azure Queues
 - Azure Functions
 
-
-# Contributing
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -61,4 +52,3 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
