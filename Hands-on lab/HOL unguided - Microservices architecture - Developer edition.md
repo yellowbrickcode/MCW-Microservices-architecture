@@ -5,7 +5,7 @@ Microservices architecture - Developer edition
 </div>
 
 <div class="MCWHeader2">
-Whiteboard design session student guide
+Hands-on lab unguided
 </div>
 
 <div class="MCWHeader3">
