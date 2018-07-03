@@ -7,6 +7,8 @@ Contoso Events is an online service for concerts, sporting and other event ticke
 - Application developer
 - Infrastructure architect
 
+## Abstract
+
 ### Workshop
 
 In this workshop, you will look at the process of developing a proof of concept (POC) that will illustrate the use of many Azure features to support a highly scalable microservices architecture based on Service Fabric and Azure Functions. 
