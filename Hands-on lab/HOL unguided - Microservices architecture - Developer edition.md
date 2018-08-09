@@ -130,17 +130,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives
 
-This whiteboard design session is designed to help attendees gain a better understanding of implementing architectures leveraging aspects from microservices and serverless architectures, by helping an online concert ticket vendor survive the first 5 minutes of crushing load. They will handle the client\'s scaling needs through microservices built on top of Service Fabric, and apply smooth updates or roll back failing updates. Finally, students will design an implementation of load testing to optimize the architecture for handling spikes in traffic.
+In this hands-on lab, you will construct an end-to-end Proof of concept for ticket ordering based on a microservices architecture based on Service Fabric and Azure Functions, alongside other supporting Azure features such as API Management, Web Apps, Azure Active Directory and Cosmos DB.
 
-Attendees will learn how to:
-
--   Implement scale and resiliency with Service Fabric
-
--   Enable serverless solutions with Azure Functions
-
--   Control API access with API Management
-
--   Provide query flexibility with Cosmos DB
+At the end of this hands-on lab, you will better be able to build solutions that leverage these Azure features, in addition to gaining experience with deploying, scaling, upgrading and rolling back Service Fabric applications.
 
 ## Overview
 
