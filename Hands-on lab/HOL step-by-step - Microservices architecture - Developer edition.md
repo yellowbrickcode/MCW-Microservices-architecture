@@ -75,7 +75,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will construct an end-to-end POC for ticket ordering based on a microservices architecture based on Service Fabric and Azure Functions - alongside other supporting Azure features such as API Management, Web Apps, Azure Active Directory and Cosmos DB.
+In this hands-on lab, you will construct an end-to-end Proof of concept for ticket ordering based on a microservices architecture based on Service Fabric and Azure Functions, alongside other supporting Azure features such as API Management, Web Apps, Azure Active Directory and Cosmos DB.
 
 At the end of this hands-on lab, you will better be able to build solutions that leverage these Azure features, in addition to gaining experience with deploying, scaling, upgrading and rolling back Service Fabric applications.
 
