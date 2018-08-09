@@ -44,7 +44,12 @@ At the end of this hands-on lab, you will better be able to build solutions that
 ## Azure solutions
 
 App Modernization
+Microservices using Service Fabric
 
 ## Related references
 
 - [MCW](https://github.com/Microsoft/MCW)
+- [Technology choices](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30347)
+- [DevOps checklist](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30348)
+- [Architecture styles](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30346)
+
