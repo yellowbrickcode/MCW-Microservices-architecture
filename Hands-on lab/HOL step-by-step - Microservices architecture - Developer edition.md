@@ -11,7 +11,7 @@ Hands-on lab step-by-step
 <div class="MCWHeader3">
 June 2018
 </div>
-
+    
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
@@ -159,9 +159,10 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 In this task, you will provision an API Management Service in the Azure portal.
 
-1.  In the Azure portal, select +New, enter "API Management" into the Search the Marketplace box, then select API management from the results
+1.  In the Azure portal, select +Create a resource, enter "API Management" into the Search the Marketplace box, then select API management from the results
 
-    ![In the Azure Portal Everything pane, API Management is typed in the search field. Under Results, API Management is circled.](media/image48.png "Azure Portal Everything pane")
+![In the Azure Portal Everything pane, API Management is typed in the search field. Under Results, API Management is circled.](media/create-api-management-resource.png "Azure Portal Everything pane")
+
 
 2.  In the API Management blade, select Create
 
@@ -191,9 +192,9 @@ In this task, you will provision an API Management Service in the Azure portal.
 
 In these steps, you will provision a Web App in a new App Service Plan.
 
-1.  Select +New in the Azure Portal, select Web, then select Web App
+1.  Select +Create a resource in the Azure Portal, select Web, then select Web App
 
-    ![In the Azure Portal, New pane, under Azure Marketplace, Web and Web App (Quckstart tutorial) are both circled.](media/image50.png "Azure Portal, New pane")
+    ![In the Azure Portal, New pane, under Azure Marketplace, Web and Web App are both circled.](media/create-web-app-resource.png "Azure Portal, Create a resource pane")
 
 2.  On the Create Web App blade, enter the following:
 
@@ -231,9 +232,9 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
 In this task, you will provision a Function App using a Consumption Plan. By using a Consumption Plan, you enable dynamic scaling of your Functions.
 
-1.  Select +New in the Azure Portal, and enter "Function App" in the Search the Marketplace box, then select Function App from the results
+1.  Select +Create a resource in the Azure Portal, and enter "Function App" in the Search the Marketplace box, then select Function App from the results
 
-    ![In the Azure Portal Everything pane, the search field is set to Function App. Under Results, Function App is circled.](media/image54.png "Azure Portal Everything pane")
+   ![In the Azure Portal Everything pane, the search field is set to Function App. Under Results, Function App is circled.](media/create-function-app-resource.png "Azure Portal Create Function App")
 
 2.  Select Create on the Function App blade
 
@@ -263,9 +264,10 @@ In this task, you will provision a Function App using a Consumption Plan. By usi
 
 In this section, you will create a Storage account for the application to create and use queues required by the solution.
 
-1.  In the Azure portal, select +New, Storage, then select Storage account -- blob, file, table, queue under Featured
+1.  In the Azure portal, select +Create a resource, Storage, then select Storage account -- blob, file, table, queue under Featured
 
-    ![In the Azure Portal, New pane, under Azure Marketplace, Storage is circled. Under Featured, Storage account - blob, file, table, queue (Quickstart tutorial) is circled.](media/image56.png "Azure Portal, New pane")
+    ![In the Azure Portal, New pane, under Azure Marketplace, Storage is circled. Under Featured, Storage account - blob, file, table, queue (Quickstart tutorial) is circled.](media/create-storage-account-resource.png "Azure Portal Create Storage Account")
+
 
 2.  In the Create Storage account blade, enter the following:
 
@@ -297,9 +299,10 @@ In this section, you will create a Storage account for the application to create
 
 In this section, you will provision a Cosmos DB account, a Cosmos DB Database and a Cosmos DB collection that will be used to collect ticket orders.
 
-1.  In the Azure portal, select +New, Databases, then select Azure Cosmos DB
+1.  In the Azure portal, select +Create a resource, Databases, then select Azure Cosmos DB
 
-    ![In the Azure Portal, New pane, in the left column, Databases is circled. In the side pane, Azure Cosmos DB (Quickstart tutorial) is circled.](media/image58.png "Azure Portal, New pane")
+    ![In the Azure Portal, New pane, in the left column, Databases is circled. In the side pane, Azure Cosmos DB (Quickstart tutorial) is circled.](media/create-cosmos-db-resource.png "Azure Portal, Create Resource Database Pane")
+
 
 2.  On the Azure Cosmos DB blade, enter the following:
 
@@ -317,8 +320,9 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
     g.  Select Create to provision the Cosmos DB
 
-    ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/image59.png "Azure Cosmos DB blade")
+    ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/cosmos-db-settings.png "Azure Cosmos DB blade")
 
+ 
 3.  When the Cosmos DB account is ready, navigate to the hands-on-labs Resource Group, and select your Cosmos DB account from the list
 
     ![In the Resource Group pane, under Name, the contosoeventsdb-SUFFIX Azure Cosmos DB account is circled.](media/image60.png "Resource Group pane")
@@ -833,7 +837,7 @@ You will also create a second function that will be used to generate load agains
 
     d.  Select Save
 
-19. While still on the Integrate screen, select +New Output
+19. While still on the Integrate screen, select +Create a resource Output
 
     ![On the Integrate Screen, under Outputs, + New Output is circled.](media/image117.png "Integrate Screen")
 
@@ -1185,7 +1189,7 @@ In this task, you will update configuration settings to communicate with the API
 
     ![In Solution Explorer, the following folders are expanded: Web\\ContosoEvents.Web\\Web.config.](media/image152.png "Solution Explorer")
 
-2.  For the apimng:BaseUrl key, enter the base URL of the API you created in the API Management Publisher Portal (Exercise 5, Task 1, Step 5), such as <http://contosoeventsSUFFIX.azure-api.net/events/>
+2.  For the apimng:BaseUrl key, enter the base URL of the API you created in the API Management Publisher Portal (Exercise 5, Task 1, Step 5), such as <https://contosoeventsSUFFIX.azure-api.net/events/>
 
     > **Note**: Make sure to include a trailing "/" or the exercise will not work
 
