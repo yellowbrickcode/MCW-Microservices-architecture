@@ -40,7 +40,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Microservices architecture whiteboard design session trainer guide](#microservices-architecture-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
@@ -257,9 +256,9 @@ According to the CIO, the current system topology handles the following core use
 
 ### Infographic for common scenarios
 
-![This diagram represents a Service Fabric overview for the scenario. At the top of the diagram is a Microservices ribbon. Below that, a Service Fabric ribbon has three arrows that point to Azure (Windows Server, Linux), Private clouds (Windows Server, Linux), and Hosted Clouds (Windows Server, Linux). The Service Fabric ribbon includes several requirements for the service fabric such as (but not limited to) high availability, self-healing, fast startup and shutdown, low latency, and automated rollback.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image2.png "Common scenarios diagram")
+![This diagram represents a Service Fabric overview for the scenario. At the top of the diagram is a Microservices ribbon. Below that, a Service Fabric ribbon has three arrows that point to Azure (Windows Server, Linux), Private clouds (Windows Server, Linux), and Hosted Clouds (Windows Server, Linux). The Service Fabric ribbon includes several requirements for the service fabric such as (but not limited to) high availability, self-healing, fast startup and shutdown, low latency, and automated rollback.](media/image2.png "Common scenarios diagram")
 
-![This diagram presents a comparison of monolithic versus microservices approaches, as described in the text following this diagram.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image3.png "Monolithic application vs. Microservices application approaches")
+![This diagram presents a comparison of monolithic versus microservices approaches, as described in the text following this diagram.](media/image3.png "Monolithic application vs. Microservices application approaches")
 
 ***Comparison between Monolithic and Microservices Approaches***
 
@@ -269,7 +268,7 @@ A microservice application separates functionality into separate smaller service
 
 Reference: [*https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices*](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices)
 
-![This diagram presents a comparison of State storage in monolithic versus microservices approaches, as described in the text following this graphic.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image4.png "State in Monolithic vs. State in Microservices approaches")
+![This diagram presents a comparison of State storage in monolithic versus microservices approaches, as described in the text following this graphic.](media/image4.png "State in Monolithic vs. State in Microservices approaches")
 
 ***Storage State between Monolithic and Microservices Approaches***
 
@@ -442,7 +441,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 *High-level architecture*
 
 1.  Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for web sites, mobile applications, third party applications, access to APIs, compute and storage.
-    ![The preferred solution is described in the text following this diagram.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image5.png "Preferred solution diagram")
+    ![The preferred solution is described in the text following this diagram.](media/image5.png "Preferred solution diagram")
 
     Summary of technologies in the topology:
 
@@ -462,7 +461,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 2.  Based on the customer situation, what core services would you propose as part of the new microservices architecture? What state, if any, would those services hold? Illustrate with a diagram.
 
-    ![Diagram of a high-level architecture of the core services that compose the new microservices architecture, as well as the state they hold. The diagram is made up of external services, microservices and state, and externalized state. External services is payment processing, external state is Orders/Events/CustomerAccounts, and Microservices and state is: Event Catalog, Customer Accounts, and Ticket Orders services, Queue, Ticket Actor Service, Ticket, Email Service, and Payment Service. In the diagram, Two arrows labeled \"Read from Externalized state\" point from Externalized state to Customer Accounts Services and Event Catalog Service. The remaining microservices and state have an arrow labeled \"Esternalize state for aggregation\" pointing back to Externalized state.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image6.png "High-level architecture diagram")
+    ![Diagram of a high-level architecture of the core services that compose the new microservices architecture, as well as the state they hold. The diagram is made up of external services, microservices and state, and externalized state. External services is payment processing, external state is Orders/Events/CustomerAccounts, and Microservices and state is: Event Catalog, Customer Accounts, and Ticket Orders services, Queue, Ticket Actor Service, Ticket, Email Service, and Payment Service. In the diagram, Two arrows labeled \"Read from Externalized state\" point from Externalized state to Customer Accounts Services and Event Catalog Service. The remaining microservices and state have an arrow labeled \"Esternalize state for aggregation\" pointing back to Externalized state.](media/image6.png "High-level architecture diagram")
 
     The Ticket Orders Service will take advantage of reliable queues provided by Service Fabric to persist requests. The Ticket Actor Service processes orders in the queue, and represents a single instance of an order and its processing workflow and state. When an order is processed, the state is externalized for shared read only services to support aggregation across other data and to optimize reads.
 
@@ -470,7 +469,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 1.  Illustrate in more detail the Service Fabric services and components participating in a ticket ordering request
     
-    ![This Scalability of Ticket Orders diagram illustrates in more detail the Service Fabric services and components participating in a ticket ordering request. The diagram is discussed in slightly more detail in the text following this diagram. However, at this time, we are unable to capture all of the information in the diagram. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image7.png "Scalability of Ticket Orders diagram")
+    ![This Scalability of Ticket Orders diagram illustrates in more detail the Service Fabric services and components participating in a ticket ordering request. The diagram is discussed in slightly more detail in the text following this diagram. However, at this time, we are unable to capture all of the information in the diagram. Future versions of this course should address this.](media/image7.png "Scalability of Ticket Orders diagram")
 
     Summary of technologies in the topology:
 
@@ -496,11 +495,11 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
     The stateless Ticket Order API offloads valid requests to the stateful Ticket Order Queue. This queue is partitioned by instance count (from 1 to n in the diagram below) and requests are randomly distributed by Service Fabric across partitions. Choosing an instance count (partition size) up front is important as today it requires a full redeploy to change this, however with a queue there are other rollover strategies you could employ to work around this. This removes the bottleneck of writes to the queue as it can distribute this load across all partitions in parallel.
     
-    ![In this Ticket order Scalability diagram an arrow labeled Partition Key equals Random, points right, to a vertical bar labeled 64-bit Addressable Range. To the side of this bar are three gray boxes labeled Partition 1, Partition 2, and Partition n. Each of these boxes has a blue box within labeled \"Ticket Order Queue Service.\" The three gray boxes also have a Reliable Queue section, with differing Order numbers.. ](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image8.png "Ticket order Scalability diagram")
+    ![In this Ticket order Scalability diagram an arrow labeled Partition Key equals Random, points right, to a vertical bar labeled 64-bit Addressable Range. To the side of this bar are three gray boxes labeled Partition 1, Partition 2, and Partition n. Each of these boxes has a blue box within labeled \"Ticket Order Queue Service.\" The three gray boxes also have a Reliable Queue section, with differing Order numbers.. ](media/image8.png "Ticket order Scalability diagram")
 
     The stateful Ticket Order Actor handles processing from this queue and, given the number of parallel orders, helps the solution to scale by maintaining the state of any number of parallel orders. The actor is able to negotiate payment, send notifications, persist its own state at each stage of processing, and send the final order data to the order synchronization queue on the back end. The actor is partitioned by order id, which allows for very fine-grained distribution of state, per order, across the cluster. Any number of concurrent orders may be concurrently available to active requests for fast retrieval. Millions of these can exist and distribute across the cluster and inactive actors are evicted from memory automatically to conserve resources.
 
-    ![The Stateful Ticket Order Actor diagram has three partitions/actors: Partition 1, with Actor 1, Partition 2 with Actor 2, and Partition n with Actor n. Three Order IDs have arrows pointing through a 64-bit Addressable Range bar, to the Partition/Actors.](images/Whiteboarddesignsessiontrainerguide-Microservicesarchitectureimages/media/image9.png "Stateful Ticket Order, Actor diagram")
+    ![The Stateful Ticket Order Actor diagram has three partitions/actors: Partition 1, with Actor 1, Partition 2 with Actor 2, and Partition n with Actor n. Three Order IDs have arrows pointing through a 64-bit Addressable Range bar, to the Partition/Actors.](media/image9.png "Stateful Ticket Order, Actor diagram")
 
 3.  Describe the resiliency of this use case. How can you create an asynchronous ticket order request and guarantee processing? Are there any potential points of failure? How will you address those?
 
