@@ -138,6 +138,7 @@ According to the CIO, the current system topology handles the following core use
 
 ![This diagram represents a Service Fabric overview for the scenario. At the top of the diagram is a Microservices ribbon. Below that, a Service Fabric ribbon has three arrows that point to Azure (Windows Server, Linux), Private clouds (Windows Server, Linux), and Hosted Clouds (Windows Server, Linux). The Service Fabric ribbon includes several requirements for the service fabric such as (but not limited to) high availability, self-healing, fast startup and shutdown, low latency, and automated rollback.](media/image2.png "Common scenarios diagram")
 
+
 ![This diagram presents a comparison of monolithic versus microservices approaches, as described in the text following this diagram.](media/image3.png "Monolithic application vs. Microservices application approaches")
 
 ***Comparison between Monolithic and Microservices Approaches***
