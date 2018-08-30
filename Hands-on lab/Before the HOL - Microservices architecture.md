@@ -21,6 +21,22 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2018 Microsoft Corporation. All rights reserved.
 
+**Contents**
+
+<!-- TOC -->
+
+- [Requirements](#requirements)
+- [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Provision Service Fabric Cluster](#task-1-provision-service-fabric-cluster)
+    - [Task 2: Provision a lab virtual machine (VM)](#task-2-provision-a-lab-virtual-machine-vm)
+    - [Task 3: Connect to your lab VM](#task-3-connect-to-your-lab-vm)
+    - [Task 4: Install Chrome on LabVM](#task-4-install-chrome-on-labvm)
+    - [Task 5: Install Service Fabric SDK for Visual Studio](#task-5-install-service-fabric-sdk-for-visual-studio)
+    - [Task 6: Setup Service Fabric certificate](#task-6-setup-service-fabric-certificate)
+    - [Task 7: Validate Service Fabric ports](#task-7-validate-service-fabric-ports)
+
+<!-- /TOC -->
+
 ## Requirements
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
