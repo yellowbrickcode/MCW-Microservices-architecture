@@ -51,4 +51,4 @@ Microservices using Service Fabric
 - [MCW](https://github.com/Microsoft/MCW)
 - [Technology choices](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-overview)
 - [DevOps checklist](https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops)
-
+- [Architecture Styles] (https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles)
