@@ -49,7 +49,6 @@ Microservices using Service Fabric
 ## Related references
 
 - [MCW](https://github.com/Microsoft/MCW)
-- [Technology choices](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30347)
-- [DevOps checklist](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30348)
-- [Architecture styles](aka.ms/mcw-architecture-styles/big-data)
+- [Technology choices](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-overview)
+- [DevOps checklist](https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops)
 
