@@ -578,7 +578,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 6.  How can you update cluster settings after the fact? What kind of settings might you want to update?
 
-    A ServiceFabric cluster is essentially a collection of VMs behind a load balancer, with Service Fabric tools and agents predeployed. If you want to update the physical characteristics of the underlying VMs or update aspects of the topology, you can update the ARM template representing the cluster that is currently provisioned, and reapply it. This update can be applied directly in the Azure portal or through your automation procedures if you have those in place.
+    A Service Fabric cluster is essentially a collection of VMs behind a load balancer, with Service Fabric tools and agents predeployed. If you want to update the physical characteristics of the underlying VMs or update aspects of the topology, you can update the ARM template representing the cluster that is currently provisioned, and reapply it. This update can be applied directly in the Azure portal or through your automation procedures if you have those in place.
 
     Examples of updates you can execute with ARM include:
 
@@ -610,7 +610,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 2.  How would you identify the user and the API consumer or application?
 
-    APIs can be secured by passing, a consumer key for identifying the calling application (be it internal or third party) or a token, issued for the user (e.g., by a trusted identity provider).
+    APIs can be secured by passing, a consumer key for identifying the calling application, be it internal or third party, or a token, issued for the user (e.g., by a trusted identity provider).
 
     The top-level Web APIs will be published through Azure API Management. This provides a security layer that can leverage Azure AD to authorize callers but also enforce consumer keys.
 
