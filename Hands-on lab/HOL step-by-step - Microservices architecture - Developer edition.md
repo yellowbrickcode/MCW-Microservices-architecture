@@ -125,31 +125,32 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 ### Task 1: Download and open the ContosoEventsPoC starter solution
 
-1.  On your Lab VM, download the starter project from <http://bit.ly/2MJgitO>. (Note: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar)
+1.  On your Lab VM, download the starter project from <http://bit.ly/2MJgitO>. 
+    <**Note**: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.
 
-2.  Unzip the contents to the folder C:\\handsonlab
+2.  Unzip the contents to the folder C:\\handsonlab.
 
-3.  Locate the solution file (C:\\handsonlab\\ContosoEventsPoC\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017
+3.  Locate the solution file (C:\\handsonlab\\ContosoEventsPoC\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017.
 
-4.  If prompted about how you want to open the file, select Visual Studio 2017, and select OK
+4.  If prompted about how you want to open the file, select Visual Studio 2017, and select OK.
 
     ![In the How do you want to open this file dialog box, Visual Studio 2017 is selected.](media/image43.png "How do you want to open this file?")
 
-5.  Log into Visual Studio or set up an account, when prompted
+5.  Log into Visual Studio or set up an account, when prompted.
 
     ![The Welcome to Visual Studio window displays, asking you to sign in.](media/image44.png "Welcome to Visual Studio window")
 
-6.  If presented with a security warning, uncheck Ask me for every project in this solution, and select OK
+6.  If presented with a security warning, uncheck **Ask me for every project in this solution**, and select OK.
 
     ![A Security Warning displays for contosoEvents.WebApi. A message states that you should only open projects from a trustworthy source. At the bottom, the check box for Ask me for every project in this solution is circled.](media/image45.png "Security Warning for contosoEvents.WebApi")
 
-7.  If you are missing any prerequisites (listed under Requirements above), you may be prompted to install these at this point
+7.  If you are missing any prerequisites (listed under Requirements above), you may be prompted to install these at this point.
 
-8.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar
+8.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar.
 
     ![On the Visual Studio Toolbar, The Platforms drop-down carat is circled, and in its drop-down menu, x64 is circled.](media/image46.png "Visual Studio Toolbar")
 
-9.  Build the solution, by selecting Build from the Visual Studio menu, then selecting Build Solution
+9.  Build the solution, by selecting Build from the Visual Studio menu, then selecting Build Solution.
 
     ![The Build button is circled on the Visual Studio menu. Under that, Build Solution is circled.](media/image47.png "Visual Studio menu")
 
@@ -159,30 +160,30 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 In this task, you will provision an API Management Service in the Azure portal.
 
-1.  In the Azure portal, select +Create a resource, enter "API Management" into the Search the Marketplace box, then select API management from the results
+1.  In the Azure portal, select +Create a resource, enter "API Management" into the Search the Marketplace box, then select API management from the results.
 
 ![In the Azure Portal Everything pane, API Management is typed in the search field. Under Results, API Management is circled.](media/create-api-management-resource.png "Azure Portal Everything pane")
 
 
-2.  In the API Management blade, select Create
+2.  In the API Management blade, select Create.
 
 3.  In the API Management service blade, enter the following:
 
-    a.  Name: Enter a unique name, such as contosoevents-SUFFIX
+    a.  Name: Enter a unique name, such as contosoevents-SUFFIX.
 
-    b.  Subscription: Choose your subscription
+    b.  Subscription: Choose your subscription.
 
-    c.  Resource group: Select Use existing, and select the hands-on-labs resource group you created previously
+    c.  Resource group: Select Use existing, and select the hands-on-labs resource group you created previously.
 
-    d.  Location: Select the same region used for the hands-on-labs resource group
+    d.  Location: Select the same region used for the hands-on-labs resource group.
 
-    e.  Organization name: Enter Contoso Events
+    e.  Organization name: Enter Contoso Events.
 
-    f.  Administrator email: Enter your email address
+    f.  Administrator email: Enter your email address.
 
-    g.  Pricing tier: Select Developer (No SLA)
+    g.  Pricing tier: Select Developer (No SLA).
 
-    h.  Select Create
+    h.  Select Create.
 
     ![On the API Management service blade, fields are set to the previously defined settings.](media/image49.png "API Management service blade")
 
