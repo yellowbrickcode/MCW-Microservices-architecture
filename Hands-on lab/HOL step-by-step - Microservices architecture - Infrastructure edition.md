@@ -1947,7 +1947,7 @@ In this task, you will test the web application and register yourself as a user 
 
 6.  You can now sign in, sign out, and register users to the website.
 
->**Note**: You can optionally publish this application to Azure and test sign in, sign out continues to work from the deployed URL
+>**Note**: You can optionally publish this application to Azure and test sign in, sign out continues to work from the deployed URL.
 
 ## After the hands-on lab
 
