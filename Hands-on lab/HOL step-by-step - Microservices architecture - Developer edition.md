@@ -209,13 +209,13 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
     e.  App Service plan/location: Select this, select Create new.
 
-       i.  App service plan: Enter contosoeventsplan-SUFFIX.
+        - App service plan: Enter contosoeventsplan-SUFFIX.
 
-       ii. Location: Select the same location you have been using for other resources in this lab.
+        - Location: Select the same location you have been using for other resources in this lab.
 
-       iii. Pricing tier: Select S1 Standard.
+        - Pricing tier: Select S1 Standard.
 
-       iv. Select OK.
+        - Select OK.
 
     f.  Select Create to provision the Web App.
 
