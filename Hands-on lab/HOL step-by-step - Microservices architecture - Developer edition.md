@@ -99,19 +99,19 @@ The following figures are intended to help you keep track of all the technologie
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
 
-    a.  Trial subscriptions will not work
+    -   Trial subscriptions will not work
 
 2.  A virtual machine configured with (see Before the hands-on lab):
 
-    a.  Visual Studio 2017 Community edition, or later
+    -   Visual Studio 2017 Community edition, or later
 
-    b.  Azure Development workload enabled in Visual Studio 2017 (enabled by default on the VM)
+    -   Azure Development workload enabled in Visual Studio 2017 (enabled by default on the VM)
 
-    e.  Service Fabric SDK 3.1 or later for Visual Studio 2017
+    -   Service Fabric SDK 3.1 or later for Visual Studio 2017
 
-    d.  Google Chrome browser (Swagger commands do not work in IE)
-
-    e.  PowerShell 3.0 or higher (v5.1 already installed on VM)
+    -   Google Chrome browser (Swagger commands do not work in IE)
+    
+    -   PowerShell 3.0 or higher (v5.1 already installed on VM)
 
 ## Exercise 1: Environment setup
 
