@@ -610,7 +610,7 @@ After evaluating the benefits of Service Fabric, with the team at Microsoft, Con
 
 2.  How would you identify the user and the API consumer or application?
 
-    APIs can be secured by passing, a consumer key for identifying the calling application, be it internal or third party, or a token, issued for the user (e.g., by a trusted identity provider).
+    APIs can be secured by passing a consumer key for identifying the calling application, be it internal or third party, or a token issued for the user (e.g., by a trusted identity provider).
 
     The top-level Web APIs will be published through Azure API Management. This provides a security layer that can leverage Azure AD to authorize callers but also enforce consumer keys.
 
