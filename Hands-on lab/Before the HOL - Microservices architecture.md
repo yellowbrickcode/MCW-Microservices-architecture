@@ -203,7 +203,7 @@ In this task, you will provision a virtual machine (VM) in Azure. The VM image u
         
 5.  Select Change Size
 
-6.  On the Select a VM Size blade, ensure the Disk type is set to SSD. This machine won't be doing much heavy lifting, so selecting D2S\_V3 Standard is a good baseline option.
+6.  On the Select a VM Size blade, enter d2s into the search text field. This machine won't be doing much heavy lifting, so selecting D2S\_V3 Standard is a good baseline option.
 
     ![On the Choose a size blade, d2s is entered into the search text field.](media/change-lab-vm-size.png "Choose a size blade")
     
