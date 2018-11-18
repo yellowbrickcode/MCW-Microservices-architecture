@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-August 2018
+November 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -67,7 +67,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 2: Perform a troubled upgrade](#task-2-perform-a-troubled-upgrade)
     - [Exercise 8: Load testing](#exercise-8-load-testing)
         - [Task 1: Simulate a 50-order request](#task-1-simulate-a-50-order-request)
-    - [BONUS Exercise 9: Load testing w/ partitions](#bonus-exercise-9-load-testing-w-partitions)
+    - [BONUS Exercise 9: Load testing w/partitions](#bonus-exercise-9-load-testing-wpartitions)
         - [Task 1: Using the current partition count, simulate 100 orders](#task-1-using-the-current-partition-count-simulate-100-orders)
         - [Task 2: Setting up for load testing with different partition counts](#task-2-setting-up-for-load-testing-with-different-partition-counts)
         - [Task 3: Using a partition count of 10, simulate 100 orders](#task-3-using-a-partition-count-of-10-simulate-100-orders)

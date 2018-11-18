@@ -199,7 +199,6 @@ In this task, you will provision a virtual machine (VM) in Azure. The VM image u
 
     -   Location: Select the region you are using for resources in this lab.
 
-    -   Select OK to move to the next step.
         
 5.  Select Change Size
 

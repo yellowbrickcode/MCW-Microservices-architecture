@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-August 2018
+November 2018
 </div>
     
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -217,9 +217,13 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
         - Select OK.
 
-    f.  Select Create to provision the Web App.
+    
+    f.  Select Code for the Publish setting.
+    
+    g.  Select Create to provision the Web App.
 
-    ![On the Create Web App blade, fields are set to the previously defined settings.](media/image51.png "Create Web App blade")
+    ![On the Create Web App blade, fields are set to the previously defined settings.](media/create-web-app.png "Create Web App blade")
+    
 
 3.  You will receive a notification in the Azure portal when the Web App deployment completes. From this, select Go to resource.
 
@@ -253,13 +257,16 @@ In this task, you will provision a Function App using a Consumption Plan. By usi
 
     f.  Location: Select the same location as the hands-on-labs resource group.
 
-    g.  Storage: Leave Create new selected, and accept the default name.
+    g.  Runtime Stack: .NET
 
-    h.  Application Insights: Select Off.
+    h.  Storage: Leave Create new selected, and accept the default name.
 
-    i.  Select Create to provision the new Function App.
+    i.  Application Insights: Select Off.
 
-    ![In the Function App blade, fields are set to the previously defined settings.](media/image55.png "Function App blade")
+    j.  Select Create to provision the new Function App.
+
+    ![In the Function App blade, fields are set to the previously defined settings.](media/create-first-function-app.png "Function App blade")
+    
 
 ### Task 5: Storage account
 
@@ -269,8 +276,8 @@ In this section, you will create a Storage account for the application to create
 
     ![In the Azure Portal, New pane, under Azure Marketplace, Storage is circled. Under Featured, Storage account - blob, file, table, queue (Quickstart tutorial) is circled.](media/create-storage-account-resource.png "Azure Portal Create Storage Account")
 
-
-2.  In the Create Storage account blade, enter the following:
+    
+2.  In the Create Storage account blade Basics Tab, enter the following:
 
     a.  Name: Enter a unique name, such as contosoeventsSUFFIX.
 
@@ -292,9 +299,19 @@ In this section, you will create a Storage account for the application to create
 
     j.  Virtual networks: Leave Disabled.
 
-    k.  Select Create.
+    k.  Select Next : Advanced >.
 
-    ![In the Create storage account blade, fields are set to the previously defined settings.](media/image57.png "Create storage account blade")
+    ![In the Create storage account blade Basics Tab, fields are set to the previously defined settings.](media/storage-account-blade-basics.png "Create storage account blade")
+
+3.  Within the Advanced Tab: 
+
+    a. set Secure transfer required to Disabled, and then select Review + create. 
+
+    ![[In the Create storage account blade Advanced Tab, Secure transfer required is disabled and Review + create is selected.](media/storage-account-blade-advanced.png "Create storage account advanced tab")
+
+    b.  Select Create in the Review + create tab.
+
+    ![In the Review + create tab, Create is selected.](media/storage-account-validation-create.png "Review and create storage account")
 
 ### Task 6: Cosmos DB
 
@@ -317,12 +334,12 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
     e.  Location: Select the location used for the hands-on-lab resource group. If this location is not available, select one close to that location that is available.
 
-    f.  Enable geo-redundancy: Leave checked.
+    f.  Select Review + create.
 
-    g.  Select Create to provision the Cosmos DB.
-
-    ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/cosmos-db-settings.png "Azure Cosmos DB blade")
-
+    
+    ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/cosmos-db-create-settings.png "Azure Cosmos DB blade")
+    
+    g. Select Create to provision the Cosmos DB after the validation has passed.
  
 3.  When the Cosmos DB account is ready, navigate to the hands-on-labs Resource Group, and select your Cosmos DB account from the list.
 
@@ -367,6 +384,7 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
     d.  Throughput: Enter 2500.
 
     e.  Select OK to create the new collection.
+
 
     ![On the Add Collection blade, fields are set to the previously defined settings.](media/image65.png "Add Collection blade")
 
@@ -786,69 +804,50 @@ You will also create a second function that will be used to generate load agains
 
     ![In the Function Apps section, Functions is selected, and the Plus symbol to its right is circled.](media/image106.png "Function Apps section")
 
-8.  Select Data processing under the Get started quickly... header, leave CSharp selected for the language, and select the Create this function button.
+8.  Select In-portal as the development environment in the getting started blade,  and select the Continue button.
 
-    ![On the Get started quickly with a premade function page, under Choose a scenario, the Data processing option is circled. Under Choose a language, CSharp is circled. At the bottom, the Create this function button is circled.](media/image107.png "Get started quickly page")
+    ![In the getting started Choose a Development Environment step, In-portal is circled](media/create-function-choose-env.png "Getting started page")
+    
 
-9.  First, let's rename the function, so it has a more meaningful name.
+9.  Select More templates and then select the Finish and continue button.
 
-10. In the side menu, select your Function app, then select the Platform features tab, and select Console under Development Tools.
+    ![More templates is circled and the Finish and view templates button is selected.](media/view-more-templates.png "View more function templates")
 
-    ![In the Function Apps pane, in the column, under Function Apps, contosoeventsfn-SUFFIX is circled. In the right column, at the top, the Platform features tab is circled. Under Development Tools, Console is circled.](media/image108.png "Function Apps pane")
+10. Select Azure Queue Storage trigger and then select install when the warning that extensions are required is displayed.
 
-11. At the Console command prompt, type ls to view the list of functions and files in the wwwroot folder.
+    ![Azure Queue Storage is circled and Install is selected within the extensions required warning screen.](media/install-extensions-warning.png "Install Queue Storage Extensions")
 
-    ![The Console command prompt displays.](media/image109.png "Console command prompt")
+    a. Continue to install any additional extensions required.
 
-12. Next, paste the following command into the console to rename the QueueTriggerCSharp1 function to ProcessOrderExternalizations.
+11.  In the Create Function blade, enter the following:
+    
+    a.  Name: ProcessOrderExternalizations
+    
+    b.  Queue name: contosoevents-externalization-requests
 
-    ```
-    rename QueueTriggerCSharp1 ProcessOrderExternalizations
-    ```
+    c.  Storage account connection: Select contosoeventsstore
+    
+![The values above are entered into the Azure Queue Storage trigger settings.](media/create-queue-storage-trigger.png  "Queue trigger settings")
 
-13. Typing ls at the command prompt again will show the function has been renamed.
+12. Under the ProcessOrderExternalizations function, select Integrate.
 
-    ![The Console command prompt displays with the renamed ProcessOrderExternalizations.](media/image110.png "Console command prompt")
+    a. On the Integrate screen, set Message parameter name to orderItem.
 
-14. Exit the Console window by selecting the X in the top corner, just below your account name.
+    b. Select Save
 
-    ![Just below the account icon, the Exit icon is circled.](media/image111.png "Exit icon")
+    ![The Message parameter name is set to orderItem and Save is circled. ](media/integrate-screen.png "Integrate screen")
 
-15. Back on the Function app page, move your mouse cursor over your function app in the side menu, and select the Refresh icon. Note the function name is still QueueTriggerCSharp1 before refreshing.
-
-    ![In the Function Apps section, next to contosoeventsfn-SUFFIX, the refresh icon is circled. under Functions, QueueTriggerCSharp1 is circled.](media/image112.png "Function Apps section")
-
-16. After the refresh, the function name will change in the display to ProcessOrderExternalizations.
-
-    ![In the Function Apps section, under Functions, QueueTriggerCSharp1 has now changed to ProcessOrderExternalizations.](media/image113.png "Function Apps section")
-
-17. Under the ProcessOrderExternalizations function, select Integrate.
-
-    ![Under Functions\\ProcessOrderExternalizations, Integrate is circled.](media/image114.png "Functions  App Section")
-
-18. On the Integrate screen, set the following:
-
-    a.  Message parameter name: Enter orderItem.
-
-    b.  Storage account connection: Select the arrows in the box, then select the contosoevents-store connection from the list. This is the Application Setting you added above.
-
-    ![contosoeventsstore is circled on the Integrate screen.](media/image115.png "Integrate screen")
-
-    c.  Queue name: Enter the name of your externalization queue (from Cloud explorer in Visual Studio). This should be contosoevents-externalization-requests.
-
-    ![On the Integrate screen, the Azure Queue Storage trigger section displays. The Message parameter name is orderItem, the Storage account connection is contosoeventsstore](media/image116.png "Integrate screen")
-
-    d.  Select Save.
-
-19. While still on the Integrate screen, select +Create a resource Output.
+13. While still on the Integrate screen, select +Create a resource Output.
 
     ![On the Integrate Screen, under Outputs, + New Output is circled.](media/image117.png "Integrate Screen")
 
-20. In the outputs box, locate and select Azure Cosmos DB, then choose Select.
+14. In the outputs box, locate and select Azure Cosmos DB, then choose Select.
 
     ![In the Azure Cosmos DB output window, next to the Azure Cosmos DB account connection field, the New button is circled.](media/image118.png "Azure Cosmos DB output window")
 
-21. On the Azure Cosmos DB output screen, enter the following:
+ > **Note**: If prompted to install extensions, Select Install and wait for the extensions to finish installing.
+
+15. On the Azure Cosmos DB output screen, enter the following:
 
     a.  Document parameter name: Enter orderDocument.
 
@@ -860,59 +859,62 @@ You will also create a second function that will be used to generate load agains
 
     e.  Azure Cosmos DB account connection: Select new next to the text box, and select the Cosmos DB you created in Exercise 1, Task 6.
 
-    ![Screenshot of Azure Cosmos DB output window with the values specified above entered into the fields.](media/image119.png "Azure Cosmos DB output window")
+    ![Screenshot of Azure Cosmos DB output window with the values specified above entered into the fields.](media/cosmos-db-output-window.png "Azure Cosmos DB output window")
+   
 
     f.  Select Save. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
 
     ![In the Integrate window, the fields under both Triggers and Outputs are circled. ](media/image120.png "Integrate window")
 
-22. Next, select your function from the side menu.
+16. Next, select your function from the side menu.
 
     ![Under Functions, ProcessOrderExternailizations is circled.](media/image121.png "Functions section")
 
-23. Now, you will retrieve the code for the function from a file in Visual Studio.
+17. Now, you will retrieve the code for the function from a file in Visual Studio.
 
-24. In Visual Studio, go to Solution Explorer, and locate ProcessTicketOrderExternalizationEvent.cs in the Azure Functions folder.
+18. In Visual Studio, go to Solution Explorer, and locate ProcessTicketOrderExternalizationEvent.cs in the Azure Functions folder.
 
     ![In Solution Explorer, under Azure Functions, ProcessTicketOrderExternalizationEvent.cs is circled.](media/image122.png "Solution Explorer")
 
-25. Select all the code in that file (CTRL+A) and copy (CTRL+C) it.
+19. Select all the code in that file (CTRL+A) and copy (CTRL+C) it.
 
-26. Return to your function's page in the Azure portal, and replace the code in the run.csx block with the code you just copied from Visual Studio, and select Save. The run.csx code should now look like the following. Note: The ProcessOrdersExternalization function will enable you to process another order, and see that it is saved to the Orders collection of the Cosmos DB.
+20. Return to your function's page in the Azure portal, and replace the code in the run.csx block with the code you just copied from Visual Studio, and select Save. The run.csx code should now look like the following. Note: The ProcessOrdersExternalization function will enable you to process another order, and see that it is saved to the Orders collection of the Cosmos DB.
 
     ![Code that was copied from Visual Studio displays in the Run.csx block.](media/image123.png "Azure Portal, Run.csx block")
 
-27. You will now create another function.
+21. You will now create another function.
 
-28. As before, select + next to Functions in the side menu.
+22. As before, select + next to Functions in the side menu.
 
     ![Under Function Apps, contosoeventsfn-SUFFIX is expanded, and under it, the + icon is circled.](media/image106.png "Function Apps Section")
 
-29. In the Choose a template... screen that appears, locate the Queue trigger box, and select PowerShell.
+23. In the Choose a template screen that appears, select Data Processing in the Scenario dropdown list.
 
-    ![In the Choose a template screen, in the Queue trigger box, at the bottom, PowerShell is circled.](media/image124.png "Choose a template, Queue trigger ")
+24. Select Azure Queue Storage Trigger
+
+    ![In the Choose a template screen, Data Processing is selected in the Scenario dropdown and Azure Queue Storage Trigger is circled](media/choose-data-processing-template.png"Choose a template, Queue trigger")
+    
 
     > **Note**: If the PowerShell option does not show, ensure that the Experimental Language Support is set to Enabled.
 
-30. In the Queue trigger dialog, enter the following:
+24. In the Queue trigger dialog, enter the following:
 
-    a.  Language: Leave PowerShell selected.
+    a.  Name: Enter ProcessSimulationRequests.
 
-    b.  Name: Enter ProcessSimulationRequests.
+    b.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be contosoevents-simulation-requests.
 
-    c.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be contosoevents-simulation-requests.
+    c.  Storage account connection: Select contosoeventsstore from the drop down.
 
-    d.  Storage account connection: Select contosoeventsstore from the drop down.
+    d.  Select Create to create the new function.
 
-    e.  Select Create to create the new function.
+    ![Fields in the Queue Trigger dialog box are set to the previously defined settings.](media/new-trigger-function.png "Queue Trigger dialog box")
+   
 
-    ![Fields in the Queue Trigger dialog box are set to the previously defined settings.](media/image125.png "Queue Trigger dialog box")
-
-31. Select Integrate under the new ProcessSimulationRequests function in the menu.
+25. Select Integrate under the new ProcessSimulationRequests function in the menu.
 
     ![Under Functions, under ProcessSimulation Requests, Integrate is circled.](media/image126.png "Functions section")
 
-32. Make sure Azure Queue Storage is selected under Triggers, then enter the following:
+26. Make sure Azure Queue Storage is selected under Triggers, then enter the following:
 
     a.  Message parameter name: Enter simulationRequest.
 
@@ -924,19 +926,36 @@ You will also create a second function that will be used to generate load agains
 
     ![In the Integrate Window, under Triggers, Azure Queue Storage (triggerInput) is circled. Under Azure Queue Storage trigger, the Message parameter name field is set to simulationRequest.](media/image127.png "Integrate window")
 
-33. Select the ProcessSimulationRequests function in the side menu.
+27. Select the ProcessSimulationRequests function in the side menu.
 
     ![Under Functions, ProcessSimulation Requests is circled.](media/image128.png "Functions section")
 
-34. Return to Visual Studio, and open the ProcessTicketOrderSimulationRequest.ps1 file in the Azure Functions folder.
+28. In this step we will manually add an empty powershell file to allow us to paste in an existing powershell script for our function.
+
+    a. Scroll all the way to the right until you the View Files link is displayed.
+
+    b. Select View Files
+    
+    !["An arrow pointing to the View Files link in the far corner of the screen"](media/view-files-link.png "View files link")
+
+    c. Select + Add
+
+    d. Name the new file run.ps1
+
+    ![Add is selected and a file named run.ps1 has been added in the View File screen. ](media/add-file-powershell.png "Add run powershell file")
+
+    e. Select the run.csx file and Select Delete.
+
+
+28. Return to Visual Studio, and open the ProcessTicketOrderSimulationRequest.ps1 file in the Azure Functions folder.
 
     ![In Solution Explorer, in the Azure Functions folder, ProcessTicketOrderSimulationRequest.ps1 is circled.](media/image129.png "Solution Explorer")
 
-35. Copy all the contents of this file (CTRL+A, then CTRL+C), then return to your function page in the Azure portal, and paste the code into the run.ps1 code block.
+29. Copy all the contents of this file (CTRL+A, then CTRL+C), then return to your function page in the Azure portal, and paste the code into the run.ps1 code block.
 
-36. Select Save.
+30. Select Save.
 
-37. The final setting to update is the API Management key. You will return to set this up when you set up the API Management service.
+31. The final setting to update is the API Management key. You will return to set this up when you set up the API Management service.
 
 ### Task 6: Test order data sync
 
