@@ -348,15 +348,15 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 6.  On the Add Collection dialog, enter the following:
 
-    a.  Database id: Select Create new and enter TicketManager.
+    a.  Database id: Select Create new and enter **TicketManager**.
 
     b.  Provision database throughput: Leave unchecked.
 
-    c.  Collection id: Enter Orders.
+    c.  Collection id: Enter **Orders**.
 
-    d.  Storage capacity: Select Fixed (10 GB).
+    d.  Storage capacity: Select **Fixed (10 GB)**.
 
-    e.  Throughput: Enter 2500.
+    e.  Throughput: Enter **2500**.
 
     f.  Select OK to create the new collection.
 
@@ -368,15 +368,15 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 8.  In the Add Collection dialog, enter the following:
 
-    a.  Database id: Select Use existing and then select TicketManager.
+    a.  Database id: Select Use existing and then select **TicketManager**.
 
-    b.  Collection id: Enter Events.
+    b.  Collection id: Enter **Events**.
 
-    c.  Storage capacity: Select Fixed (10 GB).
+    c.  Storage capacity: Select **Fixed (10 GB)**.
 
-    d.  Throughput: Enter 2500.
+    d.  Throughput: Enter **2500**.
 
-    e.  Select OK to create the new collection.
+    e.  Select **OK** to create the new collection.
 
 
     ![On the Add Collection blade, fields are set to the previously defined settings.](media/image65.png "Add Collection blade")
@@ -578,7 +578,7 @@ The purpose of this task is to make sure that the source code compiles, and that
 
     ![In the Start Menu, Service Fabric Local Cluster Manager is circled.](media/image73.png "Start Menu")
 
-3.  Right-click the system tray icon, and select Setup Local Cluster, 1 Node.
+3.  Right-click the system tray icon, and select **Setup Local Cluster, 1 Node**.
 
     ![In the System tray icon menu, Setup Local Cluster is selected. 1 Node is selected in the sub-menu. ](media/image74.png "System tray icon menu")
 
@@ -590,7 +590,7 @@ The purpose of this task is to make sure that the source code compiles, and that
 
 5.  Open the ContosoEventsPoc solution in Visual Studio, if it is not still open from the previous exercise.
 
-6.  Rebuild the solution to resolve all NuGet packages, and to make sure there are no compilation errors, by selecting Build from the menu, then selecting Rebuild Solution.
+6.  Rebuild the solution to resolve all NuGet packages, and to make sure there are no compilation errors, by selecting Build from the menu, then selecting **Rebuild Solution**.
 
     ![In Visual Studio, Rebuild Solution is circled. In the top menu, Build is circled.](media/image76.png "Visual Studio")
 
@@ -600,11 +600,11 @@ The purpose of this task is to make sure that the source code compiles, and that
 
 8.  Now, you will Publish the Service Fabric app to the local cluster.
 
-9. In Solution Explorer, right-click the Service Fabric Application, ContosoEventsApp, and select Publish.
+9. In Solution Explorer, right-click the Service Fabric Application, **ContosoEventsApp**, and select **Publish**.
 
     ![In Solution Explorer, the Service Fabric folder is expanded, and ContosoEventsApp is circled. In the right-click menu, Publish is circled.](media/image78.png "Solution Explorer")
 
-10. In the Publish Service Fabric Application dialog, select PublishProfiles\\Local.1Node.xml for the Target profile, ensure the correct account is selected, and select Publish.
+10. In the Publish Service Fabric Application dialog, select **PublishProfiles\\Local.1Node.xml** for the Target profile, ensure the correct account is selected, and select **Publish**.
 
     ![In the Publish Service Fabric Application dialog box, the Target profile field is set to PublishProfiles\\Local.1Node.xml, and is circled.](media/image79.png "Publish Service Fabric Application dialog box")
 
@@ -622,11 +622,11 @@ The Service Fabric Application includes a front-end Web API as the public-facing
 
     ![In the Swagger endpoint window, under ContosoEvents.WebApi, three endpoints are circled: Admin, Events, and Orders).](media/image81.png "Swagger endpoint window")
 
-2.  Select the Admin API, and observe the list of methods available.
+2.  Select the **Admin** API, and observe the list of methods available.
 
     ![In the Swagger endpoint window, under ContosoEvents.WebApi, Admin is circled, and its list of methods display below.](media/image82.png "Swagger endpoint window")
 
-3.  Select /api/admin/partitions, then select Try it out.
+3.  Select **/api/admin/partitions** endpoint, then select **Try it out**.
 
     ![In the Swagger endpoint window, the /api/admin/partitions method is circled. Below that, the Model Schema displays. At the bottom, the Try it out button is circled.](media/image83.png "Swagger endpoint window, Admin method section")
 
@@ -685,9 +685,9 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
     ![In the Azure Portal, Azure Cosmos DB account, under Settings, Keys is circled. In the right pane, under Read-write Keys, the URL, Primary Key, and their corresponding coopy buttons are circled.](media/image88.png "Azure Portal, Azure Cosmos DB account")
 
-2.  Select the Copy button next to the URI value, return to the Local.1Node.xml file in Visual Studio, and paste the URI value into the value for the DataStorageEndpointUri parameter.
+2.  Select the Copy button next to the URI value, return to the Local.1Node.xml file in Visual Studio, and paste the URI value into the value for the **DataStorageEndpointUri** parameter.
 
-3.  Now, on your Cosmos DB keys blade, copy the Primary Key value, return to the Local.1Node.xml file in Visual Studio, and paste the Primary Key value into the value for the DataStoragePrimaryKey parameter.
+3.  Now, on your Cosmos DB keys blade, copy the Primary Key value, return to the Local.1Node.xml file in Visual Studio, and paste the Primary Key value into the value for the **DataStoragePrimaryKey** parameter.
 
 4.  Back in the Azure portal, select Browse under Collections in the side menu for your Cosmos DB. The database (TicketManager) and collection (Orders and Events) names are pre-set in the Local.1Node.xml file, so verify these match the collection and database names you see in the Azure portal.
 
@@ -709,7 +709,7 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
     ![In Azure Portal, Storage account, in the left pane, under Settings, Access keys is circled. In the right pane, under Default keys, for key1, the Connection string and its corresponding copy button are circled.](media/image91.png "Azure Portal, Storage account")
 
-3.  Return to the Local.1Node.xml file in Visual Studio, and paste the key 1 Connection String into the value for the StorageConnectionString parameter, and save Local.1Node.xml.
+3.  Return to the Local.1Node.xml file in Visual Studio, and paste the key 1 Connection String into the value for the **StorageConnectionString** parameter, and save Local.1Node.xml.
 
     ![In the 1Node.xml file, the Key 1 Connection String displays.](media/image92.png "1Node.xml file")
 
@@ -719,11 +719,11 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
 2.  After the application is fully published, use Chrome to browse to the Swagger endpoint at <http://localhost:8082/swagger/ui/index>.
 
-3.  Select the Orders API methods, and select the POST operation for /api/orders.
+3.  Select the **Orders** API methods, and select the POST operation for /api/orders.
 
     ![In the Swagger endpoint window, Orders is circled. Below Orders, /api/orders method is circled. While the other methods have Get buttons next to them, the /api/orders method has a Post button next to it.](media/image93.png "Swagger Endpoint Window")
 
-4.  POST an order to the Contoso Events application. Copy the order request JSON below into the order value box, and select Try it out.
+4.  POST an order to the Contoso Events application. Copy the order request JSON below into the order value box, and select **Try it out**.
 
     ```
         {
@@ -745,7 +745,7 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
 6.  Now, you should have an order in the Service Fabric App, and it is being processed. In addition, the Ticket Order Actor should have sent the order to the externalization queue you set up in configuration earlier. The actor has pre-existing logic in place to write to this queue.
 
-7.  To verify that the order is in the queue, select View -\> Cloud Explorer from the menu in Visual Studio.
+7.  To verify that the order is in the queue, select **View -\> Cloud Explorer** from the menu in Visual Studio.
 
     ![In Visual Studio on the menu bar View and Cloud Explorer are circled.](media/image96.png "Visual Studio menu bar")
 
@@ -753,15 +753,15 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
     ![In the Cloud Explorer pane, the Account Manager icon is circled.](media/image97.png "Cloud Explorer pane")
 
-9.  Now, expand Storage Accounts under your subscription in Cloud Explorer, and locate the Storage account you set up in Exercise 1, Task 5. You may need to select Load more at the bottom of the list, if you don't see the storage account. Expand the storage account, then expand Queues.
+9.  Now, expand Storage Accounts under your subscription in Cloud Explorer, and locate the Storage account you set up in Exercise 1, Task 5. You may need to select Load more at the bottom of the list, if you don't see the storage account. Expand the storage account, then expand **Queues**.
 
     ![In the Cloud Explorer tree view, under contosoeventskb, Queues is selected.](media/image98.png "Cloud Explorer tree view")
 
-10. Double-click on the externalization queue, and you should see the message you just sent from Swagger in the document window.
+10. Double-click on the **contoso-externalization-requests** queue, and you should see the message you just sent from Swagger in the document window.
 
     ![In the Cloud Explorer tree view, under Queues, Contosoeventsexternalization-requests is circled. In the Cloud Explorer document window, a line of message text is circled.](media/image99.png "Cloud Explorer document window")
 
-11. Now, double-click on the message, and you will see the contents of the message including the JSON representation of the order. Select OK to close the View Message dialog.
+11. Now, double-click on the message, and you will see the contents of the message including the JSON representation of the order. Select **OK** to close the View Message dialog.
 
     ![In the View Message section, JSON representation of the message displays.](media/image100.png "View Message section")
 
@@ -785,7 +785,7 @@ You will also create a second function that will be used to generate load agains
 
     ![In the Function Apps pane, in the left column, contosoeventsfn-SUFFIX is circled. In the right, Overview column, under Configured features, Application settings is circled.](media/image103.png "Function Apps pane")
 
-5.  On the Application Settings tab, scroll down and select +Add new setting under Application Settings, then enter contosoeventsstore in the name textbox, and paste the key1 Connection String value you copied from your Storage account into the value textbox.
+5.  On the Application Settings tab, scroll down and select **+Add new setting** under Application Settings, then enter **contosoeventsstore** in the name textbox, and paste the key1 Connection String value you copied from your Storage account into the value textbox.
 
     ![On the Application settings tab, contosoeventsstore and its corresponding connection string value are circled. At the bottom, the Add new settings button is circled.](media/image104.png "Application settings tab")
 
@@ -797,16 +797,16 @@ You will also create a second function that will be used to generate load agains
 
     ![In the Function Apps section, Functions is selected, and the Plus symbol to its right is circled.](media/image106.png "Function Apps section")
 
-8.  Select In-portal as the development environment in the getting started blade,  and select the Continue button.
+8.  Select **In-portal** as the development environment in the getting started blade, and select the **Continue** button.
 
     ![In the getting started Choose a Development Environment step, In-portal is circled](media/create-function-choose-env.png "Getting started page")
     
 
-9.  Select More templates and then select the Finish and continue button.
+9.  Select **More templates** and then select the **Finish and view templates** button.
 
     ![More templates is circled and the Finish and view templates button is selected.](media/view-more-templates.png "View more function templates")
 
-10. Select Azure Queue Storage trigger and then select install when the warning that extensions are required is displayed.
+10. Select **Azure Queue Storage trigger** and then select install when the warning that extensions are required is displayed.
 
     ![Azure Queue Storage is circled and Install is selected within the extensions required warning screen.](media/install-extensions-warning.png "Install Queue Storage Extensions")
 
@@ -822,19 +822,19 @@ You will also create a second function that will be used to generate load agains
     
 ![The values above are entered into the Azure Queue Storage trigger settings.](media/create-queue-storage-trigger.png  "Queue trigger settings")
 
-12. Under the ProcessOrderExternalizations function, select Integrate.
+12. Under the ProcessOrderExternalizations function, select **Integrate**.
 
-    a. On the Integrate screen, set Message parameter name to orderItem.
+    a. On the Integrate screen, set Message parameter name to **orderItem**.
 
-    b. Select Save
+    b. Select **Save**
 
     ![The Message parameter name is set to orderItem and Save is circled. ](media/integrate-screen.png "Integrate screen")
 
-13. While still on the Integrate screen, select +Create a resource Output.
+13. While still on the Integrate screen, select **+New Output**.
 
     ![On the Integrate Screen, under Outputs, + New Output is circled.](media/image117.png "Integrate Screen")
 
-14. In the outputs box, locate and select Azure Cosmos DB, then choose Select.
+14. In the outputs box, locate and select **Azure Cosmos DB**, then choose **Select**.
 
     ![In the Azure Cosmos DB output window, next to the Azure Cosmos DB account connection field, the New button is circled.](media/image118.png "Azure Cosmos DB output window")
 
@@ -842,20 +842,19 @@ You will also create a second function that will be used to generate load agains
 
 15. On the Azure Cosmos DB output screen, enter the following:
 
-    a.  Document parameter name: Enter orderDocument.
+    a.  Document parameter name: Enter **orderDocument**.
 
-    b.  Collection name: Enter Orders.
+    b.  Collection name: Enter **Orders**.
 
     c.  Partition key: Leave empty.
 
-    e.  Database name: Enter TicketManager.
+    e.  Database name: Enter **TicketManager**.
 
-    e.  Azure Cosmos DB account connection: Select new next to the text box, and select the Cosmos DB you created in Exercise 1, Task 6.
+    e.  Azure Cosmos DB account connection: Select **new** next to the text box, and select the Cosmos DB you created in Exercise 1, Task 6.
 
     ![Screenshot of Azure Cosmos DB output window with the values specified above entered into the fields.](media/cosmos-db-output-window.png "Azure Cosmos DB output window")
    
-
-    f.  Select Save. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
+    f.  Select **Save**. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
 
     ![In the Integrate window, the fields under both Triggers and Outputs are circled. ](media/image120.png "Integrate window")
 
@@ -881,9 +880,9 @@ You will also create a second function that will be used to generate load agains
 
     ![Under Function Apps, contosoeventsfn-SUFFIX is expanded, and under it, the + icon is circled.](media/image106.png "Function Apps Section")
 
-23. In the Choose a template screen that appears, select Data Processing in the Scenario dropdown list.
+23. In the Choose a template screen that appears, select **Data Processing** in the Scenario dropdown list.
 
-24. Select Azure Queue Storage Trigger
+24. Select **Azure Queue Storage Trigger**
 
     ![In the Choose a template screen, Data Processing is selected in the Scenario dropdown and Azure Queue Storage Trigger is circled](media/choose-data-processing-template.png"Choose a template, Queue trigger")
     
@@ -892,34 +891,34 @@ You will also create a second function that will be used to generate load agains
 
 24. In the Queue trigger dialog, enter the following:
 
-    a.  Name: Enter ProcessSimulationRequests.
+    a.  Name: Enter **ProcessSimulationRequests**.
 
-    b.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be contosoevents-simulation-requests.
+    b.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be **contosoevents-simulation-requests**.
 
-    c.  Storage account connection: Select contosoeventsstore from the drop down.
+    c.  Storage account connection: Select **contosoeventsstore** from the drop down.
 
-    d.  Select Create to create the new function.
+    d.  Select **Create** to create the new function.
 
     ![Fields in the Queue Trigger dialog box are set to the previously defined settings.](media/new-trigger-function.png "Queue Trigger dialog box")
    
 
-25. Select Integrate under the new ProcessSimulationRequests function in the menu.
+25. Select Integrate under the new **ProcessSimulationRequests** function in the menu.
 
     ![Under Functions, under ProcessSimulation Requests, Integrate is circled.](media/image126.png "Functions section")
 
 26. Make sure Azure Queue Storage is selected under Triggers, then enter the following:
 
-    a.  Message parameter name: Enter simulationRequest.
+    a.  Message parameter name: Enter **simulationRequest**.
 
-    b.  Storage account connection: Leave set to contosoeventsstore.
+    b.  Storage account connection: Leave set to **contosoeventsstore**.
 
-    c.  Queue name: Leave as contosoevents-simulation-requests.
+    c.  Queue name: Leave as **contosoevents-simulation-requests**.
 
-    d.  Select Save.
+    d.  Select **Save**.
 
     ![In the Integrate Window, under Triggers, Azure Queue Storage (triggerInput) is circled. Under Azure Queue Storage trigger, the Message parameter name field is set to simulationRequest.](media/image127.png "Integrate window")
 
-27. Select the ProcessSimulationRequests function in the side menu.
+27. Select the **ProcessSimulationRequests** function in the side menu.
 
     ![Under Functions, ProcessSimulation Requests is circled.](media/image128.png "Functions section")
 
@@ -927,17 +926,17 @@ You will also create a second function that will be used to generate load agains
 
     a. Scroll all the way to the right until you the View Files link is displayed.
 
-    b. Select View Files
+    b. Select **View Files**
     
     !["An arrow pointing to the View Files link in the far corner of the screen"](media/view-files-link.png "View files link")
 
-    c. Select + Add
+    c. Select **+ Add**
 
-    d. Name the new file run.ps1
+    d. Name the new file **run.ps1**
 
     ![Add is selected and a file named run.ps1 has been added in the View File screen. ](media/add-file-powershell.png "Add run powershell file")
 
-    e. Select the run.csx file and Select Delete.
+    e. Select the **run.csx** file and Select **Delete**.
 
 
 28. Return to Visual Studio, and open the ProcessTicketOrderSimulationRequest.ps1 file in the Azure Functions folder.
@@ -946,7 +945,7 @@ You will also create a second function that will be used to generate load agains
 
 29. Copy all the contents of this file (CTRL+A, then CTRL+C), then return to your function page in the Azure portal, and paste the code into the run.ps1 code block.
 
-30. Select Save.
+30. Select **Save**.
 
 31. The final setting to update is the API Management key. You will return to set this up when you set up the API Management service.
 
@@ -956,7 +955,7 @@ In this task, you will test the ticket order processing back-end, to validate th
 
 1.  In the Azure Portal, navigate to the Function App.
 
-2.  Select the ProcessOrderExternalizations function (may be listed as the default QueueTriggerCSharp1 name if you did not rename it), and select Logs at the bottom of the screen. Leave the window open with the Logs visible.
+2.  Select the **ProcessOrderExternalizations** function (may be listed as the default QueueTriggerCSharp1 name if you did not rename it), and select **Logs** at the bottom of the screen. Leave the window open with the Logs visible.
 
     ![At the bottom of the Run.csx block, the Logs button is circled.](media/image130.png "Azure Portal Run.csx block")
 
@@ -1002,11 +1001,11 @@ In this exercise, you will publish the Service Fabric Application to the Azure c
 
 In this task, you will deploy the application to a hosted Service Fabric Cluster.
 
-1.  In Visual Studio on your Lab VM, within Solution Explorer, open Cloud.xml from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
+1.  In Visual Studio on your Lab VM, within Solution Explorer, open **Cloud.xml** from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
 
     ![In the Solution Explorer window, the following path is expanded: Service Fabric\\ContosoEventsApp\\ApplicationParameters. Under ApplicationParameters, Cloud.xml is circled.](media/image135.png "Solution Explorer window")
 
-2.  Open Local.1Node.XML from the same folder.
+2.  Open **Local.1Node.XML** from the same folder.
 
 3.  To make sure you are using the same parameters you setup earlier for the Local cluster, copy just the following parameters from Local.1Node.xml to Cloud.xml, overwriting the existing parameters in Cloud.xml, then save Cloud.xml.
 
@@ -1025,9 +1024,9 @@ In this task, you will deploy the application to a hosted Service Fabric Cluster
 
 4.  Review the settings related specifically to cloud publishing.
 
-5.  In Cloud.xml, verify the WebAPi\_InstanceCount parameter is set to -1. This instructs the cluster to create as many instances of the Web API as there are nodes in the cluster.
+5.  In Cloud.xml, verify the **WebAPi\_InstanceCount** parameter is set to -1. This instructs the cluster to create as many instances of the Web API as there are nodes in the cluster.
 
-6.  In Cloud.xml, verify the TicketOrderService\_PartitionCount parameter is set to 5.
+6.  In Cloud.xml, verify the **TicketOrderService\_PartitionCount** parameter is set to 5.
 
 ```
     <Parameter Name="TicketOrderService_PartitionCount" Value="5" />
@@ -1038,9 +1037,9 @@ In this task, you will deploy the application to a hosted Service Fabric Cluster
     <Parameter Name="EventActorService_PartitionCount" Value="1" />
 ```
 
-7.  From Solution Explorer, right-click the ContosoEventsApp project and select Publish.
+7.  From Solution Explorer, right-click the ContosoEventsApp project and select **Publish**.
 
-8.  In the Publish Service Fabric Application dialog, set the Target profile to Cloud.xml, and select your Service Fabric Cluster endpoint from the Connection Endpoint drop down, then select Publish.
+8.  In the Publish Service Fabric Application dialog, set the Target profile to Cloud.xml, and select your Service Fabric Cluster endpoint from the Connection Endpoint drop down, then select **Publish**.
 
     ![In the Publish Service Fabric Application dialog box, the Target profile, which is circled, is set to PublishProfiles\\Cloud.xml. The Connection Endpoint also is circled, and is set to contosoeventssf-SUFFIX.westus2.cloudapp.azure.com:19000. StoreLocation and StoreName are also circled.](media/image136.png "Publish Service Fabric Application dialog box")
 
@@ -1105,11 +1104,11 @@ In this task, you will import the Web API description to your API Management ser
 
     ![In the Resource group list of resources, the contosoevents-SUFFIX API Management service is circled.](media/image141.png "Resource group list of resources")
 
-2.  In the API Management blade, select APIs under Api Management.
+2.  In the API Management blade, select **APIs** under Api Management.
 
     ![In the API Management blade, on the left, under Api Management, APIs is circled.](media//image142.png "API Management blade")
 
-3.  In the APIs blade, select OpenAPI specification.
+3.  In the APIs blade, select **OpenAPI specification**.
 
     ![In the APIs blade, OpenAPI specification is circled.](media//image143.png "APIs blade")
 
@@ -1117,29 +1116,29 @@ In this task, you will import the Web API description to your API Management ser
 
     ![In the Swagger browser window, the URL is circled.](media/image144.png "Swagger browser window")
 
-5.  Return to the Create from OpenAPI specification window, and do the following:
+5.  Return to the Create from OpenAPI specification window, click the **Full** link and do the following:
 
     a. Paste the URL copied from Swagger into the OpenAPI specification textbox.
 
-    b. Select HTTPs as the URL scheme.
+    b. Select **HTTPs** as the URL scheme.
 
-    c. Enter events in the API URL suffix textbox.
+    c. Enter **events** in the API URL suffix textbox.
 
-    d. Note the URL under "Base URL". You will use this URL in your website configuration in the next exercise.
+    d. Select **Unlimited** in the Products.
 
-    e. Select Unlimited in the Products.
-
-    f. Select Create.
+    e. Select **Create**.
 
     ![On the Create from OpenAPI specification window, fields are set to previously defined settings and Base URL is circled.](media/image145.png "Create from OpenAPI specification")
 
     > **Note**: You would typically create a new product for each environment in a scenario like this one. For example, Development, Testing, Acceptance and Production (DTAP) and issue a key for your internal application usage for each environment, managed accordingly.
 
-6.  Select Settings in the ContosoEvents.WebApi toolbar, update Web Service URL so that it uses HTTP instead of HTTPS, and select Save.
+6.  Select **Settings** in the ContosoEvents.WebApi toolbar, update **Web Service URL** to point to your published API endpoint.  Ensure that it uses HTTP instead of HTTPS, and select **Save**.
 
     ![On the right of ContosoEvents.WebApi api blade, the Settings tab is selected, and Web Service URL and Save are circled.](media/image145a.png "")
 
-7.  Select ContosoEvents.WebApi from the All APIs list, and then select Design. You will see your API backend endpoint.
+    > **Note**: Notice the URL under "Base URL". You will use this URL in your website configuration in the next exercise.
+
+7.  Select **Design**. you will see your API backend endpoint.
 
     ![In the APIs blade, ContosoEvents.WebApi is circled. On the right, the Design tab is selected, and the ContosoEvents.WebApi Backend endpoint URL is circled.](media/image146.png "Publisher portal")
 
@@ -1147,15 +1146,15 @@ In this task, you will import the Web API description to your API Management ser
 
 In this task, you will retrieve the subscription key for the client applications to call the new API Management endpoint.
 
-1.  In the Azure portal, navigate to your API Management service, and from the Overview blade, select Developer portal from the toolbar. This will open a new browser tab, and log you into the Developer portal as an administrator, giving you the rights you need to complete the following steps.
+1.  In the Azure portal, navigate to your API Management service, and from the Overview blade, select **Developer portal** from the toolbar. This will open a new browser tab, and log you into the Developer portal as an administrator, giving you the rights you need to complete the following steps.
 
     ![In the API Management service pane, on the toolbar, the Developer portal button is circled.](media/image147.png "API Management service")
 
-2.  In the Developer portal, expand the Administrator menu, and then select Profile.
+2.  In the Developer portal, expand the Administrator menu, and then select **Profile**.
 
     ![In the Contoso Events API Developer portal, the down-arrow next to Administrator is circled, and in its drop-down menu, Profile is circled.](media/image148.png "Developer portal")
 
-3.  Select Show for the Primary Key of the Unlimited subscription to reveal it.
+3.  Select **Show** for the Primary Key of the Unlimited subscription to reveal it.
 
     ![In the Your Subscriptions section, for the Unlimited (default) subscription\'s Primary key, the Show button is circled.](media/image149.png "Your Subscriptions section")
 
@@ -1177,11 +1176,11 @@ In this task, you will provide the API Management key in a setting for the Funct
 
     ![In the Function Apps pane, on the left under Function Apps, contosoeventsfn-SUFFIX is circled. On the right under Configured features, Application settings is circled.](media/image103.png "Function Apps")
 
-4.  Scroll down to the Application settings section, select +Add new setting, and enter contosoeventsapimgrkey into the name field, and paste the API key you copied from the Developer portal above into the value field.
+4.  Scroll down to the Application settings section, select *+Add new* setting, and enter **contosoeventsapimgrkey** into the name field, and paste the API key you copied from the Developer portal above into the value field.
 
     ![In the Application settings section, in the name field displays contosoeventsapimgrkey, and the copied API key displays in the value field. At the bottom, the + Add new setting button is circled.](media/image151.png "Application settings section")
 
-5.  Scroll back to the top of the Application Settings tab, and select Save to apply the change.
+5.  Scroll back to the top of the Application Settings tab, and select **Save** to apply the change.
 
     ![Screenshot of the Save button.](media/image105.png "Save button")
 
@@ -1218,19 +1217,19 @@ In this task, you will update configuration settings to communicate with the API
 
 In this task, you will test the web application calls to API Management by creating an order through the UI.
 
-1.  Using Solution Explorer in Visual Studio, expand the Web folder, then right-click the ContosoEvents.Web project, select Debug, and then Start new instance.
+1.  Using Solution Explorer in Visual Studio, expand the Web folder, then right-click the ContosoEvents.Web project, select **Debug**, and then **Start new instance**.
 
     ![In Solution Explorer, ContosoEvents.Web is circled, and its right-click menu displays.](media/image154.png "Solution Explorer")
 
-2.  If prompted about whether you would like to trust the IIS Express SSL certificate, select Yes, then select Yes again at the Security Warning prompt.
+2.  If prompted about whether you would like to trust the IIS Express SSL certificate, select **Yes**, then select **Yes** again at the Security Warning prompt.
 
     ![A Microsoft Visual Studio warning message displays, asking if you trust the IIS Express SSL certificate.](media/image155.png "Microsoft Visual Studio warning message")
 
-3.  If you receive a warning in the browser that "Your connection is not private," select Advanced.
+3.  If you receive a warning in the browser that "Your connection is not private," select **Advanced**.
 
     ![On the Your connection is not private warning, the Advanced button is circled.](media/image156.png "Your connection is not private warning")
 
-4.  Under Advanced, select Proceed to localhost (unsafe).
+4.  Under Advanced, select **Proceed to localhost (unsafe)**.
 
     ![The Advanced warning displays once you select the Advanced button. It explains that the server culd not prove that it is localhost, and its security certificate does not specify SANs. At the bottom, the Proceed to localhost (unsafe) button is circled.](media/image157.png "Advanced section")
 
@@ -1238,7 +1237,7 @@ In this task, you will test the web application calls to API Management by creat
 
     ![The Contoso Events website displays, with information about the Seattle Rock and Rollers concert tickets. At the bottom of the page is the Order tickets now button.](media/image158.png "Contoso Events website")
 
-6.  Note the event presented on the home page has an Order Tickets Now button. Select that to place an order.
+6.  Note the event presented on the home page has an **Order Tickets Now** button. Select that to place an order.
 
 7.  Choose the number of tickets for the order, and then scroll down to see the billing fields.
 
@@ -1248,7 +1247,7 @@ In this task, you will test the web application calls to API Management by creat
 
     ![On the Billing page, on the left under Billing, the Email, First name, and Last name fields are circled. Under Credit Card, the Cardholder Name field is circled, as is the Place Order button at the bottom. ](media/image160.png "Billing information page")
 
-9.  Select Place Order.
+9.  Select **Place Order**.
 
 10. Once the order is queued for processing, you will be redirected to a results page as shown in the following screen shot. It should indicate Success and show you the order id that was queued as confirmation.
 
@@ -1264,13 +1263,13 @@ In this task, you will publish the web application to Azure.
 
     ![In Solution Explorer, on the right-click menu for ContosoEvents.Web, Publish is circled.](media/image162.png "Solution Explorer")
 
-2.  Select the App Service option, choose Select Existing, then select Publish.
+2.  Select the App Service option, choose Select Existing, then select **Publish**.
 
     ![Under Publish, the Microsoft Azure App Service tile is circled. Under this tile, the radio button is selected for Select Existing, and is circled. At the bottom, the Publish button is circled.](media/image163.png "Publish section")
 
 3.  You may be prompted to log in to your Microsoft Account with access to the subscription where you created the resources for this hands-on lab. After logging in, you can select the subscription in the App Service screen.
 
-4.  From the list below, expand the Resource Group you created previously (hands-on-labs), and select the web app contosoeventsweb-SUFFIX. Select OK.
+4.  From the list below, expand the Resource Group you created previously (hands-on-labs), and select the web app **contosoeventsweb-SUFFIX**. Select **OK**.
 
     ![In the App Service window, in the Resource group pane, the hands-on-labs folder is expanded, and contosoeventsweb-SUFFIX is selected. At the bottom of the window, the OK button is circled.](media/image164.png "App Service window")
 
@@ -1306,7 +1305,7 @@ If you set the upgrade mode to Monitored, Service Fabric will be in full control
 
 Currently, the TicketOrderActor does not have a status property to make it easier to check on the actor order status quickly. In this task, you will modify the Ticket Order State model to add a new status property.
 
-1.  In Visual Studio on the Lab VM, open TicketOrder.cs in the ContosoEvents.Models project, under the Common folder.
+1.  In Visual Studio on the Lab VM, open **TicketOrder.cs** in the ContosoEvents.Models project, under the Common folder.
 
     ![In Solution Explorer, under Common, under ContosoEvents.Models, TicketOrder.cs is circled.](media/image167.png "Solution Explorer")
 
@@ -1363,25 +1362,25 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 In this task, you will configure settings for the Service Fabric application to perform an upgrade.
 
-1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click ContosoEventsApp, and select Publish.
+1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click **ContosoEventsApp**, and select **Publish**.
 
-2.  In the Public Service Fabric Application dialog, select PublishProfiles\\Cloud.xml for the target profile, and check Upgrade the Application.
+2.  In the Public Service Fabric Application dialog, select PublishProfiles\\Cloud.xml for the target profile, and check **Upgrade the Application**.
 
     ![In the Public Service Fabric Application dialog box, in the Target profile field, PublishProfiles\\Cloud.xml is circled. The checkbox for Upgrade the Application is selected and circled.](media/image168.png "Public Service Fabric Application dialog box")
 
-3.  Select Configure Upgrade Settings, under Upgrade the Application. Select Monitored for the upgrade mode, then select OK.
+3.  Select **Configure Upgrade Settings**, under Upgrade the Application. Select **Monitored** for the upgrade mode, then select **OK**.
 
     ![In the Edit Upgrade Settings dialog box, the Upgrade mode is set to Monitored, and is circled.](media/image169.png "Edit Upgrade Settings dialog box")
 
-4.  From the Publish Service Fabric Application dialog, select Manifest Versions.
+4.  From the Publish Service Fabric Application dialog, select **Manifest Versions**.
 
-5.  Change the TicketOrderActorPkg\\Code New Version to 1.1.0. This change will force the actor package and the app to change to 1.1.0 as well.
+5.  Change the **ContosoEvents.TicketOrderActorPkg\\Code -> New Version** to **1.1.0**. This change will force the actor package and the app to change to 1.1.0 as well.
 
     ![In the Edit Versions dialog box, in the Application and Services section, ContosoEventsAppyType is expanded. Under that, ContosoEvents.TicketOrderActorPkg is expanded. Under that, the Code line is circled which shows that the current Code version is 1.0.0, and the new version is 1.1.0.](media/image170.png "Edit Versions dialog box")
 
-6.  Select Save.
+6.  Select **Save**.
 
-7.  Now that the upgrade configuration is set, select Publish.
+7.  Now that the upgrade configuration is set, select **Publish**.
 
 8.  Observe the Visual Studio Output window going through the upgrade process, which can take 5 minutes or more.
 
