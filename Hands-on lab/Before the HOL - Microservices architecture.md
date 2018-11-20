@@ -104,9 +104,9 @@ In this task, you will provision the Service Fabric Cluster in Azure.
 
 -   Node type 1 (Primary): Select to configure required settings. On the Node type configuration blade enter:
 
-    -   Node type name: Enter Web.
+    -   Node type name: Enter **Web**.
 
-    -   Durability tier: Leave Bronze selected.
+    -   Durability tier: Leave **Bronze** selected.
 
     -   Virtual machine size: Select a VM size of D1\_V2 Standard and select Select on the Choose a size blade.
 

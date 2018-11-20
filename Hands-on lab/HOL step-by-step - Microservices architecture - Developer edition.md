@@ -177,11 +177,11 @@ In this task, you will provision an API Management Service in the Azure portal.
 
     d.  Location: Select the same region used for the hands-on-labs resource group.
 
-    e.  Organization name: Enter Contoso Events.
+    e.  Organization name: Enter **Contoso Events**.
 
     f.  Administrator email: Enter your email address.
 
-    g.  Pricing tier: Select Developer (No SLA).
+    g.  Pricing tier: Select **Developer (No SLA)**.
 
     h.  Select Create.
 
@@ -205,7 +205,7 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
     c.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    d.  OS: Select Windows.
+    d.  OS: Select **Windows**.
 
     e.  App Service plan/location: Select this, select Create new.
 
@@ -279,37 +279,31 @@ In this section, you will create a Storage account for the application to create
     
 2.  In the Create Storage account blade Basics Tab, enter the following:
 
-    a.  Name: Enter a unique name, such as contosoeventsSUFFIX.
+    a.  Subscription: Select your subscription.
 
-    b.  Deployment model: Select Resource manager.
+    b.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    c.  Account kind: Select Storage (general purpose v1).
+    c.  Name: Enter a unique name, such as **contosoeventsSUFFIX**.
 
     d.  Location: Select the same location as the hands-on-labs resource group.
 
-    e.  Replication: Select Locally-redundant storage (LRS).
+    e.  Performance: Select **Standard**.
 
-    f.  Performance: Select Standard.
+    f.  Account kind: Select **Storage (general purpose v1)**.
 
-    g.  Secure transfer required: Leave Disabled.
+    g.  Replication: Select **Locally-redundant storage (LRS)**.
 
-    h.  Subscription: Select your subscription.
-
-    i.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
-
-    j.  Virtual networks: Leave Disabled.
-
-    k.  Select Next : Advanced >.
+    h.  Select Next : Advanced >.
 
     ![In the Create storage account blade Basics Tab, fields are set to the previously defined settings.](media/storage-account-blade-basics.png "Create storage account blade")
 
 3.  Within the Advanced Tab: 
 
-    a. set Secure transfer required to Disabled, and then select Review + create. 
+    a. Set Secure transfer required to **Disabled**, and then select **Review + create** tab. 
 
     ![[In the Create storage account blade Advanced Tab, Secure transfer required is disabled and Review + create is selected.](media/storage-account-blade-advanced.png "Create storage account advanced tab")
 
-    b.  Select Create in the Review + create tab.
+    b.  Select **Create** in the Review + create tab.
 
     ![In the Review + create tab, Create is selected.](media/storage-account-validation-create.png "Review and create storage account")
 
@@ -317,35 +311,34 @@ In this section, you will create a Storage account for the application to create
 
 In this section, you will provision a Cosmos DB account, a Cosmos DB Database and a Cosmos DB collection that will be used to collect ticket orders.
 
-1.  In the Azure portal, select +Create a resource, Databases, then select Azure Cosmos DB.
+1.  In the Azure portal, select +Create a resource, Databases, then select **Azure Cosmos DB**s.
 
     ![In the Azure Portal, New pane, in the left column, Databases is circled. In the side pane, Azure Cosmos DB (Quickstart tutorial) is circled.](media/create-cosmos-db-resource.png "Azure Portal, Create Resource Database Pane")
 
 
 2.  On the Azure Cosmos DB blade, enter the following:
 
-    a.  ID: Enter a unique value, such as contosoeventsdb-SUFFIX
+    a.  Subscription: Select your subscription.
 
-    b.  API: Select SQL.
+    b.  Resource group: Select Use existing, and select the hands-on-labs resource group previously created.
 
-    c.  Subscription: Select your subscription.
+    c.  ID: Enter a unique value, such as **contosoeventsdb-SUFFIX**
 
-    d.  Resource group: Select Use existing, and select the hands-on-labs resource group previously created.
+    d.  API: Select **Core (SQL)**.
 
     e.  Location: Select the location used for the hands-on-lab resource group. If this location is not available, select one close to that location that is available.
 
-    f.  Select Review + create.
+    f.  Select **Review + create**.
 
-    
     ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/cosmos-db-create-settings.png "Azure Cosmos DB blade")
     
-    g. Select Create to provision the Cosmos DB after the validation has passed.
+    g. Select **Create** to provision the Cosmos DB after the validation has passed.
  
 3.  When the Cosmos DB account is ready, navigate to the hands-on-labs Resource Group, and select your Cosmos DB account from the list.
 
     ![In the Resource Group pane, under Name, the contosoeventsdb-SUFFIX Azure Cosmos DB account is circled.](media/image60.png "Resource Group pane")
 
-4.  On the Cosmos DB account blade, under Collections in the side menu, select Browse.
+4.  On the Cosmos DB account blade, under Collections in the side menu, select **Browse**.
 
     ![In the Cosmos DB account blade, Collections section, Browse is circled.](media/image61.png "Cosmos DB account blade")
 
