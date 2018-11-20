@@ -523,7 +523,7 @@ In this task, you will browse to the Service Fabric Explorer, and view the local
 
 In this task, you will complete features of the Contoso Events POC so that placing an order also syncs with the back-end data store. You will also update the configuration settings to reference the Azure resources you previously created correctly.
 
-1.  Return to Visual Studio, and from Solution Explorer, open **Local.1Node.xml**, located in the ApplicationParameters folder under the ContosoEventsApp project in the Service Fabric folder.
+1.  Return to Visual Studio, and from Solution Explorer, open **Local.1Node.xml**, located in the **ApplicationParameters** folder under the ContosoEventsApp project in the Service Fabric folder.
 
     ![In Solution Explorer, the following path is expanded in the tree view: Service Fabric\\ContosoEventsApp\\ApplicationParameters. In ApplicationParameters, Local.1Node.xml is circled.](media/image87.png "Solution Explorer")
 
@@ -718,7 +718,7 @@ You will also create a second function that will be used to generate load agains
 
     ![On the Integrate Screen, under Outputs, + New Output is circled.](media/image117.png "Integrate Screen")
 
-20. In the outputs box, locate and select Azure Cosmos DB, then select Select.
+20. In the outputs box, locate and select **Azure Cosmos DB**, then select **Select**.
 
     ![In the Azure Cosmos DB output window, next to the Azure Cosmos DB account connection field, the New button is circled.](media/image118.png "Azure Cosmos DB output window")
 
@@ -736,7 +736,7 @@ You will also create a second function that will be used to generate load agains
 
     ![Screenshot of Azure Cosmos DB output window with the values specified above entered into the fields.](media/image119.png "Azure Cosmos DB output window")
 
-    f.  Select Save. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
+    f.  Select **Save**. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
 
     ![In the Integrate window, the fields under both Triggers and Outputs are circled. ](media/image120.png "Integrate window")
 
@@ -864,11 +864,11 @@ In this exercise, you will publish the Service Fabric Application to the Azure c
 
 In this task, you will deploy the application to a hosted Service Fabric Cluster.
 
-1.  In Visual Studio on your Lab VM, within Solution Explorer, open Cloud.xml from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
+1.  In Visual Studio on your Lab VM, within Solution Explorer, open **Cloud.xml** from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
 
     ![In the Solution Explorer window, the following path is expanded: Service Fabric\\ContosoEventsApp\\ApplicationParameters. Under ApplicationParameters, Cloud.xml is circled.](media/image135.png "Solution Explorer window")
 
-2.  Open Local.1Node.XML from the same folder.
+2.  Open **Local.1Node.XML** from the same folder.
 
 3.  To make sure you are using the same parameters you setup earlier for the Local cluster, copy just the following parameters from Local.1Node.xml to Cloud.xml, overwriting the existing parameters in Cloud.xml, then save Cloud.xml.
 
@@ -1168,7 +1168,7 @@ If you set the upgrade mode to Monitored, Service Fabric will be in full control
 
 Currently, the TicketOrderActor does not have a status property to make it easier to check on the actor order status quickly. In this task, you will modify the Ticket Order State model to add a new status property.
 
-1.  In Visual Studio on the Lab VM, open **TicketOrder.cs** in the ContosoEvents.Models project, under the Common folder.
+1.  In Visual Studio on the Lab VM, open **TicketOrder.cs** in the **ContosoEvents.Models** project, under the **Common** folder.
 
     ![In Solution Explorer, under Common, under ContosoEvents.Models, TicketOrder.cs is circled.](media/image167.png "Solution Explorer")
 
@@ -1196,7 +1196,7 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 4.  Save TicketOrder.cs.
 
-5.  From Solution Explorer, open **TicketOrderActor.cs** in the ContosoEvents.TicketOrderActor project, under the Service Fabric folder.
+5.  From Solution Explorer, open **TicketOrderActor.cs** in the **ContosoEvents.TicketOrderActor** project, under the **Service Fabric** folder.
 
 6.  Edit the TicketOrderActor to add the new order status. Uncomment all TODO: Exercise 6 -- Task 1. The change will uncomment several lines that set the new Status field to one of the OrderStatuses enumeration values. Be sure to find all of the following comments (there are 6 total):
 
@@ -1225,7 +1225,7 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 In this task, you will configure settings for the Service Fabric application to perform an upgrade.
 
-1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click ContosoEventsApp, and select **Publish**.
+1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click **ContosoEventsApp**, and select **Publish**.
 
 2.  In the Public Service Fabric Application dialog, select **PublishProfiles\\Cloud.xml** for the target profile, and check **Upgrade the Application**.
 
@@ -1303,7 +1303,7 @@ In this exercise, you will deploy an update that causes issues with the applicat
 
 In this task, you will add code to produce health checks that force the monitored upgrade to roll back to the original version of the service.
 
-1.  In Visual Studio, open TicketOrderService.cs located in the ContosoEvents.TicketOrderService project in the Service Fabric folder.
+1.  In Visual Studio, open **TicketOrderService.cs** located in the **ContosoEvents.TicketOrderService** project in the **Service Fabric** folder.
 
 2.  Locate TODO: Exercise 7 - Task 1 and uncomment:
 
@@ -1322,7 +1322,7 @@ In this task, you will perform an upgrade, and watch a rollback of the upgrade.
 
 2.  From the Publish Service Fabric Application dialog, check **Upgrade the Application**, and select **Manifest Versions**.
 
-3.  Change the TicketOrderServicePkg\\Code New Version to 1.1.0. This change will force the service package be change to 1.1.0 and the application to 1.2.0.
+3.  Change the **TicketOrderServicePkg\\Code** New Version to **1.1.0**. This change will force the service package be change to 1.1.0 and the application to 1.2.0.
 
     ![In the Edit Versions dialog box, in the Application and Services section, ContosoEventsAppyType is expanded. Under that, ContosoEvents.TicketOrderServicePkg is expanded. Under that, the Code line is circled which shows that the current Code version is 1.0.0, and the new version is 1.1.0.](media/image178.png "Edit Versions dialog box")
 
@@ -1375,11 +1375,11 @@ In this task, you will simulate a load test of 50 orders against the cluster usi
 
 1.  Navigate to the published Web application at a URL like <https://contosoeventsweb-SUFFIX.azurewebsites.net>.
 
-2.  Select the Load Test menu. Optionally give a new name to the tag for tracking. Set load to 50 requests. Choose Start Load Test.
+2.  Select the **Load Test** menu. Optionally give a new name to the tag for tracking. Set load to **50** requests. Choose **Start Load Test**.
 
     ![In the Load Test section, the Event is Seattle Rock and Rollers. The Tag is load-test-1, and the number of requests is set to 50.](media/image183.png "Load Test section")
 
-3.  Navigate to the Load Test Status menu. It shows you the partitions that were created for the ticket order service (reliable queue).
+3.  Select the **LoadTest Status** menu. It shows you the partitions that were created for the ticket order service (reliable queue).
 
     ![The Simulation Status window displays the following columns: Partition ID, Partition Status, Node Name, Health State, and Items in Queue.](media/image184.png "Simulation Status window")
 
@@ -1401,7 +1401,7 @@ In this task, you will perform several load tests against the Cluster using diff
 
 In this task, you will simulate a load test against the Cluster using the current partition count (that is, 5) of the Ticket Order Service.
 
-1.  Using the Service Fabric Web API Swagger UI, please issue a POST request against /api/admin/simulate/orders.
+1.  Using the Service Fabric Web API Swagger UI, please issue a POST request against **/api/admin/simulate/orders**.
 
     ![In the POST method for api/admin/simulate/orders section, the request field, which is empty, has a callout saying to place the simulation request here.](media/image190.png "POST method for api/admin/simulate/orders section")
 
@@ -1480,7 +1480,7 @@ In this task, you will simulate a load test against the Cluster using the curren
 
 In this task, you will clean the existing orders from the Cosmos DB, so you can start with clean slate. This step is optional but because we are going to rely on reporting about orders in the database, it is much better to keep in the database only the orders that were simulated for load testing.
 
-1.  In the Swagger UI for your Service Fabric Web API, please access the admin APIs DELETE /api/admin/orders and select Try it out. When you get back a 200-response code, the orders will have been deleted from the Cosmos DB.
+1.  In the Swagger UI for your Service Fabric Web API, please access the admin APIs **DELETE /api/admin/orders** and select **Try it out**. When you get back a 200-response code, the orders will have been deleted from the Cosmos DB.
 
     ![On the Swagger Endpoint webpage for ContosoEvents.WebApi, under Admin, the Delete method for /api/admin/orders section is expanded. Current Response Messages have statuses of 400 and 404.](media/image185.png "Swagger Endpoint webpage")
 
@@ -1676,17 +1676,17 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     ![In the Profile menu, a callout points to Directory.](media/image196.png "Profile menu")
 
-3.  From the Settings blade, select Applications.
+3.  From the Settings blade, select **Applications**.
 
     ![In the Settings blade, under Manage, a callout arrow points to Applications.](media/image197.png "Settings blade")
 
-4.  Select +Add.
+4.  Select **+Add**.
 
-5.  Set the application name to WebApp.
+5.  Set the application name to **WebApp**.
 
-6.  Select Yes for include Web App / Web API.
+6.  Select **Yes** for include Web App / Web API.
 
-7.  Select Yes for Allow implicit flow.
+7.  Select **Yes** for Allow implicit flow.
 
 8.  Add a reply URL for local testing: <https://localhost:44327/>.
 
@@ -1694,127 +1694,89 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     > **Note**: Make sure to include the closing / or the configuration will not work.
 
-10. Choose Create.
+10. Choose **Create**.
 
     ![On the New application blade, fields are set to the previously defined settings.](media/image198.png "New application blade")
 
 11. In the Settings blade, select **Identity providers**.
 
-12. Select Username for Local accounts.
+12. Select **Username** for Local accounts.
 
 13. Choose **Save**.
 
     ![On the Settings blade, under Manage, Identity providers is selected. in the Identity provider pane, Username is selected in the Local Accounts drop-down menu.](media/image199.png "Settings blade")
 
-14. In the Settings blade, select **Sign-up policies**.
+14. In the Settings blade, select **User flows**.
 
-15. Select **+ Add**.
+15. Select **+ New user flow**, then select **All**
 
-16. Set the policy name to **signup**.
+16. Select **Sign up**.
+
+17. Set the policy name to **signup**.
 
     ![On the Settings blade, under Policies, Sign-up policies is selected. in the Sign-up policies pane, the Add button is selected. In the Add sign-up policy pane, the Name field is set to signup.](media/image200.png "Settings blade")
 
-17. Select **Identity providers**.
+18. Under **Identity providers**, check the **User ID Signup** chekcbox
 
-18. Select User ID signup.
+19. Select **Create**.
 
-19. Choose **OK**.
+20. Select **User attributes**, select **Email Address, Given Name, and Surname**.
 
-    ![In the Add sign-up policy pane, Identity providers is selected. In the Select identity providers pane, User ID signup is selected.](media/image201.png "Add sign-up policy pane")
-
-20. Select Sign-up attributes.
-
-21. Select Email Address, Given Name, and Surname.
-
-22. Choose **OK**.
+21. Select **Save**.
 
     ![In the Add sign-up policy pane, Sign-up attributes is selected. In the Sign-up attributes pane, the following three attributes are selected: Email Address, Given Name, and Surname.](media/image202.png "Add sign-up policy pane")
 
-23. Select **Application Claims**.
+22. Select **Application claims**, select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-24. Select Email Addresses, Given Name, Surname, and User's Object ID.
+23. Select **Save**.
 
-25. Choose **OK**.
+24. Select **Properties**, under **Token compatability settings**, select **acr** under Claim representing user flow.
 
-    ![In the Add sign-up policy pane, application claims is selected. In the Select application claims pane, the following application claims are selected: City, Email Addresses, Given Name, Surname, and User\'s Object ID.](media/image203.png "Add sign-up policy")
-
-26. Select Token, session & SSO config.
-
-27. Select acr under Claim representing policy ID.
-
-28. Choose **OK**.
+25. Choose **Save**.
 
     ![In the Edit Policy pane, Token, session & SSO config (Default) is selected. In the Token, session & SSO config pane, the Claim representing policy ID toggle button is set to acr, and is circled.](media/image204.png "Edit Policy pane")
 
-29. Choose **Create**.
+26. In the Settings blade, select **+ New user flow**, then select **All**
 
-30. In the Settings blade, select Sign-in policies.
+27. Select **Sign in**
 
-31. Select **+ Add**.
+27. Set the policy name to **signin**.
 
-32. Set the policy name to **signin**.
+33. Under **Identity providers**, check **Local Account Signin**.
 
-    ![In the Settings blade, under Policies, Sign-in policies is selected. In the Sign-in policies pane, the Add button is selected. In the Add Sign-in policy blade, the policy name is set to signin.](media/image205.png "Settings blade")
-
-33. Select **Identity providers**.
-
-34. Select Local Account Signin.
-
-35. Select **OK**.
-
-    ![In the Add sign-in policy pane, Identity providers is selected. In the Select identity providers pane, Local Account Signin is selected.](media/image206.png "Add sign-in policy pane")
+35. Select **Create**.
 
 36. Select **Application Claims**.
 
-37. Select Email Addresses, Given Name, Surname, and User's Object ID.
+37. Select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-38. Choose **OK**.
+38. Select **Save**.
 
-    ![In the Add sign-in policy pane, Application claims is selected. In the Select application claims pane, the following application claims are selected: Email Addresses, Given Name, Surname, and User\'s Object ID.](media/image207.png "Add sign-in policy pane")
+39. Select **Properties**
 
-39. Select Token, session & SSO config.
+40. Select **acr** under **Token compatability settings**.
 
-40. Select acr under Claim representing policy ID.
+41. Choose **Save**.
 
-41. Choose **OK**.
+43. In the Settings blade, select **+ New user flow**, then select **All**
 
-    ![In the Edit Policy pane, Token, session & SSO config (Default) is selected. In the Token, session & SSO config pane, the Claim representing policy ID toggle button is set to acr, and is circled.](media/image208.png "Edit Policy pane")
-
-42. Choose **Create**.
-
-43. In the Settings blade, select Profile editing policies.
-
-44. Select **+ Add**.
+44. Select **Profile editing**.
 
 45. Set the policy name to **profileedit**.
 
-    ![In the Profile editing policy pane, the Add button is selected. In the Add profile editing policy pane, the Name field is set to profileedit.](media/image209.png "Profile editing policy pane")
+46. Under **Identity providers**, select **Local Account Signin**.
 
-46. Select **Identity providers**.
+48. Select **Create**.
 
-47. Select Local Account Signin.
+49. Select **User attributes**, then select **Given Name** and **Surname**.
 
-48. Choose **OK**.
+51. Choose **Save**.
 
-    ![In the Add profile editing pane, Identity providers is selected. In the Select identity providers pane, Local Account Signin is selected.](media/image210.png "Add profile editing pane")
+52. Select **Application Claims**.
 
-49. Select Profile attributes.
+53. Select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-50. Select Given Name and Surname.
-
-51. Choose **OK**.
-
-    ![In the Add profile editing pane, Profile attributes is selected. In the Select Profile attributes pane, the Given Name and Surname attributes are selected.](media/image211.png "Add profile editing pane")
-
-52. Select **A*pplication Claims**.
-
-53. Select Email Addresses, Given Name, Surname, and User's Object ID.
-
-54. Choose **OK**.
-
-    ![In the Add profile editing pane, Application claims is selected. In the Select Application claims pane, the following application claims are selected: Email Addresses, Given Name, Surname, and Users\'s Object ID.](media/image212.png "Add profile editing pane")
-
-55. Choose **Create**.
+54. Choose **Save**.
 
 56. In the Settings blade, select **Applications**.
 
@@ -1824,7 +1786,7 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     ![In the WebApp section, a callout arrow points to the Application ID copy button.](media/image213.png "WebApp section")
 
-59. In the Settings blade, select All Policies. You should see three policies and the B2C instance. Take note of the names for these policies with the prefix 'B2C' as these names will be used in the next task.
+59. In the Settings blade, select **User flows**. You should see three policies and the B2C instance. Take note of the names for these policies with the prefix 'B2C' as these names will be used in the next task.
 
     ![In the Settings blade, under Policies, All policies is selected. In the All policies pane, three policies display: B2C\_1\_profileedit, B2C\_1\_signin, and B2C\_1\_signup.](media/image214.png "Settings blade")
 
@@ -1852,11 +1814,11 @@ Azure Active Directory B2C:
 
 2.  For the ida:ClientId enter the Application ID generated for your B2C application created in the previous task.
 
-3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., B2C\_1\_signup).
+3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., **B2C\_1\_signup**).
 
-4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., B2C\_1\_signin).
+4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., **B2C\_1\_signin**).
 
-5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., B2C\_1\_profileedit).
+5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., **B2C\_1\_profileedit**).
 
 ### Task 3: Add security features to the web application
 
@@ -1871,14 +1833,14 @@ In this task, you will enable security features that will leverage the configura
     ConfigureAuth(app);
     ```
 
-3.  Open FilterConfig.cs from the App\_Start folder, and uncomment the line below the TODO item. This will provide default protection for all routes so that authentication is required unless the route allows anonymous callers.
+3.  Open **FilterConfig.cs** from the **App\_Start** folder, and uncomment the line below the TODO item. This will provide default protection for all routes so that authentication is required unless the route allows anonymous callers.
 
     ```
     //TODO Exercise 10 - Task 3
     filters.Add(new Policies.PolicyAuthorize { Policy = Startup.SignInPolicyId });
     ```
 
-4.  Open \_Layout.cshtml under Views\\Shared and remove the 3 lines following the TODO item, and uncomment area below it. This will prevent the menu items to be hidden unless the user is authenticated. It will look like this when you complete the change.
+4.  Open **\_Layout.cshtml** under **Views\\Shared** and remove the 3 lines following the TODO item, and uncomment area below it. This will prevent the menu items to be hidden unless the user is authenticated. It will look like this when you complete the change.
 
     ```
     @\*TODO Exercise 10 - Task 3 \*@
@@ -1931,7 +1893,7 @@ In this task, you will test the web application and register yourself as a user 
 
 1.  Using Solution Explorer in Visual Studio, open the Web folder.
 
-2.  Right-click the ContosoEvents.Web project, select Debug, and then Start new instance.
+2.  Right-click the ContosoEvents.Web project, select **Debug**, and then **Start new instance**.
 
 3.  When the application launches you will see the website home page.
 
