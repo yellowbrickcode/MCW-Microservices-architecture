@@ -150,7 +150,7 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
     ![On the Visual Studio Toolbar, The Platforms drop-down carat is circled, and in its drop-down menu, x64 is circled.](media/image46.png "Visual Studio Toolbar")
 
-9.  Build the solution, by selecting Build from the Visual Studio menu, then selecting Build Solution.
+9.  Build the solution, by selecting **Build** from the Visual Studio menu, then selecting **Build Solution**.
 
     ![The Build button is circled on the Visual Studio menu. Under that, Build Solution is circled.](media/image47.png "Visual Studio menu")
 
@@ -160,16 +160,16 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 In this task, you will provision an API Management Service in the Azure portal.
 
-1.  In the Azure portal, select +Create a resource, enter "API Management" into the Search the Marketplace box, then select API management from the results.
+1.  In the Azure portal, select **+Create a resource**, enter **API Management** into the Search the Marketplace box, then select API management from the results.
 
 ![In the Azure Portal Everything pane, API Management is typed in the search field. Under Results, API Management is circled.](media/create-api-management-resource.png "Azure Portal Everything pane")
 
 
-2.  In the API Management blade, select Create.
+2.  In the API Management blade, select **Create**.
 
 3.  In the API Management service blade, enter the following:
 
-    a.  Name: Enter a unique name, such as contosoevents-SUFFIX.
+    a.  Name: Enter a unique name, such as **contosoevents-SUFFIX**.
 
     b.  Subscription: Choose your subscription.
 
@@ -183,7 +183,7 @@ In this task, you will provision an API Management Service in the Azure portal.
 
     g.  Pricing tier: Select **Developer (No SLA)**.
 
-    h.  Select Create.
+    h.  Select **Create**.
 
     ![On the API Management service blade, fields are set to the previously defined settings.](media/image49.png "API Management service blade")
 
@@ -193,13 +193,13 @@ In this task, you will provision an API Management Service in the Azure portal.
 
 In these steps, you will provision a Web App in a new App Service Plan.
 
-1.  Select +Create a resource in the Azure Portal, select Web, then select Web App.
+1.  Select **+Create a resource** in the Azure Portal, select **Web**, then select **Web App**.
 
     ![In the Azure Portal, New pane, under Azure Marketplace, Web and Web App are both circled.](media/create-web-app-resource.png "Azure Portal, Create a resource pane")
 
 2.  On the Create Web App blade, enter the following:
 
-    a.  App name: Enter a unique name, such as contosoeventsweb-SUFFIX.
+    a.  App name: Enter a unique name, such as **contosoeventsweb-SUFFIX**.
 
     b.  Subscription: Select your subscription.
 
@@ -209,18 +209,17 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
     e.  App Service plan/location: Select this, select Create new.
 
-        - App service plan: Enter contosoeventsplan-SUFFIX.
+        - App service plan: Enter **contosoeventsplan-SUFFIX**.
 
         - Location: Select the same location you have been using for other resources in this lab.
 
-        - Pricing tier: Select S1 Standard.
+        - Pricing tier: Select **S1 Standard**.
 
-        - Select OK.
-
+        - Select **OK**.
     
     f.  Select Code for the Publish setting.
     
-    g.  Select Create to provision the Web App.
+    g.  Select **Create** to provision the Web App.
 
     ![On the Create Web App blade, fields are set to the previously defined settings.](media/create-web-app.png "Create Web App blade")
     
@@ -237,33 +236,33 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
 In this task, you will provision a Function App using a Consumption Plan. By using a Consumption Plan, you enable dynamic scaling of your Functions.
 
-1.  Select +Create a resource in the Azure Portal, and enter "Function App" in the Search the Marketplace box, then select Function App from the results.
+1.  Select **+Create a resource** in the Azure Portal, and enter "Function App" in the Search the Marketplace box, then select **Function App** from the results.
 
    ![In the Azure Portal Everything pane, the search field is set to Function App. Under Results, Function App is circled.](media/create-function-app-resource.png "Azure Portal Create Function App")
 
-2.  Select Create on the Function App blade.
+2.  Select **Create** on the Function App blade.
 
 3.  On the Create Function App blade, enter the following:
 
-    a.  App name: Enter a unique name, such as contosoeventsfn-SUFFIX.
+    a.  App name: Enter a unique name, such as **contosoeventsfn-SUFFIX**.
 
     b.  Subscription: Select your subscription.
 
     c.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    d.  OS: Select Windows.
+    d.  OS: Select **Windows**.
 
-    e.  Hosting Plan: Select Consumption Plan.
+    e.  Hosting Plan: Select **Consumption Plan**.
 
     f.  Location: Select the same location as the hands-on-labs resource group.
 
-    g.  Runtime Stack: .NET
+    g.  Runtime Stack: **.NET**
 
     h.  Storage: Leave Create new selected, and accept the default name.
 
-    i.  Application Insights: Select Off.
+    i.  Application Insights: Select **Off**.
 
-    j.  Select Create to provision the new Function App.
+    j.  Select **Create** to provision the new Function App.
 
     ![In the Function App blade, fields are set to the previously defined settings.](media/create-first-function-app.png "Function App blade")
     
@@ -293,7 +292,7 @@ In this section, you will create a Storage account for the application to create
 
     g.  Replication: Select **Locally-redundant storage (LRS)**.
 
-    h.  Select Next : Advanced >.
+    h.  Select **Next : Advanced >**.
 
     ![In the Create storage account blade Basics Tab, fields are set to the previously defined settings.](media/storage-account-blade-basics.png "Create storage account blade")
 
@@ -358,7 +357,7 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
     e.  Throughput: Enter **2500**.
 
-    f.  Select OK to create the new collection.
+    f.  Select **OK** to create the new collection.
 
     ![On the Add Collections blade, fields are set to the previously defined settings.](media/image63.png "Add Collections blade")
 
@@ -401,7 +400,7 @@ The design also calls for saving the state of the ticket order to a Cosmos DB co
 
 In this task, you will write code to process the cancellation of an order by interacting with the Ticket Order Actor. To cancel an order, a Ticket Order Actor instance must be retrieved, and the CancelTicket operation it provides is invoked that changes the actor's state to reflect a "canceled" status.
 
-1.  On your Lab VM, with the ContosoEventsPoC solution open in Visual Studio, use the Solution Explorer to open the TicketOrderActor.cs file, in the Service Fabric folder, under the ContosoEvents.TicketOrderActor project.
+1.  On your Lab VM, with the ContosoEventsPoC solution open in Visual Studio, use the Solution Explorer to open the **TicketOrderActor.cs** file, in the Service Fabric folder, under the ContosoEvents.TicketOrderActor project.
 
     ![In the Solution Explorer window, the following path is expanded: Service Fabric\\ContosoEvents.TicketOrderActor. Under ContosoEvents.TicketOrderActor, TicketOrderActor.cs is circled.](media/image68.png "Solution Explorer window")
 
@@ -660,7 +659,7 @@ In this task, you will browse to the Service Fabric Explorer, and view the local
 
 In this task, you will complete features of the Contoso Events POC so that placing an order also syncs with the back-end data store. You will also update the configuration settings to reference the Azure resources you previously created correctly.
 
-1.  Return to Visual Studio, and from Solution Explorer, open Local.1Node.xml, located in the ApplicationParameters folder under the ContosoEventsApp project in the Service Fabric folder.
+1.  Return to Visual Studio, and from Solution Explorer, open **Local.1Node.xml**, located in the ApplicationParameters folder under the ContosoEventsApp project in the Service Fabric folder.
 
     ![In Solution Explorer, the following path is expanded in the tree view: Service Fabric\\ContosoEventsApp\\ApplicationParameters. In ApplicationParameters, Local.1Node.xml is circled.](media/image87.png "Solution Explorer")
 
@@ -814,11 +813,11 @@ You will also create a second function that will be used to generate load agains
 
 11.  In the Create Function blade, enter the following:
     
-    a.  Name: ProcessOrderExternalizations
+    a.  Name: **ProcessOrderExternalizations**
     
-    b.  Queue name: contosoevents-externalization-requests
+    b.  Queue name: **contosoevents-externalization-requests**
 
-    c.  Storage account connection: Select contosoeventsstore
+    c.  Storage account connection: Select **contosoeventsstore**
     
 ![The values above are entered into the Azure Queue Storage trigger settings.](media/create-queue-storage-trigger.png  "Queue trigger settings")
 
@@ -838,7 +837,7 @@ You will also create a second function that will be used to generate load agains
 
     ![In the Azure Cosmos DB output window, next to the Azure Cosmos DB account connection field, the New button is circled.](media/image118.png "Azure Cosmos DB output window")
 
- > **Note**: If prompted to install extensions, Select Install and wait for the extensions to finish installing.
+ > **Note**: If prompted to install extensions, Select **Install** and wait for the extensions to finish installing.
 
 15. On the Azure Cosmos DB output screen, enter the following:
 
