@@ -108,16 +108,16 @@ In this task, you will provision the Service Fabric Cluster in Azure.
 
     -   Durability tier: Leave **Bronze** selected.
 
-    -   Virtual machine size: Select a VM size of D1\_V2 Standard and select Select on the Choose a size blade.
+    -   Virtual machine size: Select a VM size of **D1\_V2 Standard** and select Select on the Choose a size blade.
 
         ![On the Cluster configuration blade, under Virtual Machine Size, D1\_V2 Standard is indicated.](media/ClusterConfigurationBlade.png "Cluster configuration blade")
        
 
     -   Single node cluster: Leave unchecked.
 
-    -   Initial VM scale set capacity: Leave set to 5.
+    -   Initial VM scale set capacity: Leave set to **5**.
 
-    -   Custom endpoints: Enter 8082. This will allow the Web API to be accessible through the cluster.
+    -   Custom endpoints: Enter **8082**. This will allow the Web API to be accessible through the cluster.
 
     -   Enable reverse proxy: Leave unchecked.
 
