@@ -128,11 +128,11 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 1.  On your Lab VM, download the starter project from <http://bit.ly/2MJgitO>. 
     >**Note**: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.
 
-2.  Unzip the contents to the folder C:\\handsonlab.
+2.  Unzip the contents to the folder **C:\\handsonlab**.
 
 3.  Locate the solution file (C:\\handsonlab\\ContosoEventsPoC\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017.
 
-4.  If prompted about how you want to open the file, select Visual Studio 2017, and select OK.
+4.  If prompted about how you want to open the file, select **Visual Studio 2017**, and select **OK**.
 
     ![In the How do you want to open this file dialog box, Visual Studio 2017 is selected.](media/image43.png "How do you want to open this file?")
 
@@ -146,11 +146,17 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 7.  If you are missing any prerequisites (listed under Requirements above), you may be prompted to install these at this point.
 
-8.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar.
+8.  Verify your Visual Studio version is 15.4.0 or higher.
+
+    a.  Click **Help** in the menu, then select **About Microsoft Visual Studio**.
+
+    b.  If the version is not 15.4.0, you will need to update it.  Click **OK**, then click **View** in the menu.  Select **Notifications**, you should see an entry for **Visual Studio Update is available***.  Select it and then click **Update** to update your instance.
+
+9.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar.
 
     ![On the Visual Studio Toolbar, The Platforms drop-down carat is circled, and in its drop-down menu, x64 is circled.](media/image46.png "Visual Studio Toolbar")
 
-9.  Build the solution, by selecting **Build** from the Visual Studio menu, then selecting **Build Solution**.
+10.  Build the solution, by selecting **Build** from the Visual Studio menu, then selecting **Build Solution**.
 
     ![The Build button is circled on the Visual Studio menu. Under that, Build Solution is circled.](media/image47.png "Visual Studio menu")
 
