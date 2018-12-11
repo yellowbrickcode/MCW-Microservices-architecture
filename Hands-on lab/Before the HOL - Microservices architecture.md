@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+November 2018
 </div>
 
 
@@ -104,19 +104,20 @@ In this task, you will provision the Service Fabric Cluster in Azure.
 
 -   Node type 1 (Primary): Select to configure required settings. On the Node type configuration blade enter:
 
-    -   Node type name: Enter Web.
+    -   Node type name: Enter **Web**.
 
-    -   Durability tier: Leave Bronze selected.
+    -   Durability tier: Leave **Bronze** selected.
 
-    -   Virtual machine size: Select a VM size of D1\_V2 Standard and select Select on the Choose a size blade.
+    -   Virtual machine size: Select a VM size of **D1\_V2 Standard** and select Select on the Choose a size blade.
 
-        ![On the Cluster configuration blade, under Virtual Machine Size, D1\_V2 Standard is circled.](media/b4-image7.png "Cluster configuration blade")
+        ![On the Cluster configuration blade, under Virtual Machine Size, D1\_V2 Standard is indicated.](media/ClusterConfigurationBlade.png "Cluster configuration blade")
+       
 
     -   Single node cluster: Leave unchecked.
 
-    -   Initial VM scale set capacity: Leave set to 5.
+    -   Initial VM scale set capacity: Leave set to **5**.
 
-    -   Custom endpoints: Enter 8082. This will allow the Web API to be accessible through the cluster.
+    -   Custom endpoints: Enter **8082**. This will allow the Web API to be accessible through the cluster.
 
     -   Enable reverse proxy: Leave unchecked.
 
@@ -198,25 +199,22 @@ In this task, you will provision a virtual machine (VM) in Azure. The VM image u
 
     -   Location: Select the region you are using for resources in this lab.
 
-    -   Select OK to move to the next step.
+        
+5.  Select Change Size
 
-        ![The Basics blade displays with the fields set to the previously stated settings.](media/b4-image14.png "Basics blade")
+6.  On the Select a VM Size blade, enter d2s into the search text field. This machine won't be doing much heavy lifting, so selecting D2S\_V3 Standard is a good baseline option.
 
-5.  On the Choose a size blade, ensure the Disk type is set to SSD. This machine won't be doing much heavy lifting, so selecting D2S\_V3 Standard is a good baseline option.
+    ![On the Choose a size blade, d2s is entered into the search text field.](media/change-lab-vm-size.png "Choose a size blade")
+    
+7.  Within the **INBOUND PORT RULES** section, choose RDP (3389) from the Select public inbound ports dropdown.
 
-    ![On the Choose a size blade, the Supported disk type, Premium SSD, is circled. The D2S\_V3 Standard option is circled, as is the View all button.](media/b4-image15.png "Choose a size blade")
+8.  Accept all the remaining default values on the Basic blade and select Review + Create.
 
-6.  Select Select to move on to the Settings blade.
-
-7.  On the Settings blade, choose RDP (3389) from the Select public inbound ports dropdown .
-
-8.  Accept all the remaining default values on the Settings blade and select OK.
-
-    ![Select public inbound ports dropdown with RDP (3389) selected](media/b4-image52.png "Select public inbound ports dropdown")
+    ![The Basics blade displays with the fields set to the previously stated settings.](media/lab-vm-basics-blade.png "Basics blade ")
 
 9.  Select Create on the Create blade to provision the virtual machine.
-
-    ![The Create blade displays with the Standard D2s v3 offer details.](media/b4-image16.png "Create blade")
+    
+    ![The Validation screen displays with the Standard D2s v3 offer details.](media/vm-validation-passed-create.png "Validation Passed")
 
 10.  It may take 10+ minutes for the virtual machine to complete provisioning.
 
@@ -303,8 +301,9 @@ In this task, you will install the latest Service Fabric SDK for Visual Studio 2
     ![In the Install the SDK and tools section, the link to Install the Microsoft Azure Service Fabric SDK is circled.](media/b4-image30.png "Install the SDK and tools section")
 
 3.  Run the downloaded executable and select Install in the Web Platform Installer screen.
+   
+    ![The Web Platform Installer window displays the information for Microsoft Azure Service Fabric SDK - 3.1.283.](media/install-service-fabric-sdk.png "Web Platform Installer window")
 
-    ![The Web Platform Installer window displays the information for Microsoft Azure Service Fabric SDK - 3.1.283.](media/b4-image31.png "Web Platform Installer window")
 
 4.  On the Prerequisites screen, select I Accept.
 

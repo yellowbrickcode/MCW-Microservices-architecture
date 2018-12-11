@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-August 2018
+November 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -67,7 +67,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 2: Perform a troubled upgrade](#task-2-perform-a-troubled-upgrade)
     - [Exercise 8: Load testing](#exercise-8-load-testing)
         - [Task 1: Simulate a 50-order request](#task-1-simulate-a-50-order-request)
-    - [BONUS Exercise 9: Load testing w/ partitions](#bonus-exercise-9-load-testing-w-partitions)
+    - [BONUS Exercise 9: Load testing w/partitions](#bonus-exercise-9-load-testing-wpartitions)
         - [Task 1: Using the current partition count, simulate 100 orders](#task-1-using-the-current-partition-count-simulate-100-orders)
         - [Task 2: Setting up for load testing with different partition counts](#task-2-setting-up-for-load-testing-with-different-partition-counts)
         - [Task 3: Using a partition count of 10, simulate 100 orders](#task-3-using-a-partition-count-of-10-simulate-100-orders)
@@ -141,11 +141,11 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 1.  On your Lab VM, download the starter project from <http://bit.ly/2Kw6SW3>. 
     >**Note**: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.
 
-2.  Unzip the contents to the folder C:\\handsonlab.
+2.  Unzip the contents to the folder **C:\\handsonlab**.
 
 3.  Locate the solution file (C:\\handsonlab\\ContosoEventsPoC\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017.
 
-4.  If prompted about how you want to open the file, select Visual Studio 2017, and select OK.
+4.  If prompted about how you want to open the file, select **Visual Studio 2017**, and select **OK**.
 
     ![In the How do you want to open this file dialog box, Visual Studio 2017 is selected.](media/image43.png "How do you want to open this file?")
 
@@ -159,15 +159,21 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 7.  If you are missing any prerequisites (listed under Requirements above), you may be prompted to install these at this point.
 
-8.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar.
+8.  Verify your Visual Studio version is 15.4.0 or higher.
+
+    a.  Click **Help** in the menu, then select **About Microsoft Visual Studio**.
+
+    b.  If the version is not 15.4.0, you will need to update it.  Click **OK**, then click **View** in the menu.  Select **Notifications**, you should see an entry for **Visual Studio Update is available***.  Select it and then click **Update** to update your instance.
+
+9.  Before you attempt to compile the solution, set the configuration to x64 by selecting it from the Solution Platforms drop down in the Visual Studio toolbar.
 
     ![On the Visual Studio Toolbar, The Platforms drop-down carat is circled, and in its drop-down menu, x64 is circled.](media/image46.png "Visual Studio Toolbar")
 
-9.  Build the solution, by selecting Build from the Visual Studio menu, then selecting Build Solution.
+10.  Build the solution, by selecting Build from the Visual Studio menu, then selecting Build Solution.
 
     ![The Build button is circled on the Visual Studio menu. Under that, Build Solution is circled.](media/image47.png "Visual Studio menu")
 
-10. You will have some compile-time errors at this point. These are expected, and will be fixed as you proceed with the hands-on lab.
+11. You will have some compile-time errors at this point. These are expected, and will be fixed as you proceed with the hands-on lab.
 
 ### Task 2: API Management
 
@@ -177,11 +183,11 @@ In this task, you will provision an API Management Service in the Azure portal.
 
 ![In the Azure Portal Everything pane, API Management is typed in the search field. Under Results, API Management is circled.](media/create-api-management-resource.png "Azure Portal Everything pane")
 
-2.  In the API Management blade, select Create.
+2.  In the API Management blade, select **Create**.
 
 3.  In the API Management service blade, enter the following:
 
-    a.  Name: Enter a unique name, such as contosoevents-SUFFIX.
+    a.  Name: Enter a unique name, such as **contosoevents-SUFFIX**.
 
     b.  Subscription: Choose your subscription.
 
@@ -189,13 +195,13 @@ In this task, you will provision an API Management Service in the Azure portal.
 
     d.  Location: Select the same region used for the hands-on-labs resource group.
 
-    e.  Organization name: Enter Contoso Events.
+    e.  Organization name: Enter **Contoso Events**.
 
     f.  Administrator email: Enter your email address.
 
-    g.  Pricing tier: Select Developer (No SLA).
+    g.  Pricing tier: Select **Developer (No SLA)**.
 
-    h.  Select Create.
+    h.  Select **Create**.
 
     ![On the API Management service blade, fields are set to the previously defined settings.](media/image49.png "API Management service blade")
 
@@ -205,33 +211,31 @@ In this task, you will provision an API Management Service in the Azure portal.
 
 In this section, you will provision an Azure Active Directory B2C tenant. You will use this if you do BONUS Exercise 10, so it is best to set it up in advance to avoid having to wait for provisioning.
 
-1.  In the Azure portal, select +Create a resource, and enter "Azure Active Directory" into the Search the Marketplace box, then select Azure Active Directory B2C from the results.
+1.  In the Azure portal, select **+Create a resource**, and enter **Azure Active Directory** into the Search the Marketplace box, then select **Azure Active Directory B2C** from the results.
 
    ![In the Azure Portal Everything pane, Azure Active Directory is typed in the search field. Under Results, Azure Active Directory B2C is circled.](media/create-azure-ad-b2c-resource.png "Azure Portal Azure AD Panel")
 
-2.  Select Create in the Azure Active Directory B2C blade.
-
-3.  In the Create new B2C Tenant blade, select Create a new Azure AD B2C Tenant.
+2.  Select **Create a new Azure Active Directory Tenant**.
 
     ![In the Create new B2C Tenant or Link to existing Tenant blade, Create a new Azure AD B2C Tenant is circled.](media/image31.png "Create new B2C Tenant or Link to existing Tenant blade")
 
-4.  In the Azure AD B2C Create Tenant blade, enter:
+3.  In the Azure AD B2C Create Tenant blade, enter:
 
-    a.  Organization name: Enter a unique name, such as contosoeventsb2cSUFFIX.
+    a.  Organization name: Enter a unique name, such as **contosoeventsb2cSUFFIX**.
 
     b.  Initial domain name: Enter the same name as was entered for Organization name.
 
-    c.  Country or region: Select United States.
+    c.  Country or region: Select **United States**.
 
-    d.  Select Create.
+    d.  Select **Create**.
 
     ![On the Azure AD B2C Create Tenant, fields are set to the previously defined settings.](media/image32.png "Azure AD B2C Create Tenant")
 
-5.  When the tenant finishes provisioning, you can switch to your new tenant by select the manage your new directory link which will appear in the Azure AD B2C Create Tenant blade.
+4.  When the tenant finishes provisioning, you can switch to your new tenant by select the manage your new directory link which will appear in the Azure AD B2C Create Tenant blade.
 
     ![Screenshot of the Click here to manage your new directory link.](media/image33.png "Click here to manage your new directory")
 
-6.  It may take a few minutes to provision the new directory. In the meantime, feel free to move on to Task 4, and return later to verify. To find the directory later, you may need to refresh the portal. The directory can be found by selecting your Directory + subscription icon, on the side of your logged in user name in the upper corner of the page.
+5.  It may take a few minutes to provision the new directory. In the meantime, feel free to move on to Task 4, and return later to verify. To find the directory later, you may need to refresh the portal. The directory can be found by selecting your Directory + subscription icon, on the side of your logged in user name in the upper corner of the page.
 
     ![In the Azure Portal, the Directory + subscription icon, contosoeventsb2cSUFFIX and its corresponding address are circled.](media/image34.png "Azure Portal Directory + subscription pane")
 
@@ -239,35 +243,35 @@ In this section, you will provision an Azure Active Directory B2C tenant. You wi
 
 In these steps, you will provision a Web App in a new App Service Plan.
 
-1.  Select +Create a resource in the Azure Portal, select Web, then select Web App
+1.  Select **+Create a resource** in the Azure Portal, select **Web**, then select **Web App**
 
     ![In the Azure Portal, New pane, under Azure Marketplace, Web and Web App are both circled.](media/create-web-app-resource.png "Azure Portal, Create a resource pane")
 
 2.  On the Create Web App blade, enter the following:
 
-    a.  App name: Enter a unique name, such as contosoeventsweb-SUFFIX.
+    a.  App name: Enter a unique name, such as **contosoeventsweb-SUFFIX**.
 
     b.  Subscription: Select your subscription.
 
     c.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    d.  OS: Select Windows.
+    d.  OS: Select **Windows**.
 
-    e.  App Service plan/location: Select this, select Create new.
+    e.  App Service plan/location: Select this, select **Create new**.
 
-        -  App service plan: Enter contosoeventsplan-SUFFIX.
+        -  App service plan: Enter **contosoeventsplan-SUFFIX**.
 
         - Location: Select the same location you have been using for other resources in this lab.
 
-        - Pricing tier: Select S1 Standard.
+        - Pricing tier: Select **S1 Standard**.
 
-        - Select OK.
+        - Select **OK**.
 
-    f.  Select Create to provision the Web App.
+    f.  Select **Create** to provision the Web App.
 
     ![On the Create Web App blade, fields are set to the previously defined settings.](media/image51.png "Create Web App blade")
 
-3.  You will receive a notification in the Azure portal when the Web App deployment completes. From this, select Go to resource.
+3.  You will receive a notification in the Azure portal when the Web App deployment completes. From this, select **Go to resource**.
 
     ![The Azure Portal Notification displays, indicating that deployment succeeded. In the top corner of the notification window, a Bell (notification) icon is circled. At the bottom of the Deployment succeeded message, the Go to resource button is circled.](media/image52.png "Azure Portal Notification")
 
@@ -279,31 +283,31 @@ In these steps, you will provision a Web App in a new App Service Plan.
 
 In this task, you will provision a Function App using a Consumption Plan. By using a Consumption Plan, you enable dynamic scaling of your Functions.
 
-1.  Select +Create a resource in the Azure Portal, and enter "Function App" in the Search the Marketplace box, then select Function App from the results.
+1.  Select **+Create a resource** in the Azure Portal, and enter **Function App** in the Search the Marketplace box, then select **Function App** from the results.
 
     ![In the Azure Portal Everything pane, the search field is set to Function App. Under Results, Function App is circled.](media/create-function-app-resource.png "Azure Portal Create Function App")
 
-2.  Select Create on the Function App blade.
+2.  Select **Create** on the Function App blade.
 
 3.  On the Create Function App blade, enter the following:
 
-    a.  App name: Enter a unique name, such as contosoeventsfn-SUFFIX.
+    a.  App name: Enter a unique name, such as **contosoeventsfn-SUFFIX**.
 
     b.  Subscription: Select your subscription.
 
     c.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    d.  OS: Select Windows.
+    d.  OS: Select **Windows**.
 
-    e.  Hosting Plan: Select Consumption Plan.
+    e.  Hosting Plan: Select **Consumption Plan**.
 
     f.  Location: Select the same location as the hands-on-labs resource group.
 
     g.  Storage: Leave Create new selected, and accept the default name.
 
-    h.  Application Insights: Select Off.
+    h.  Application Insights: Select **Off**.
 
-    i.  Select Create to provision the new Function App.
+    i.  Select **Create** to provision the new Function App.
 
     ![In the Function App blade, fields are set to the previously defined settings.](media/image55.png "Function App blade")
 
@@ -311,33 +315,33 @@ In this task, you will provision a Function App using a Consumption Plan. By usi
 
 In this section, you will create a Storage account for the application to create and use queues required by the solution.
 
-1.  In the Azure portal, select +Create a resource, Storage, then select Storage account -- blob, file, table, queue under Featured.
+1.  In the Azure portal, select **+Create a resource**, Storage, then select **Storage account -- blob, file, table, queue** under Featured.
 
     ![In the Azure Portal, New pane, under Azure Marketplace, Storage is circled. Under Featured, Storage account - blob, file, table, queue (Quickstart tutorial) is circled.](media/create-storage-account-resource.png "Azure Portal Create Storage Account")
 
 2.  In the Create Storage account blade, enter the following:
 
-    a.  Name: Enter a unique name, such as contosoeventsSUFFIX.
+    a.  Name: Enter a unique name, such as **contosoeventsSUFFIX**.
 
-    b.  Deployment model: Select Resource manager.
+    b.  Deployment model: Select **Resource manager**.
 
-    c.  Account kind: Select Storage (general purpose v1).
+    c.  Account kind: Select **Storage (general purpose v1)**.
 
     d.  Location: Select the same location as the hands-on-labs resource group.
 
-    e.  Replication: Select Locally-redundant storage (LRS).
+    e.  Replication: Select **Locally-redundant storage (LRS)**.
 
-    f.  Performance: Select Standard.
+    f.  Performance: Select **Standard**.
 
-    g.  Secure transfer required: Leave Disabled.
+    g.  Secure transfer required: Leave **Disabled**.
 
     h.  Subscription: Select your subscription.
 
     i.  Resource group: Select Use existing, and select the hands-on-labs resource group created previously.
 
-    j.  Virtual networks: Leave Disabled.
+    j.  Virtual networks: Leave **Disabled**.
 
-    k.  Select Create.
+    k.  Select **Create**.
 
     ![In the Create storage account blade, fields are set to the previously defined settings.](media/image57.png "Create storage account blade")
 
@@ -351,9 +355,9 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 2.  On the Azure Cosmos DB blade, enter the following:
 
-    a.  ID: Enter a unique value, such as contosoeventsdb-SUFFIX.
+    a.  ID: Enter a unique value, such as **contosoeventsdb-SUFFIX**.
 
-    b.  API: Select SQL.
+    b.  API: Select **SQL**.
 
     c.  Subscription: Select your subscription.
 
@@ -363,7 +367,7 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
     f.  Enable geo-redundancy: Leave checked.
 
-    g.  Select Create to provision the Cosmos DB.
+    g.  Select **Create** to provision the Cosmos DB.
 
     ![In the Azure Cosmos DB blade, fields are set to the previously defined settings.](media/cosmos-db-settings.png "Azure Cosmos DB blade")
 
@@ -381,17 +385,17 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 6.  On the Add Collection dialog, enter the following:
 
-    a.  Database id: Select Create new and enter TicketManager.
+    a.  Database id: Select Create new and enter **TicketManager**.
 
     b.  Provision database throughput: Leave unchecked.
 
-    c.  Collection id: Enter Orders.
+    c.  Collection id: Enter **Orders**.
 
-    d.  Storage capacity: Select Fixed (10 GB).
+    d.  Storage capacity: Select **Fixed (10 GB)**.
 
-    e.  Throughput: Enter 2500.
+    e.  Throughput: Enter **2500**.
 
-    f.  Select OK to create the new collection.
+    f.  Select **OK** to create the new collection.
 
     ![On the Add Collections blade, fields are set to the previously defined settings.](media/image63.png "Add Collections blade")
 
@@ -401,15 +405,15 @@ In this section, you will provision a Cosmos DB account, a Cosmos DB Database an
 
 8.  In the Add Collection dialog, enter the following:
 
-    a.  Database id: Select Use existing and then select TicketManager.
+    a.  Database id: Select Use existing and then select **TicketManager**.
 
-    b.  Collection id: Enter Events.
+    b.  Collection id: Enter **Events**.
 
-    c.  Storage capacity: Select Fixed (10 GB).
+    c.  Storage capacity: Select **Fixed (10 GB)**.
 
-    d.  Throughput: Enter 2500.
+    d.  Throughput: Enter **2500**.
 
-    e.  Select OK to create the new collection.
+    e.  Select **OK** to create the new collection.
 
     ![On the Add Collection blade, fields are set to the previously defined settings.](media/image65.png "Add Collection blade")
 
@@ -443,7 +447,7 @@ The purpose of this task is to make sure that the source code compiles, and that
 
     ![In the Start Menu, Service Fabric Local Cluster Manager is circled.](media/image73.png "Start Menu")
 
-3.  Right-click the system tray icon, and select Setup Local Cluster, 1 Node.
+3.  Right-click the system tray icon, and select **Setup Local Cluster, 1 Node**.
 
     ![In the System tray icon menu, Setup Local Cluster is selected. 1 Node is selected in the sub-menu. ](media/image74.png "System tray icon menu")
 
@@ -455,7 +459,7 @@ The purpose of this task is to make sure that the source code compiles, and that
 
 5.  Open the ContosoEventsPoc solution in Visual Studio, if it is not still open from the previous exercise.
 
-6.  Rebuild the solution to resolve all NuGet packages, and to make sure there are no compilation errors, by selecting Build from the menu, then selecting Rebuild Solution.
+6.  Rebuild the solution to resolve all NuGet packages, and to make sure there are no compilation errors, by selecting Build from the menu, then selecting **Rebuild Solution**.
 
     ![In Visual Studio, Rebuild Solution is circled. In the top menu, Build is circled.](media/image76.png "Visual Studio")
 
@@ -465,11 +469,11 @@ The purpose of this task is to make sure that the source code compiles, and that
 
 8.  Now, you will Publish the Service Fabric app to the local cluster.
 
-9.  In Solution Explorer, right-click the Service Fabric Application, ContosoEventsApp, and select Publish.
+9.  In Solution Explorer, right-click the Service Fabric Application, ContosoEventsApp, and select **Publish**.
 
   ![In Solution Explorer, the Service Fabric folder is expanded, and ContosoEventsApp is circled. In the right-click menu, Publish is circled.](media/image78.png "Solution Explorer")
 
-10. In the Publish Service Fabric Application dialog, select PublishProfiles\\Local.1Node.xml for the Target profile, ensure the correct account is selected, and select Publish.
+10. In the Publish Service Fabric Application dialog, select **PublishProfiles\\Local.1Node.xml** for the Target profile, ensure the correct account is selected, and select **Publish**.
 
     ![In the Publish Service Fabric Application dialog box, the Target profile field is set to PublishProfiles\\Local.1Node.xml, and is circled.](media/image79.png "Publish Service Fabric Application dialog box")
 
@@ -487,11 +491,11 @@ The Service Fabric Application includes a front-end Web API as the public-facing
 
     ![In the Swagger endpoint window, under ContosoEvents.WebApi, three endpoints are circled: Admin, Events, and Orders).](media/image81.png "Swagger endpoint window")
 
-2.  Select the Admin API, and observe the list of methods available.
+2.  Select the **Admin** API, and observe the list of methods available.
 
     ![In the Swagger endpoint window, under ContosoEvents.WebApi, Admin is circled, and its list of methods display below.](media/image82.png "Swagger endpoint window")
 
-3.  Select /api/admin/partitions, then select Try it out.
+3.  Select **/api/admin/partitions**, then select **Try it out**.
 
     ![In the Swagger endpoint window, the /api/admin/partitions method is circled. Below that, the Model Schema displays. At the bottom, the Try it out button is circled.](media/image83.png "Swagger endpoint window, Admin method section")
 
@@ -525,7 +529,7 @@ In this task, you will browse to the Service Fabric Explorer, and view the local
 
 In this task, you will complete features of the Contoso Events POC so that placing an order also syncs with the back-end data store. You will also update the configuration settings to reference the Azure resources you previously created correctly.
 
-1.  Return to Visual Studio, and from Solution Explorer, open Local.1Node.xml, located in the ApplicationParameters folder under the ContosoEventsApp project in the Service Fabric folder.
+1.  Return to Visual Studio, and from Solution Explorer, open **Local.1Node.xml**, located in the **ApplicationParameters** folder under the ContosoEventsApp project in the Service Fabric folder.
 
     ![In Solution Explorer, the following path is expanded in the tree view: Service Fabric\\ContosoEventsApp\\ApplicationParameters. In ApplicationParameters, Local.1Node.xml is circled.](media/image87.png "Solution Explorer")
 
@@ -610,7 +614,7 @@ In this task, you will complete features of the Contoso Events POC so that placi
 
 6.  Now, you should have an order in the Service Fabric App, and it is being processed. In addition, the Ticket Order Actor should have sent the order to the externalization queue you set up in configuration earlier. The actor has pre-existing logic in place to write to this queue.
 
-7.  To verify that the order is in the queue, select View -\> Cloud Explorer from the menu in Visual Studio.
+7.  To verify that the order is in the queue, select **View -\> Cloud Explorer** from the menu in Visual Studio.
 
     ![In Visual Studio on the menu bar View and Cloud Explorer are circled.](media/image96.png "Visual Studio menu bar")
 
@@ -704,41 +708,41 @@ You will also create a second function that will be used to generate load agains
 
 18. On the Integrate screen, set the following:
 
-    a.  Message parameter name: Enter orderItem.
+    a.  Message parameter name: Enter **orderItem**.
 
     b.  Storage account connection: Select the arrows in the box, then select the contosoevents-store connection from the list. This is the Application Setting you added above.
 
     ![contosoeventsstore is circled on the Integrate screen.](media/image115.png "Integrate screen")
 
-    c.  Queue name: Enter the name of your externalization queue (from Cloud explorer in Visual Studio). This should be contosoevents-externalization-requests.
+    c.  Queue name: Enter the name of your externalization queue (from Cloud explorer in Visual Studio). This should be **contosoevents-externalization-requests**.
 
     ![On the Integrate screen, the Azure Queue Storage trigger section displays. The Message parameter name is orderItem, the Storage account connection is contosoeventsstore](media/image116.png "Integrate screen")
 
-    d.  Select Save.
+    d.  Select **Save**.
 
-19. While still on the Integrate screen, select +Create a resource Output.
+19. While still on the Integrate screen, select **+Create a resource** Output.
 
     ![On the Integrate Screen, under Outputs, + New Output is circled.](media/image117.png "Integrate Screen")
 
-20. In the outputs box, locate and select Azure Cosmos DB, then select Select.
+20. In the outputs box, locate and select **Azure Cosmos DB**, then select **Select**.
 
     ![In the Azure Cosmos DB output window, next to the Azure Cosmos DB account connection field, the New button is circled.](media/image118.png "Azure Cosmos DB output window")
 
 21. On the Azure Cosmos DB output screen, enter the following:
 
-    a.  Document parameter name: Enter orderDocument.
+    a.  Document parameter name: Enter **orderDocument**.
 
-    b.  Collection name: Enter Orders.
+    b.  Collection name: Enter **Orders**.
 
     c.  Partition key: Leave empty.
 
-    d.  Database name: Enter TicketManager.
+    d.  Database name: Enter **TicketManager**.
 
     e.  Azure Cosmos DB account connection: Select new next to the text box, and select the Cosmos DB you created in Exercise 1, Task 6.
 
     ![Screenshot of Azure Cosmos DB output window with the values specified above entered into the fields.](media/image119.png "Azure Cosmos DB output window")
 
-    f.  Select Save. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
+    f.  Select **Save**. You should now see an Azure Queue Storage trigger and an Azure Cosmos DB output on the Integrate screen.
 
     ![In the Integrate window, the fields under both Triggers and Outputs are circled. ](media/image120.png "Integrate window")
 
@@ -760,11 +764,11 @@ You will also create a second function that will be used to generate load agains
 
 27. You will now create another function for the load simulation you will use later in this hands-on lab.
 
-28. As before, select + next to Functions in the side menu.
+28. As before, select **+** next to Functions in the side menu.
 
     ![Under Function Apps, contosoeventsfn-SUFFIX is expanded, and under it, the + icon is circled.](media/image106.png "Function Apps Section")
 
-29. In the Choose a template screen that appears, locate the Queue trigger box, and select PowerShell.
+29. In the Choose a template screen that appears, locate the Queue trigger box, and select **PowerShell**.
 
     ![In the Choose a template screen, in the Queue trigger box, at the bottom, PowerShell is circled.](media/image124.png "Choose a template, Queue trigger ")
 
@@ -772,15 +776,15 @@ You will also create a second function that will be used to generate load agains
 
 30. In the Queue trigger dialog, enter the following:
 
-    a.  Language: Leave PowerShell selected.
+    a.  Language: Leave **PowerShell** selected.
 
-    b.  Name: Enter ProcessSimulationRequests.
+    b.  Name: Enter **ProcessSimulationRequests**.
 
-    c.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be contosoevents-simulation-requests.
+    c.  Queue name: Enter your simulation queue name, from Cloud explorer in Visual Studio. The value should be **contosoevents-simulation-requests**.
 
-    d.  Storage account connection: Select contosoeventsstore from the drop down.
+    d.  Storage account connection: Select **contosoeventsstore** from the drop down.
 
-    e.  Select Create to create the new function.
+    e.  Select **Create** to create the new function.
 
     ![Fields in the Queue Trigger dialog box are set to the previously defined settings.](media/image125.png "Queue Trigger dialog box")
 
@@ -790,13 +794,13 @@ You will also create a second function that will be used to generate load agains
 
 32. Make sure Azure Queue Storage is selected under Triggers, then enter the following:
 
-    a.  Message parameter name: Enter simulationRequest.
+    a.  Message parameter name: Enter **simulationRequest**.
 
-    b.  Storage account connection: Leave set to contosoeventsstore.
+    b.  Storage account connection: Leave set to **contosoeventsstore**.
 
-    c.  Queue name: Leave as contosoevents-simulation-requests.
+    c.  Queue name: Leave as **contosoevents-simulation-requests**.
 
-    d.  Select Save.
+    d.  Select **Save**.
 
     ![In the Integrate Window, under Triggers, Azure Queue Storage (triggerInput) is circled. Under Azure Queue Storage trigger, the Message parameter name field is set to simulationRequest.](media/image127.png "Integrate window")
 
@@ -810,7 +814,7 @@ You will also create a second function that will be used to generate load agains
 
 35. Copy all the contents of this file (CTRL+A, then CTRL+C), then return to your function page in the Azure portal, and paste the code into the run.ps1 code block.
 
-36. Select Save.
+36. Select **Save**.
 
 37. The final setting to update is the API Management key. You will return to set this up when you set up the API Management service.
 
@@ -840,7 +844,7 @@ In this task, you will test the ticket order processing back-end, to validate th
     
     ![In the Monitor tab, the Switch to classic view is circled.](media/image132a.png "Monitor tab Application Insights request")
 
-7.  In the Azure portal, navigate to your Cosmos DB account, and from the top menu of the Overview blade, select Data Explorer.
+7.  In the Azure portal, navigate to your Cosmos DB account, and from the top menu of the Overview blade, select **Data Explorer**.
 
     ![In the Azure Cosmos DB account pane, the Data Explorer button is circled.](media/image133.png "Azure Cosmos DB account pane")
 
@@ -850,7 +854,7 @@ In this task, you will test the ticket order processing back-end, to validate th
     SELECT * FROM c WHERE c.id = '56dab32a-4154-4ea5-befa-2eb324e142ee'
 ```
 
-9.  Select Execute Query.
+9.  Select **Execute Query**.
 
     ![In the Azure Cosmos DB account pane, in the left column, Data Explorer is selected. In the center column, at the top, the New SQL Query button is circled. Under Collections, TicketManager is expanded, and Orders is circled. In the right column, on the Query 1 tab, in the Query 1 field, a callout points to an ID in red, and says, \"Replace with your order ID.\" in the Results pane at the bottom, the same order ID is circled. The Execute Query button is circled as well. ](media/image134.png "Azure Cosmos DB account pane")
 
@@ -866,11 +870,11 @@ In this exercise, you will publish the Service Fabric Application to the Azure c
 
 In this task, you will deploy the application to a hosted Service Fabric Cluster.
 
-1.  In Visual Studio on your Lab VM, within Solution Explorer, open Cloud.xml from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
+1.  In Visual Studio on your Lab VM, within Solution Explorer, open **Cloud.xml** from the ApplicationParameters folder of the ContosoEventsApp project, under the Service Fabric folder. This file contains parameters we can use for publishing to the hosted cluster, as opposed to the local cluster.
 
     ![In the Solution Explorer window, the following path is expanded: Service Fabric\\ContosoEventsApp\\ApplicationParameters. Under ApplicationParameters, Cloud.xml is circled.](media/image135.png "Solution Explorer window")
 
-2.  Open Local.1Node.XML from the same folder.
+2.  Open **Local.1Node.XML** from the same folder.
 
 3.  To make sure you are using the same parameters you setup earlier for the Local cluster, copy just the following parameters from Local.1Node.xml to Cloud.xml, overwriting the existing parameters in Cloud.xml, then save Cloud.xml.
 
@@ -902,9 +906,9 @@ In this task, you will deploy the application to a hosted Service Fabric Cluster
     <Parameter Name="EventActorService_PartitionCount" Value="1" />
 ```
 
-7.  From Solution Explorer, right-click the ContosoEventsApp project and select Publish.
+7.  From Solution Explorer, right-click the ContosoEventsApp project and select **Publish**.
 
-8.  In the Publish Service Fabric Application dialog, set the Target profile to Cloud.xml, and select your Service Fabric Cluster endpoint from the Connection Endpoint drop down, then select Publish.
+8.  In the Publish Service Fabric Application dialog, set the Target profile to **Cloud.xml**, and select your Service Fabric Cluster endpoint from the Connection Endpoint drop down, then select **Publish**.
 
     ![In the Publish Service Fabric Application dialog box, the Target profile, which is circled, is set to PublishProfiles\\Cloud.xml. The Connection Endpoint also is circled, and is set to contosoeventssf-SUFFIX.westus2.cloudapp.azure.com:19000.](media/image136.png "Publish Service Fabric Application dialog box")
 
@@ -969,11 +973,11 @@ In this task, you will import the Web API description to your API Management ser
 
     ![In the Resource group list of resources, the contosoevents-SUFFIX API Management service is circled.](media/image141.png "Resource group list of resources")
 
-2.  In the API Management blade, select APIs under Api Management.
+2.  In the API Management blade, select **APIs** under Api Management.
 
     ![In the API Management blade, on the left, under Api Management, APIs is circled.](media//image142.png "API Management blade")
 
-3.  In the APIs blade, select OpenAPI specification.
+3.  In the APIs blade, select **OpenAPI specification**.
 
     ![In the APIs blade, OpenAPI specification is circled.](media//image143.png "APIs blade")
 
@@ -991,19 +995,19 @@ In this task, you will import the Web API description to your API Management ser
 
     d. Note the URL under "Base URL". You will use this URL in your website configuration in the next exercise.
 
-    e. Select Unlimited in the Products.
+    e. Select **Unlimited** in the Products.
 
-    f. Select Create.
+    f. Select **Create**.
 
     ![On the Create from OpenAPI specification window, fields are set to previously defined settings and Base URL is circled.](media/image145.png "Create from OpenAPI specification")
 
     > **Note**: You would typically create a new product for each environment in a scenario like this one. For example, Development, Testing, Acceptance and Production (DTAP) and issue a key for your internal application usage for each environment, managed accordingly.
 
-6.  Select Settings in the ContosoEvents.WebApi toolbar, update Web Service URL so that it uses HTTP instead of HTTPS, and select Save.
+6.  Select **Settings** in the ContosoEvents.WebApi toolbar, update Web Service URL so that it uses HTTP instead of HTTPS, and select **Save**.
 
     ![On the right of ContosoEvents.WebApi api blade, the Settings tab is selected, and Web Service URL and Save are circled.](media/image145a.png "")
 
-7.  Select ContosoEvents.WebApi from the All APIs list, and then select Design. You will see your API backend endpoint.
+7.  Select **ContosoEvents.WebApi** from the All APIs list, and then select **Design**. You will see your API backend endpoint.
 
     ![In the APIs blade, ContosoEvents.WebApi is circled. On the right, the Design tab is selected, and the ContosoEvents.WebApi Backend endpoint URL is circled.](media/image146.png "Publisher portal")
 
@@ -1011,7 +1015,7 @@ In this task, you will import the Web API description to your API Management ser
 
 In this task, you will retrieve the subscription key for the client applications to call the new API Management endpoint.
 
-1.  In the Azure portal, navigate to your API Management service, and from the Overview blade, select Developer portal from the toolbar. This will open a new browser tab, and log you into the Developer portal as an administrator, giving you the rights you need to complete the following steps.
+1.  In the Azure portal, navigate to your API Management service, and from the Overview blade, select **Developer portal** from the toolbar. This will open a new browser tab, and log you into the Developer portal as an administrator, giving you the rights you need to complete the following steps.
 
     ![In the API Management service pane, on the toolbar, the Developer portal button is circled.](media/image147.png "API Management service")
 
@@ -1090,11 +1094,11 @@ In this task, you will test the web application calls to API Management by creat
 
     ![A Microsoft Visual Studio warning message displays, asking if you trust the IIS Express SSL certificate.](media/image155.png "Microsoft Visual Studio warning message")
 
-3.  If you receive a warning in the browser that "Your connection is not private," select Advanced.
+3.  If you receive a warning in the browser that "Your connection is not private," select **Advanced**.
 
     ![On the Your connection is not private warning, the Advanced button is circled.](media/image156.png "Your connection is not private warning")
 
-4.  Under Advanced, select Proceed to localhost (unsafe).
+4.  Under Advanced, select **Proceed to localhost (unsafe)**.
 
     ![The Advanced warning displays once you click the Advanced button. It explains that the server culd not prove that it is localhost, and its security certificate does not specify SANs. At the bottom, the Proceed to localhost (unsafe) button is circled.](media/image157.png "Advanced section")
 
@@ -1102,7 +1106,7 @@ In this task, you will test the web application calls to API Management by creat
 
     ![The Contoso Events website displays, with information about the Seattle Rock and Rollers concert tickets. At the bottom of the page is the Order tickets now button.](media/image158.png "Contoso Events website")
 
-6.  Note the event presented on the home page has an Order Tickets Now button. Select that to place an order.
+6.  Note the event presented on the home page has an **Order Tickets Now** button. Select that to place an order.
 
 7.  Choose the number of tickets for the order, and then scroll down to see the billing fields.
 
@@ -1112,7 +1116,7 @@ In this task, you will test the web application calls to API Management by creat
 
     ![On the Billing page, on the left under Billing, the Email, First name, and Last name fields are circled. On the right under Credit Card, the Cardholder Name field is circled, as is the Place Order button at the bottom. ](media/image160.png "Billing information page")
 
-9.  Select Place Order.
+9.  Select **Place Order**.
 
 10. Once the order is queued for processing, you will be redirected to a results page as shown in the following screen shot. It should indicate Success and show you the order id that was queued as confirmation.
 
@@ -1124,11 +1128,11 @@ In this task, you will test the web application calls to API Management by creat
 
 In this task, you will publish the web application to Azure.
 
-1.  From the Visual Studio Solution Explorer, right-click ContosoEvents.Web, and select Publish.
+1.  From the Visual Studio Solution Explorer, right-click ContosoEvents.Web, and select **Publish**.
 
     ![In Solution Explorer, on the right-click menu for ContosoEvents.Web, Publish is circled.](media/image162.png "Solution Explorer")
 
-2.  Select the App Service option, choose Select Existing, then select Publish.
+2.  Select the App Service option, choose **Select Existing**, then select **Publish**.
 
     ![Under Publish, the Microsoft Azure App Service tile is circled. Under this tile, the radio button is selected for Select Existing, and is circled. At the bottom, the Publish button is circled.](media/image163.png "Publish section")
 
@@ -1170,7 +1174,7 @@ If you set the upgrade mode to Monitored, Service Fabric will be in full control
 
 Currently, the TicketOrderActor does not have a status property to make it easier to check on the actor order status quickly. In this task, you will modify the Ticket Order State model to add a new status property.
 
-1.  In Visual Studio on the Lab VM, open TicketOrder.cs in the ContosoEvents.Models project, under the Common folder.
+1.  In Visual Studio on the Lab VM, open **TicketOrder.cs** in the **ContosoEvents.Models** project, under the **Common** folder.
 
     ![In Solution Explorer, under Common, under ContosoEvents.Models, TicketOrder.cs is circled.](media/image167.png "Solution Explorer")
 
@@ -1198,7 +1202,7 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 4.  Save TicketOrder.cs.
 
-5.  From Solution Explorer, open TicketOrderActor.cs in the ContosoEvents.TicketOrderActor project, under the Service Fabric folder.
+5.  From Solution Explorer, open **TicketOrderActor.cs** in the **ContosoEvents.TicketOrderActor** project, under the **Service Fabric** folder.
 
 6.  Edit the TicketOrderActor to add the new order status. Uncomment all TODO: Exercise 6 -- Task 1. The change will uncomment several lines that set the new Status field to one of the OrderStatuses enumeration values. Be sure to find all of the following comments (there are 6 total):
 
@@ -1227,25 +1231,25 @@ Currently, the TicketOrderActor does not have a status property to make it easie
 
 In this task, you will configure settings for the Service Fabric application to perform an upgrade.
 
-1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click ContosoEventsApp, and select Publish.
+1.  From the Visual Studio Solution Explorer, expand the Service Fabric folder, then right-click **ContosoEventsApp**, and select **Publish**.
 
-2.  In the Public Service Fabric Application dialog, select PublishProfiles\\Cloud.xml for the target profile, and check Upgrade the Application.
+2.  In the Public Service Fabric Application dialog, select **PublishProfiles\\Cloud.xml** for the target profile, and check **Upgrade the Application**.
 
     ![In the Public Service Fabric Application dialog box, in the Target profile field, PublishProfiles\\Cloud.xml is circled. The checkbox for Upgrade the Application is selected and circled.](media/image168.png "Public Service Fabric Application dialog box")
 
-3.  Select Configure Upgrade Settings, under Upgrade the Application. Select Monitored for the upgrade mode, then select OK.
+3.  Select Configure Upgrade Settings, under Upgrade the Application. Select **Monitored** for the upgrade mode, then select **OK**.
 
     ![In the Edit Upgrade Settings dialog box, the Upgrade mode is set to Monitored, and is circled.](media/image169.png "Edit Upgrade Settings dialog box")
 
-4.  From the Publish Service Fabric Application dialog, select Manifest Versions.
+4.  From the Publish Service Fabric Application dialog, select **Manifest Versions**.
 
-5.  Change the TicketOrderActorPkg\\Code New Version to 1.1.0. This change will force the actor package and the app to change to 1.1.0 as well.
+5.  Change the **TicketOrderActorPkg\\Code** New Version to **1.1.0**. This change will force the actor package and the app to change to 1.1.0 as well.
 
     ![In the Edit Versions dialog box, in the Application and Services section, ContosoEventsAppyType is expanded. Under that, ContosoEvents.TicketOrderActorPkg is expanded. Under that, the Code line is circled which shows that the current Code version is 1.0.0, and the new version is 1.1.0.](media/image170.png "Edit Versions dialog box")
 
-6.  Select Save.
+6.  Select **Save**.
 
-7.  Now that the upgrade configuration is set, select Publish.
+7.  Now that the upgrade configuration is set, select **Publish**.
 
 8.  Observe the Visual Studio Output window going through the upgrade process, which can take 5 minutes or more.
 
@@ -1305,7 +1309,7 @@ In this exercise, you will deploy an update that causes issues with the applicat
 
 In this task, you will add code to produce health checks that force the monitored upgrade to roll back to the original version of the service.
 
-1.  In Visual Studio, open TicketOrderService.cs located in the ContosoEvents.TicketOrderService project in the Service Fabric folder.
+1.  In Visual Studio, open **TicketOrderService.cs** located in the **ContosoEvents.TicketOrderService** project in the **Service Fabric** folder.
 
 2.  Locate TODO: Exercise 7 - Task 1 and uncomment:
 
@@ -1320,17 +1324,17 @@ In this task, you will add code to produce health checks that force the monitore
 
 In this task, you will perform an upgrade, and watch a rollback of the upgrade.
 
-1.  From Solution Explorer in Visual Studio, right-click the ContosoEventsApp project, under the Service Fabric folder, and select Publish.
+1.  From Solution Explorer in Visual Studio, right-click the ContosoEventsApp project, under the Service Fabric folder, and select **Publish**.
 
-2.  From the Publish Service Fabric Application dialog, check Upgrade the Application, and select Manifest Versions.
+2.  From the Publish Service Fabric Application dialog, check **Upgrade the Application**, and select **Manifest Versions**.
 
-3.  Change the TicketOrderServicePkg\\Code New Version to 1.1.0. This change will force the service package be change to 1.1.0 and the application to 1.2.0.
+3.  Change the **TicketOrderServicePkg\\Code** New Version to **1.1.0**. This change will force the service package be change to 1.1.0 and the application to 1.2.0.
 
     ![In the Edit Versions dialog box, in the Application and Services section, ContosoEventsAppyType is expanded. Under that, ContosoEvents.TicketOrderServicePkg is expanded. Under that, the Code line is circled which shows that the current Code version is 1.0.0, and the new version is 1.1.0.](media/image178.png "Edit Versions dialog box")
 
-4.  Select Save.
+4.  Select **Save**.
 
-5.  Select Publish, and return to Service Fabric Explorer.
+5.  Select **Publish**, and return to Service Fabric Explorer.
 
 6.  Observe the time it is taking to upgrade in Visual Studio and the errors that are now occurring in Service Fabric Explorer.
 
@@ -1377,11 +1381,11 @@ In this task, you will simulate a load test of 50 orders against the cluster usi
 
 1.  Navigate to the published Web application at a URL like <https://contosoeventsweb-SUFFIX.azurewebsites.net>.
 
-2.  Select the Load Test menu. Optionally give a new name to the tag for tracking. Set load to 50 requests. Choose Start Load Test.
+2.  Select the **Load Test** menu. Optionally give a new name to the tag for tracking. Set load to **50** requests. Choose **Start Load Test**.
 
     ![In the Load Test section, the Event is Seattle Rock and Rollers. The Tag is load-test-1, and the number of requests is set to 50.](media/image183.png "Load Test section")
 
-3.  Navigate to the Load Test Status menu. It shows you the partitions that were created for the ticket order service (reliable queue).
+3.  Select the **LoadTest Status** menu. It shows you the partitions that were created for the ticket order service (reliable queue).
 
     ![The Simulation Status window displays the following columns: Partition ID, Partition Status, Node Name, Health State, and Items in Queue.](media/image184.png "Simulation Status window")
 
@@ -1403,7 +1407,7 @@ In this task, you will perform several load tests against the Cluster using diff
 
 In this task, you will simulate a load test against the Cluster using the current partition count (that is, 5) of the Ticket Order Service.
 
-1.  Using the Service Fabric Web API Swagger UI, please issue a POST request against /api/admin/simulate/orders.
+1.  Using the Service Fabric Web API Swagger UI, please issue a POST request against **/api/admin/simulate/orders**.
 
     ![In the POST method for api/admin/simulate/orders section, the request field, which is empty, has a callout saying to place the simulation request here.](media/image190.png "POST method for api/admin/simulate/orders section")
 
@@ -1482,7 +1486,7 @@ In this task, you will simulate a load test against the Cluster using the curren
 
 In this task, you will clean the existing orders from the Cosmos DB, so you can start with clean slate. This step is optional but because we are going to rely on reporting about orders in the database, it is much better to keep in the database only the orders that were simulated for load testing.
 
-1.  In the Swagger UI for your Service Fabric Web API, please access the admin APIs DELETE /api/admin/orders and select Try it out. When you get back a 200-response code, the orders will have been deleted from the Cosmos DB.
+1.  In the Swagger UI for your Service Fabric Web API, please access the admin APIs **DELETE /api/admin/orders** and select **Try it out**. When you get back a 200-response code, the orders will have been deleted from the Cosmos DB.
 
     ![On the Swagger Endpoint webpage for ContosoEvents.WebApi, under Admin, the Delete method for /api/admin/orders section is expanded. Current Response Messages have statuses of 400 and 404.](media/image185.png "Swagger Endpoint webpage")
 
@@ -1678,17 +1682,17 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     ![In the Profile menu, a callout points to Directory.](media/image196.png "Profile menu")
 
-3.  From the Settings blade, select Applications.
+3.  From the Settings blade, select **Applications**.
 
     ![In the Settings blade, under Manage, a callout arrow points to Applications.](media/image197.png "Settings blade")
 
-4.  Select +Add.
+4.  Select **+Add**.
 
-5.  Set the application name to WebApp.
+5.  Set the application name to **WebApp**.
 
-6.  Select Yes for include Web App / Web API.
+6.  Select **Yes** for include Web App / Web API.
 
-7.  Select Yes for Allow implicit flow.
+7.  Select **Yes** for Allow implicit flow.
 
 8.  Add a reply URL for local testing: <https://localhost:44327/>.
 
@@ -1696,129 +1700,91 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     > **Note**: Make sure to include the closing / or the configuration will not work.
 
-10. Choose Create.
+10. Choose **Create**.
 
     ![On the New application blade, fields are set to the previously defined settings.](media/image198.png "New application blade")
 
-11. In the Settings blade, select Identity providers.
+11. In the Settings blade, select **Identity providers**.
 
-12. Select Username for Local accounts.
+12. Select **Username** for Local accounts.
 
-13. Choose Save.
+13. Choose **Save**.
 
     ![On the Settings blade, under Manage, Identity providers is selected. in the Identity provider pane, Username is selected in the Local Accounts drop-down menu.](media/image199.png "Settings blade")
 
-14. In the Settings blade, select Sign-up policies.
+14. In the Settings blade, select **User flows**.
 
-15. Select + Add.
+15. Select **+ New user flow**, then select **All**
 
-16. Set the policy name to 'signup'.
+16. Select **Sign up**.
+
+17. Set the policy name to **signup**.
 
     ![On the Settings blade, under Policies, Sign-up policies is selected. in the Sign-up policies pane, the Add button is selected. In the Add sign-up policy pane, the Name field is set to signup.](media/image200.png "Settings blade")
 
-17. Select Identity providers.
+18. Under **Identity providers**, check the **User ID Signup** chekcbox
 
-18. Select User ID signup.
+19. Select **Create**.
 
-19. Choose OK.
+20. Select **User attributes**, select **Email Address, Given Name, and Surname**.
 
-    ![In the Add sign-up policy pane, Identity providers is selected. In the Select identity providers pane, User ID signup is selected.](media/image201.png "Add sign-up policy pane")
-
-20. Select Sign-up attributes.
-
-21. Select Email Address, Given Name, and Surname.
-
-22. Choose OK.
+21. Select **Save**.
 
     ![In the Add sign-up policy pane, Sign-up attributes is selected. In the Sign-up attributes pane, the following three attributes are selected: Email Address, Given Name, and Surname.](media/image202.png "Add sign-up policy pane")
 
-23. Select Application Claims.
+22. Select **Application claims**, select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-24. Select Email Addresses, Given Name, Surname, and User's Object ID.
+23. Select **Save**.
 
-25. Choose OK.
+24. Select **Properties**, under **Token compatability settings**, select **acr** under Claim representing user flow.
 
-    ![In the Add sign-up policy pane, application claims is selected. In the Select application claims pane, the following application claims are selected: City, Email Addresses, Given Name, Surname, and User\'s Object ID.](media/image203.png "Add sign-up policy")
-
-26. Select Token, session & SSO config.
-
-27. Select acr under Claim representing policy ID.
-
-28. Choose OK.
+25. Choose **Save**.
 
     ![In the Edit Policy pane, Token, session & SSO config (Default) is selected. In the Token, session & SSO config pane, the Claim representing policy ID toggle button is set to acr, and is circled.](media/image204.png "Edit Policy pane")
 
-29. Choose Create.
+26. In the Settings blade, select **+ New user flow**, then select **All**
 
-30. In the Settings blade, select Sign-in policies.
+27. Select **Sign in**
 
-31. Select + Add.
+27. Set the policy name to **signin**.
 
-32. Set the policy name to 'signin'.
+33. Under **Identity providers**, check **Local Account Signin**.
 
-    ![In the Settings blade, under Policies, Sign-in policies is selected. In the Sign-in policies pane, the Add button is selected. In the Add Sign-in policy blade, the policy name is set to signin.](media/image205.png "Settings blade")
+35. Select **Create**.
 
-33. Select Identity providers.
+36. Select **Application Claims**.
 
-34. Select Local Account Signin.
+37. Select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-35. Select OK.
+38. Select **Save**.
 
-    ![In the Add sign-in policy pane, Identity providers is selected. In the Select identity providers pane, Local Account Signin is selected.](media/image206.png "Add sign-in policy pane")
+39. Select **Properties**
 
-36. Select Application Claims.
+40. Select **acr** under **Token compatability settings**.
 
-37. Select Email Addresses, Given Name, Surname, and User's Object ID.
+41. Choose **Save**.
 
-38. Choose OK.
+43. In the Settings blade, select **+ New user flow**, then select **All**
 
-    ![In the Add sign-in policy pane, Application claims is selected. In the Select application claims pane, the following application claims are selected: Email Addresses, Given Name, Surname, and User\'s Object ID.](media/image207.png "Add sign-in policy pane")
+44. Select **Profile editing**.
 
-39. Select Token, session & SSO config.
+45. Set the policy name to **profileedit**.
 
-40. Select acr under Claim representing policy ID.
+46. Under **Identity providers**, select **Local Account Signin**.
 
-41. Choose OK.
+48. Select **Create**.
 
-    ![In the Edit Policy pane, Token, session & SSO config (Default) is selected. In the Token, session & SSO config pane, the Claim representing policy ID toggle button is set to acr, and is circled.](media/image208.png "Edit Policy pane")
+49. Select **User attributes**, then select **Given Name** and **Surname**.
 
-42. Choose Create.
+51. Choose **Save**.
 
-43. In the Settings blade, select Profile editing policies.
+52. Select **Application Claims**.
 
-44. Select + Add.
+53. Select **Email Addresses, Given Name, Surname, and User's Object ID**.
 
-45. Set the policy name to 'profileedit'.
+54. Choose **Save**.
 
-    ![In the Profile editing policy pane, the Add button is selected. In the Add profile editing policy pane, the Name field is set to profileedit.](media/image209.png "Profile editing policy pane")
-
-46. Select Identity providers.
-
-47. Select Local Account Signin.
-
-48. Choose OK.
-
-    ![In the Add profile editing pane, Identity providers is selected. In the Select identity providers pane, Local Account Signin is selected.](media/image210.png "Add profile editing pane")
-
-49. Select Profile attributes.
-
-50. Select Given Name and Surname.
-
-51. Choose OK.
-
-    ![In the Add profile editing pane, Profile attributes is selected. In the Select Profile attributes pane, the Given Name and Surname attributes are selected.](media/image211.png "Add profile editing pane")
-
-52. Select Application Claims.
-
-53. Select Email Addresses, Given Name, Surname, and User's Object ID.
-
-54. Choose OK.
-
-    ![In the Add profile editing pane, Application claims is selected. In the Select Application claims pane, the following application claims are selected: Email Addresses, Given Name, Surname, and Users\'s Object ID.](media/image212.png "Add profile editing pane")
-
-55. Choose Create.
-
-56. In the Settings blade, select Applications.
+56. In the Settings blade, select **Applications**.
 
 57. Select the created app.
 
@@ -1826,7 +1792,7 @@ In this task, you will set up the Azure Active Directory B2C directory for your 
 
     ![In the WebApp section, a callout arrow points to the Application ID copy button.](media/image213.png "WebApp section")
 
-59. In the Settings blade, select All Policies. You should see three policies and the B2C instance. Take note of the names for these policies with the prefix 'B2C' as these names will be used in the next task.
+59. In the Settings blade, select **User flows**. You should see three policies and the B2C instance. Take note of the names for these policies with the prefix 'B2C' as these names will be used in the next task.
 
     ![In the Settings blade, under Policies, All policies is selected. In the All policies pane, three policies display: B2C\_1\_profileedit, B2C\_1\_signin, and B2C\_1\_signup.](media/image214.png "Settings blade")
 
@@ -1854,11 +1820,11 @@ Azure Active Directory B2C:
 
 2.  For the ida:ClientId enter the Application ID generated for your B2C application created in the previous task.
 
-3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., B2C\_1\_signup).
+3.  For the ida:SignUpPolicyId enter the name of the sign-up policy you created in the tenant (e.g., **B2C\_1\_signup**).
 
-4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., B2C\_1\_signin).
+4.  For the ida:SignInPolicyId enter the name of the sign in policy you created in the tenant (e.g., **B2C\_1\_signin**).
 
-5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., B2C\_1\_profileedit).
+5.  For the ida:UserProfilePolicyId enter the name of the profile editing policy you created in the tenant (e.g., **B2C\_1\_profileedit**).
 
 ### Task 3: Add security features to the web application
 
@@ -1873,14 +1839,14 @@ In this task, you will enable security features that will leverage the configura
     ConfigureAuth(app);
     ```
 
-3.  Open FilterConfig.cs from the App\_Start folder, and uncomment the line below the TODO item. This will provide default protection for all routes so that authentication is required unless the route allows anonymous callers.
+3.  Open **FilterConfig.cs** from the **App\_Start** folder, and uncomment the line below the TODO item. This will provide default protection for all routes so that authentication is required unless the route allows anonymous callers.
 
     ```
     //TODO Exercise 10 - Task 3
     filters.Add(new Policies.PolicyAuthorize { Policy = Startup.SignInPolicyId });
     ```
 
-4.  Open \_Layout.cshtml under Views\\Shared and remove the 3 lines following the TODO item, and uncomment area below it. This will prevent the menu items to be hidden unless the user is authenticated. It will look like this when you complete the change.
+4.  Open **\_Layout.cshtml** under **Views\\Shared** and remove the 3 lines following the TODO item, and uncomment area below it. This will prevent the menu items to be hidden unless the user is authenticated. It will look like this when you complete the change.
 
     ```
     @\*TODO Exercise 10 - Task 3 \*@
@@ -1933,7 +1899,7 @@ In this task, you will test the web application and register yourself as a user 
 
 1.  Using Solution Explorer in Visual Studio, open the Web folder.
 
-2.  Right-click the ContosoEvents.Web project, select Debug, and then Start new instance.
+2.  Right-click the ContosoEvents.Web project, select **Debug**, and then **Start new instance**.
 
 3.  When the application launches you will see the website home page.
 
