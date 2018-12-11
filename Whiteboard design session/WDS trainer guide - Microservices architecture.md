@@ -26,6 +26,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
+- [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
     - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
@@ -52,6 +53,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
+
+# Trainer information
+
+Thank you for taking time to support the whiteboard design sessions as a trainer!
 
 ## Role of the trainer
 
