@@ -125,7 +125,7 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 ### Task 1: Download and open the ContosoEventsPoC starter solution
 
-1.  On your Lab VM, open a browser to https://github.com/Microsoft/MCW-Microservices-architecture. CLick the **Clone or downlaod** link and then select **Download ZIP**
+1.  On your Lab VM, open a browser to https://github.com/Microsoft/MCW-Microservices-architecture. Click the **Clone or downlaod** link and then select **Download ZIP**
     
 2.  Unzip the contents to the folder **C:\\**.
 
