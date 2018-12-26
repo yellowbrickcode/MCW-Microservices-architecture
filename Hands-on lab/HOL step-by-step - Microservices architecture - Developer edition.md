@@ -125,12 +125,11 @@ Because this is a "born in Azure" solution, it depends on many Azure resources. 
 
 ### Task 1: Download and open the ContosoEventsPoC starter solution
 
-1.  On your Lab VM, download the starter project from <http://bit.ly/2MJgitO>. 
-    >**Note**: the URL is case sensitive, so you may need to copy and paste it into your browser's address bar.
+1.  On your Lab VM, open a browser to https://github.com/Microsoft/MCW-Microservices-architecture. Click the **Clone or downlaod** link and then select **Download ZIP**
+    
+2.  Unzip the contents to the folder **C:\\**.
 
-2.  Unzip the contents to the folder **C:\\handsonlab**.
-
-3.  Locate the solution file (C:\\handsonlab\\ContosoEventsPoC\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017.
+3.  Locate the solution file (C:\\MCW-Microservices-architecture-master\\Source\\ContosoEventsPoC-DeveloperEdition\\Src\\ContosoEventsPOC.sln), and double-click it to open it with Visual Studio 2017.
 
 4.  If prompted about how you want to open the file, select **Visual Studio 2017**, and select **OK**.
 
