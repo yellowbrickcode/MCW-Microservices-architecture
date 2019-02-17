@@ -7,6 +7,12 @@ Contoso Events is an online service for concerts, sporting and other event ticke
 - Application developer
 - Infrastructure architect
 
+## Resources
+- [Whiteboard Design Session Student Guide](https://github.com/yellowbrickcode/MCW-Microservices-architecture/blob/master/Whiteboard%20design%20session/WDS%20student%20guide%20-%20Microservices%20architecture.md)
+- [Before the Hands On Lab Setup Guide](https://github.com/yellowbrickcode/MCW-Microservices-architecture/blob/master/Hands-on%20lab/Before%20the%20HOL%20-%20Microservices%20architecture.md)
+- [Hands On Lab Step By Step - Developer Edition](https://github.com/yellowbrickcode/MCW-Microservices-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Microservices%20architecture%20-%20Developer%20edition.md)
+- [Hands On Lab Step By Step - Infrastructure Edition](https://github.com/yellowbrickcode/MCW-Microservices-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Microservices%20architecture%20-%20Infrastructure%20edition.md)
+
 ## Abstract
 
 ### Workshop
