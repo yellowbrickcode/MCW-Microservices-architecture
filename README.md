@@ -58,3 +58,8 @@ Microservices using Service Fabric
 - [Technology choices](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-overview)
 - [DevOps checklist](https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops)
 - [Architecture Styles](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles)
+
+## Extra links
+- [What I Wish I Had Known Before Scaling Uber to 1000 Services](https://www.youtube.com/watch?v=kb-m2fasdDY)
+- [Microservice Architecture](https://microservices.io/index.html)
+- [Service Fabric Documentation](https://docs.microsoft.com/en-us/azure/service-fabric/)
